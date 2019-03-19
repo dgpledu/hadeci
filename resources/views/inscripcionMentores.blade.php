@@ -79,38 +79,9 @@
       <small class="form-text text-muted">Suba su foto en formato JPG, PNG, GIF, BMP o SVG. El archivo debe ser menor a 6 Mb.</small>
     </div>
     <div>
-    {{-- <div class="form-group col-sm-6">
-      <select class="form-control" name="restric_alim">
-      <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option>
-<option>No</option>
-        <option>Celiaquía</option>
-        <option>Veganismo</option>
-        <option>Vegetarianismo</option>
-        <option>Fenilcetonuria</option>
-        <option>Otra</option>
-      </select>
-      <small class="form-text text-muted">Si selecciona la opción "Otra", por favor envíe un mail a <a href="mailto:desafios.cientificos@bue.edu.ar">desafios.cientificos@bue.edu.ar</a> detallando en qué consiste dicha restricción alimentaria.
-      </small>
-    </div> --}}
 
-  <!-- fin de la tercera línea del formulario -->
-
-
-
-<!-- Fin de carga de datos del estudiante -->
 <hr>
-      {{-- <div class="form-group col-sm-4" name="escuela">
-        <select class="form-control" name="escuela">
-          <option selected>Elegir escuela...</option>
-          {{-- <option value="{{$escuelaAnterior}}">{{$escuelaAnterior}}</option> --}}
-          {{-- @foreach ($escuelas as $escuela)
-            <option value="{{$escuela->ID}}">
-              {{$escuela->nombre}}
-            </option>
-          @endforeach
-        </select>
-        <small class="form-text text-muted">Seleccionar la escuela a la cual concurre el/la estudiante</small>
-    </div> --}}
+
     <div class="form-row">
     <div class="form-group col-sm-4">
   <input type="submit" class="btn btn-primary" value="Inscribirse">
@@ -118,10 +89,9 @@
 </form>
 <!-- fin de formulario de inscripción -->
 
-</div>
-</div>
-</div>
-</div><!-- fin del jumbotron secundario -->
+</div></div></div></div></div></div>
+
+ </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')
 
