@@ -47,8 +47,8 @@
         <small class="form-text text-muted">Ingrese su apellido tal como figura en su DNI</small>
     </div>
     <div class="form-group col-sm-3">
-      <input type="number" name="dni_tutor" class="form-control" placeholder="DNI">
-        <small class="form-text text-muted">Ingrese su DNI sin puntos ni espacios</small>
+      <input type="number" name="dni_tutor" class="form-control" placeholder="CUIL o CUIT">
+        <small class="form-text text-muted">Ingrese su CUIL o CUIT sin puntos ni espacios</small>
     </div>
   </div>
   <!-- fin de la primera línea del formulario -->
@@ -63,7 +63,7 @@
       <small class="form-text text-muted">Ingrese su fecha de nacimiento</small>
   </div>
   <div class="form-group col-sm-3">
-    <input type="text" name="celular" class="form-control" placeholder="Apellido">
+    <input type="text" name="celular" class="form-control" placeholder="Celular">
     <small class="form-text text-muted">Ingrese un teléfono de contacto (preferentemente su número de celular)</small>
   </div>
   </div>
@@ -83,13 +83,11 @@
       <small class="form-text text-muted">Si selecciona la opción "Otra", por favor envíe un mail a <a href="mailto:desafios.cientificos@bue.edu.ar">desafios.cientificos@bue.edu.ar</a> detallando en qué consiste dicha restricción alimentaria.
       </small>
     </div>
-
+</div>
   <!-- fin de la tercera línea del formulario -->
   <hr>
-
-
 <!-- Fin de carga de datos del estudiante -->
-<hr>
+
       {{-- <div class="form-group col-sm-4" name="escuela">
         <select class="form-control" name="escuela">
           <option selected>Elegir escuela...</option>

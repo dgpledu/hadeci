@@ -32,16 +32,16 @@
             <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a>
             <hr>
             <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente</a>
-            <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor</a>
-            <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor</a>
+            <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor/a</a>
+            <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor/a</a>
             <a class="dropdown-item" href="#">Inscribirme como jurado</a>
-            <a class="dropdown-item" href="#">Inscribirme como organizador</a>
-            <a class="dropdown-item" href="#">Inscribirme como autoridad</a>
-            <a class="dropdown-item" href="#">Inscribirme como colaborador</a>
-            <a class="dropdown-item" href="#">Inscribirme como invitado</a>
-            <a class="dropdown-item" href="#">Inscribirme como disertante/tallerista</a>
-            <a class="dropdown-item" href="#">Inscribirme como proveedor de servicios y/o productos</a>
-            <a class="dropdown-item" href="#">Miembro de institución asociada</a>
+            <a class="dropdown-item" href="#">Inscribirme como organizador/a</a>
+            <a class="dropdown-item" href="#">Inscribirme como autoridad (funcionario/a)</a>
+            <a class="dropdown-item" href="#">Inscribirme como colaborador/a</a>
+            <a class="dropdown-item" href="#">Inscribirme como invitado/a</a>
+            <a class="dropdown-item" href="/inscripcionDisertantes">Inscribirme como disertante/tallerista</a>
+            <a class="dropdown-item" href="#">Inscribirme como proveedor/a de servicios y/o productos</a>
+            {{-- <a class="dropdown-item" href="#">Miembro de institución asociada</a> --}}
             {{-- <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor</a>
             <a class="dropdown-item" href="/inscripcionJurados">Inscribirme como jurado</a>
             <a class="dropdown-item" href="/inscripcionOrganizadores">Inscribirme como organizador</a>

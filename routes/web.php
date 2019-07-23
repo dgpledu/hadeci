@@ -49,6 +49,8 @@ Route::post("/estudiantesAcreditadosDia2", "EstudiantesController@acreditadosDia
 Route::get("/consultaEscuelasParticipantes", "EscuelasParticipantesController@consultaactivas")->middleware("auth");
 Route::get("/consultaTutores", "TutoresController@consulta")->middleware("auth");
 Route::get("/listadoTutores", "TutoresController@listado")->middleware("auth");
+Route::get("/listadoMentores", "OtrosController@listadoMentores")->middleware("auth");
+Route::get("/listadoDisertantes", "OtrosController@listadoDisertantes")->middleware("auth");
 Route::get("/listadoEscuelas", "EscuelasParticipantesController@listado")->middleware("auth");
 Route::get("/estudiantesPorDocente", "EstudiantesController@PorDocente")->middleware("auth");
 Route::get("/listadoEstudiantes", "EstudiantesController@listado")->middleware("auth");
@@ -71,6 +73,8 @@ Route::get("/inscripcionTutores", "TutoresController@inscribir");
 Route::post("/inscripcionTutores", "TutoresController@registrar");
 Route::get("/inscripcionMentores", "OtrosController@inscribirMentores");
 Route::post("/inscripcionMentores", "OtrosController@registrarMentores");
+Route::get("/inscripcionDisertantes", "OtrosController@inscribirDisertantes");
+Route::post("/inscripcionDisertantes", "OtrosController@registrarDisertantes");
 Route::get("/inscripcionDocentes", "DocentesController@inscribir");
 Route::post("/inscripcionDocentes", "DocentesController@registrar");
 

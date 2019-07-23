@@ -59,17 +59,20 @@
           <th scope="col">Fecha de nac.</th>
           <th scope="col">Año</th>
           <th scope="col">Restr. Alim.</th>
-            <th scope="col">Docente</th>
-          <th scope="col">Nombre tutor/a</th>
-          <th scope="col">Apellido tutor/a</th>
-          <th scope="col">Teléfono tutor/a</th>
+          <th scope="col">Docente</th>
+          <!-- lo agrego como prueba -->
+          <th scope="col">Grupo</th>
+          <!-- fin de lo agregado como prueba -->
+          <th scope="col">Nombre adulto</th>
+          <th scope="col">Apellido adulto</th>
+          <th scope="col">Teléfono adulto</th>
         </tr>
       </thead>
       <tbody>
  @foreach ($resultados_esc->estudiantes->sortBy('apellido') as $estudiante)
       @php
         $cant_est++;
-      @endphp
+    @endphp
       <tr>
         <th scope="row">{{ $cant_est }}</th>
         <td>{{$estudiante["apellido"]}}</td>
@@ -79,11 +82,13 @@
         <td>{{$estudiante["anio_cursa"]}}</td>
         <td>{{$estudiante["restric_alim"]}}</td>
         <td>{{$estudiante->docente["apellido"]}}</td>
+        <!-- lo agrego como prueba -->
+        <td>{{$estudiante->grupo["nombre"]}}</td>
+        <!-- fin de lo agregado como prueba -->
         <td>{{$estudiante["nom_padre"]}}</td>
         <td>{{$estudiante["ape_padre"]}}</td>
         <td>{{$estudiante["telefono_padre"]}}</td>
       </tr>
-      {{-- {{$cant_est}}. {{$estudiante["apellido"]}}, {{$estudiante["nombre"]}} | <b>DNI:</b> {{$estudiante["DNI"]}}<br> --}}
     @endforeach
   </tbody>
 </table>

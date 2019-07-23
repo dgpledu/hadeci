@@ -23,7 +23,7 @@
   <div class="card-body">
     <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
 
-<!-- para mostrarle el mensaje de exitoso -->
+<!-- para mostrarle el mensaje de inscripción exitosa -->
 
      @if (session('estado'))
           <div class="alert alert-success">
@@ -32,7 +32,12 @@
              <b> {{session('estado')}}, </b>
              docente de la escuela <b>{{session('escuela')}}</b> se ha inscripto correctamente en "Desafíos Científicos".
              <br><br>
-             <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción.</h5>
+             <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción.
+             <!-- prueba de botón para dirigir a inscripción de estudiantes -->
+             <br><br>
+             Si desea inscribir ahora a sus estudiantes, haga clic en el botón siguiente: <a class="btn btn-success" href="/preinscripcionEstudiantes" role="button">Inscribir estudiantes</a>
+             <!-- fin prueba de botón  -->
+             </h5>
           </div>
 
       @endif
@@ -84,8 +89,9 @@
   </div>
   <!-- fin de la segunda línea del formulario -->
   <!-- Inicio tercera línea del formulario -->
-  <div class="form-row">
-    <div class="form-group col-sm-6">
+  <div class="form-inline">
+<div class="form-group col-sm-6">
+
       <select class="form-control" name="restric_alim">
         <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option>
         <option>No</option>
@@ -99,9 +105,11 @@
       </small>
     </div>
 
-    <div class="form-group col-sm-5">
+<!-- Como estaba originalmente -->
+    <div class="form-group col-sm-6">
+<label for="id_escuela" >ID:&nbsp;</label>
       <input type="text" name="id_escuela" class="form-control" placeholder="ID de su escuela">
-      <small class="form-text text-muted">Ingrese el ID de su escuela. Si no conoce el ID de su escuela para este hackatón, haga clic
+      <small class="form-text text-muted">Ingrese el ID de su escuela (solamente el número). Si no conoce el número de ID de su escuela para este hackatón, haga clic
 
 
 <kbd style="background-color:#b2b4b7";><a href="/consultaEstablecimientos" target="_blank" style="color:#0066CC"; >en éste enlace</a></kbd>
@@ -111,7 +119,8 @@
   <!-- fin de la tercera línea del formulario -->
 
 <!-- Fin de carga de datos  -->
-
+</div> <!--- este div lo agregué de prueba para cerrar el inline -->
+<br>
     <div class="form-row">
     <div class="form-group col-sm-4">
   <input type="submit" class="btn btn-primary" value="Inscribirse">

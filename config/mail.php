@@ -60,10 +60,12 @@ return [
     //     'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
     //     'name' => env('MAIL_FROM_NAME', 'Example'),
     // ],
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'desafios.cientificos@bue.edu.ar'),
-        'name' => env('MAIL_FROM_NAME', 'Desafíos Científicos'),
-    ],
+    // 'from' => [
+    //     'address' => env('MAIL_FROM_ADDRESS', 'desafios.cientificos@bue.edu.ar'),
+    //     'name' => env('MAIL_FROM_NAME', 'Desafíos Científicos'),
+    // ],
+    'from' => ['address' => 'desafios.cientificos@bue.edu.ar', 'name' => 'Desafíos Científicos'],
+    'reply_to' => ['address' => 'desafios.cientificos@bue.edu.ar', 'name' => 'Desafíos Científicos'],
 
     /*
     |--------------------------------------------------------------------------
@@ -93,6 +95,9 @@ return [
     'username' => env('MAIL_USERNAME'),
 
     'password' => env('MAIL_PASSWORD'),
+    // 'username' => env('desafios.cientificos@gmail.com'),
+    //
+    // 'password' => env('qzcqtuybyaptpmfc'),
     // 'username' => env('codigobloque@gmail.com'),
     //
     // 'password' => env('mpaaavpvqjkdrioo'),

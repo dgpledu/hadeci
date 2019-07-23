@@ -30,4 +30,5 @@ class Bienvenido extends Mailable
     {
         return $this->view('emails.bienvenido');
     }
+    
 }

@@ -61,6 +61,8 @@
         <small id="emailHelp" class="form-text text-muted">Elegir el tipo de listado a visualizar seleccionando una de las opciones</small>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="/listadoTutores">Listado de tutores</a>
+        <a class="dropdown-item" href="/listadoMentores">Listado de mentores</a>
+        <a class="dropdown-item" href="/listadoDisertantes">Listado de disertantes</a>
         <a class="dropdown-item" href="/listadoEscuelas">Listado de escuelas participantes</a>
         <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia1">Listado de estudiantes presentes (día 1)</a>

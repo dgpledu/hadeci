@@ -56,9 +56,9 @@
         <th scope="col">Fecha de nac.</th>
         <th scope="col">Restr. Alim.</th>
           <th scope="col">Docente</th>
-        <th scope="col">Nombre tutor/a</th>
-        <th scope="col">Apellido tutor/a</th>
-        <th scope="col">Teléfono tutor/a</th>
+        <th scope="col">Nombre adulto</th>
+        <th scope="col">Apellido adulto</th>
+        <th scope="col">Teléfono adulto</th>
       </tr>
     </thead>
     <tbody>

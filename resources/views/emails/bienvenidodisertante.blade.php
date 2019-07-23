@@ -5,6 +5,6 @@
     <title>Mail de bienvenida</title>
   </head>
   <body>
-    <h5>Usted se ha registrado a Desafíos Científicos!!</h5>
+    <h5>Usted se ha registrado a Desafíos Científicos como disertante. <br>Muchas gracias por su colaboración.</h5>
   </body>
 </html>

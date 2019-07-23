@@ -79,7 +79,8 @@ de un total de
     </table>
     <!-- fin de tabla -->
 
-    <table class="table table-responsive table-striped">
+  <!-- tabla para paginación -->
+    <table class="table table-responsive ">
       <thead>
         <tr>
           {{-- <th scope="col"></th> --}}
@@ -91,6 +92,7 @@ de un total de
         </tr>
       </tbody>
     </table>
+    <!-- fin de tabla para paginación -->
 </div></div>
 </div><!-- fin del jumbotron secundario -->
 
