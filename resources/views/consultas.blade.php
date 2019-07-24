@@ -62,7 +62,13 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="/listadoTutores">Listado de tutores</a>
         <a class="dropdown-item" href="/listadoMentores">Listado de mentores</a>
+        <a class="dropdown-item" href="/listadoJurados">Listado de jurados</a>
         <a class="dropdown-item" href="/listadoDisertantes">Listado de disertantes</a>
+        <a class="dropdown-item" href="/listadoOrganizadores">Listado de organizadores</a>
+        <a class="dropdown-item" href="/listadoAutoridades">Listado de autoridades</a>
+        <a class="dropdown-item" href="/listadoColaboradores">Listado de colaboradores</a>
+        <a class="dropdown-item" href="/listadoInvitados">Listado de invitados</a>
+        <a class="dropdown-item" href="/listadoProveedores">Listado de proveedores</a>
         <a class="dropdown-item" href="/listadoEscuelas">Listado de escuelas participantes</a>
         <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia1">Listado de estudiantes presentes (día 1)</a>

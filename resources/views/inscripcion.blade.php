@@ -34,13 +34,13 @@
             <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente</a>
             <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor/a</a>
             <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor/a</a>
-            <a class="dropdown-item" href="#">Inscribirme como jurado</a>
-            <a class="dropdown-item" href="#">Inscribirme como organizador/a</a>
-            <a class="dropdown-item" href="#">Inscribirme como autoridad (funcionario/a)</a>
-            <a class="dropdown-item" href="#">Inscribirme como colaborador/a</a>
-            <a class="dropdown-item" href="#">Inscribirme como invitado/a</a>
+            <a class="dropdown-item" href="/inscripcionJurados">Inscribirme como jurado</a>
+            <a class="dropdown-item" href="/inscripcionOrganizadores">Inscribirme como organizador/a</a>
+            <a class="dropdown-item" href="/inscripcionAutoridades">Inscribirme como autoridad (funcionario/a)</a>
+            <a class="dropdown-item" href="/inscripcionColaboradores">Inscribirme como colaborador/a</a>
+            <a class="dropdown-item" href="/inscripcionInvitados">Inscribirme como invitado/a</a>
             <a class="dropdown-item" href="/inscripcionDisertantes">Inscribirme como disertante/tallerista</a>
-            <a class="dropdown-item" href="#">Inscribirme como proveedor/a de servicios y/o productos</a>
+            <a class="dropdown-item" href="/inscripcionProveedores">Inscribirme como proveedor/a de servicios y/o productos</a>
             {{-- <a class="dropdown-item" href="#">Miembro de institución asociada</a> --}}
             {{-- <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor</a>
             <a class="dropdown-item" href="/inscripcionJurados">Inscribirme como jurado</a>

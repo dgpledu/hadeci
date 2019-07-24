@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class Bienvenidodisertante extends Mailable
+class Bienvenidocolaborador extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -38,8 +38,8 @@ class Bienvenidodisertante extends Mailable
 public function build()
 {
     return $this->attach('https://cienciascontic.github.io/archivos/autorizacion_de_imagen_2019_hackaton.pdf')
-                ->subject('¡Le damos la bienvenida!')->view('emails.bienvenidodisertante');
-
+                ->subject('¡Le damos la bienvenida!')->view('emails.bienvenidocolaborador');
+                
 }
 
 }
