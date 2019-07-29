@@ -59,11 +59,17 @@ Route::get("/listadoInvitados", "OtrosController@listadoInvitados")->middleware(
 Route::get("/listadoProveedores", "OtrosController@listadoProveedores")->middleware("auth");
 Route::get("/listadoEscuelas", "EscuelasParticipantesController@listado")->middleware("auth");
 Route::get("/estudiantesPorDocente", "EstudiantesController@PorDocente")->middleware("auth");
+// Consulta para docentes sin necesidad de loguearse
+Route::get("/estudiantesPorDocenteNL", "EstudiantesController@PorDocenteNL");
+// fin de consulta para docentes
 Route::get("/listadoEstudiantes", "EstudiantesController@listado")->middleware("auth");
 Route::get("/listadoEstudiantesPresentesDia1", "EstudiantesController@listadoEstudiantesPresentesDia1")->middleware("auth");
 Route::get("/listadoEstudiantesPresentesDia2", "EstudiantesController@listadoEstudiantesPresentesDia2")->middleware("auth");
 Route::get("/estudiantesPorEscuela", "EstudiantesController@PorEscuelaActiva")->middleware("auth");
 Route::get("/estudiantesPorGrupo", "EstudiantesController@PorGrupo")->middleware("auth");
+// agregado a ver si funciona
+// Route::get("/inscripcionPropuestas", "PropuestasController@PorGrupo")->middleware("auth");
+// fin de agregado
 Route::get("/consultaPorDesafio", "DesafiosController@consulta")->middleware("auth");
 
 Route::get("/asignarDesafioATutores", "DesafiosController@consultaDeTutores");
@@ -71,6 +77,10 @@ Route::get("/asignarDesafioATutores", "DesafiosController@consultaDeTutores");
 Route::get("/consultaPorDesafioTipeandoCodigo", "DesafiosController@consultaTipeandoCodigo");
 Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
 Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
+// People's choice
+Route::get("/inscripcionPropuestas", "PropuestasController@inscribirPropuestas");
+Route::post("/inscripcionPropuestas", "PropuestasController@registrarPropuestas");
+// fin de People's choice
 Route::get("/cargarDesafios", "DesafiosController@cargar");
 Route::post("/cargarDesafios", "DesafiosController@guardar");
 Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");

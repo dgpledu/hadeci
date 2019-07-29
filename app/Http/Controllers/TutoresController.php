@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tutor;
 use App\Grupo;
+use App\Mail\Bienvenidotutor;
 
 class TutoresController extends Controller
 {
@@ -36,7 +37,10 @@ $todoslostutores = Tutor::all();
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "dni_tutor" => "required|integer"
+      "dni_tutor" => "required|integer",
+      "fecha_nac_tutor" => "required|string",
+      "email_tutor" => "required|email",
+      "celular" => "required|string|max:40"
     ]);
 
     $tutor = new Tutor();
@@ -50,10 +54,17 @@ $todoslostutores = Tutor::all();
 
     $tutor->save();
 
+\Mail::to($tutor)->send(new Bienvenidotutor);
     // $escuelaAnterior = $req["escuela"];
 
     // return redirect("/inscripcionEstudiantes", compact("escuelaAnterior"));
-    return redirect("/inscripcionTutores");
+    return redirect("/inscripcionTutores")
+    ->with([
+    "estado" => $req["nombre"]." ".$req["apellido"],
+    "correo" => $req["email_tutor"],
+    ])
+
+    ;
 
   }
 

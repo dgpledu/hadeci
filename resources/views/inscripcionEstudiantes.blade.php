@@ -27,9 +27,9 @@
       @if (session('estado'))
           <div class="alert alert-success">
 <h5 ><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
-El estudiante
+La inscripción de
             <b> {{ session('estado') }} </b>
-             ha sido inscripto exitosamente!</h5>
+             se ha realizado exitosamente. En el mensaje de bienvenida como docente que recibió por mail cuando se inscribió, hay un enlace desde el cual podrá consultar el listado de los estudiantes que usted ha inscripto.</h5>
           </div>
       @endif
 
@@ -131,12 +131,13 @@ El estudiante
           </option>
         @endforeach
       </select>
-      <small class="form-text text-muted">Categoría temática preferida en <b>segundo</b> lugar</small>
+      <small class="form-text text-muted">Categoría temática preferida en <b>segundo</b> lugar. <span style="color: red">ATENCIÓN:</span> Debe ser <b>diferente</b> a la categoría elegida en <b>primer</b> lugar, salvo que la elección sea <b>"Cualquiera"</b>.</small>
     </div>
   </div>
   <!-- fin de la tercera línea del formulario -->
   <hr>
   <h5>Datos padre/madre/tutor del/la estudiante</h5>
+  <h6 style="color: red">*Si el estudiante es mayor de edad, puede rellenar los campos de nombre, apellido y teléfono con "---" y en el mail repetir el del estudiante.</h6>
   <!-- Inicio cuarta línea del formulario -->
     <div class="form-row">
       <div class="form-group col-sm-4">

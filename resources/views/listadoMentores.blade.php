@@ -69,6 +69,8 @@ de un total de
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
           <th scope="col">Breve CV</th>
+          <th scope="col">Día 1</th>
+          <th scope="col">Día 2</th>
           <th scope="col">Foto</th>
         </tr>
       </thead>
@@ -86,6 +88,8 @@ de un total de
           <td>{{$otro["celular"]}}</td>
           <td><a href="mailto:{{$otro["email"]}}">{{$otro["email"]}}</a></td>
           <td>{{$otro["CV"]}}</td>
+          <td>{{$otro["disp_horariaD1"]}}</td>
+          <td>{{$otro["disp_horariaD2"]}}</td>
           <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td>
         </tr>
       @endforeach

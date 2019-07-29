@@ -16,7 +16,8 @@
   <body>
   @include('primerabarranav')
 
- <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
+ {{-- <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')"> --}}
+   <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron-HDC-jpg-01.jpg')">
  <div class="col-sm-6 mx-auto">
     <div class="card mx-auto" >
       <div class="card-header" style="background:#ffebcc"><h4>Menú de opciones para inscripción</h4></div>

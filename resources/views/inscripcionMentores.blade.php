@@ -27,8 +27,8 @@
      <div class="alert alert-success">
 <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
-        <b> {{session('estado')}}, </b>
-        Se ha inscripto correctamente como <b>mentor</b> en "Desafíos Científicos".
+        <b> {{session('estado')}} </b>
+        se ha inscripto correctamente como <b>mentor</b> en "Desafíos Científicos".
         <br><br>
         <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción.
 
@@ -111,6 +111,9 @@
   </div>
   <!-- Fin cuarta línea del formulario -->
   <!-- Inicio quinta línea del formulario -->
+
+  <!-- Fin quinta línea del formulario -->
+  <!-- Inicio sexta línea del formulario -->
   <div class="form-row">
     <div class="form-group col-sm-6">
       <input type="file" name="foto_mentor" class="form-control-file" placeholder="Foto personal">
@@ -128,6 +131,21 @@
 
 <!-- Fin quinta línea del formulario -->
 <hr>
+<h5>Disponibilidad horaria</h5>
+<h6>Completá la siguiente información según tu disponibilidad horaria. <br>No necesariamente tenés que venir ambos días (¡aunque sería buenísimo!)
+</h6>
+<div class="form-group col-sm-5">
+
+    <input type="text" name="disp_horariaD1" class="form-control" placeholder="Disponibilidad día martes">
+    <small class="form-text text-muted">Ingresá el/los horario/s del día martes 1/10 en que vas a poder estar presente (Recordá que el trabajo fuerte es sobretodo de 14 a 17hs).
+</small>
+</div>
+<div class="form-group col-sm-5">
+    <input type="text" name="disp_horariaD2" class="form-control" placeholder="Disponibilidad día miércoles">
+    <small class="form-text text-muted">Ingresá el/los horario/s del día miércoles 2/10 en que vas a poder estar presente (Recordá que el trabajo fuerte es de 8:30 a 13:30hs).
+</small>
+</div>
+
 
     <div class="form-row">
     <div class="form-group col-sm-4">

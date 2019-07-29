@@ -55,7 +55,7 @@ de un total de
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
+          <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
         </tr>
@@ -71,7 +71,7 @@ de un total de
           <td>{{$tutor["Apellido"]}}</td>
           <td>{{$tutor["Nombre"]}}</td>
           <td>{{$tutor["DNI"]}}</td>
-          <td>{{$tutor["Celular"]}}</td>
+          <td>{{$tutor["Celular"] }}</td>
           <td><a href="mailto:{{$tutor["email"]}}">{{$tutor["email"]}}</a></td>
         </tr>
       @endforeach

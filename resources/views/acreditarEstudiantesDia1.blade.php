@@ -60,6 +60,10 @@
           <th scope="col">Nombre</th>
           <th scope="col">DNI</th>
           <th scope="col">Escuela</th>
+          <!-- agregado para mostrar grupo -->
+          <th scope="col">Grupo</th>
+          <th scope="col">Tutor</th>
+          <!-- fin de agregado para mostrar grupo -->
           <th scope="col">¿Acreditado?</th>
         </tr>
       </thead>
@@ -74,6 +78,12 @@
           <td>{{$estudiante["nombre"]}}</td>
           <td>{{$estudiante["DNI"]}}</td>
           <td>{{$estudiante->escuela["nombre"]}}</td>
+          <!-- agregado para mostrar grupo y tutor -->
+          <td>{{$estudiante->grupo["nombre"]}}</td>
+          <td>{{$estudiante->grupo->tutor["Nombre"]}}
+{{$estudiante->grupo->tutor["Apellido"]}}
+          </td>
+          <!-- fin de agregado para mostrar grupo y tutor -->
           <td>
            @if ($estudiante["pres_dia1"] == 1)
                <input type="checkbox" checked name="presente[]" value="{{$estudiante["DNI"]}}" >

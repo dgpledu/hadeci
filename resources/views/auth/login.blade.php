@@ -19,7 +19,7 @@
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-  <div class="card-header" style="background:#f2d333"><h5>Login de usuarios del sistema</h5></div>
+  <div class="card-header" style="background:#f2d333"><h5>Login de usuarios del sistema</h5><h6><b><span><img src="/img/alert-icon.png" "height=40 width=40"</span></b> El ingreso está reservado <b>solamente</b> a integrantes del <b>equipo organizador</b>. Si es parte del equipo organizador, ingrese su usuario y contraseña. Si no lo es, puede regresar al menú principal.</h6></br></div>
   <div class="card-body">
     <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
 <!-- Divisor -->

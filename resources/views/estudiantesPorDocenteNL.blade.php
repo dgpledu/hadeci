@@ -26,9 +26,8 @@
     <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
 
 <div class="alert alert-secondary w-85" role="alert">
-  {{-- <form class="form-group pt-2" action="" method="get"> --}}
   <form class="form-group pt-2" action="" method="get">
-    {{ csrf_field() }}
+    {{-- {{ csrf_field() }} --}}
     <input type="text" name="busqueda_DNI_docente" value="" placeholder="DNI del docente">
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
     <small id="emailHelp" class="form-text text-muted">Tipee el DNI del docente registrante sin puntos ni espacios. Por ejemplo: <b>11111111</b></small>

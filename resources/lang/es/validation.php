@@ -57,7 +57,7 @@ return [
     'image' => 'La :attribute debe ser una imagen.',
     'in' => 'El atributo seleccionado :attribute es inválido.',
     'in_array' => 'The :attribute field does not exist in :other.',
-    'integer' => 'El valor para :attribute debe ser un número entero.',
+    'integer' => 'Es obligatorio elegir un valor para :attribute',
     'ip' => 'The :attribute must be a valid IP address.',
     'ipv4' => 'The :attribute must be a valid IPv4 address.',
     'ipv6' => 'The :attribute must be a valid IPv6 address.',

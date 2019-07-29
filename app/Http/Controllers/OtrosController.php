@@ -51,7 +51,9 @@ class OtrosController extends Controller
       "celular" => "required|string|max:22",
       "instit_rep" => "required|string|max:45",
       "breveCV" => "required|string|max:255",
-      "foto_mentor" => "required|image|max:5000"
+      "foto_mentor" => "required|image|max:5000",
+      "disp_horariaD1" => "required|string|max:45",
+      "disp_horariaD2" => "required|string|max:45"
 
     ]);
 
@@ -71,6 +73,8 @@ class OtrosController extends Controller
 $otro["nom_foto"] = $nombreArchivo;
 $otro["dir_foto"] = $ruta;
 // fin de lo agregado después de ver el video
+$otro["disp_horariaD1"] = $req["disp_horariaD1"];
+$otro["disp_horariaD2"] = $req["disp_horariaD2"];
 
     $otro["rol"] = "Mentor";
 

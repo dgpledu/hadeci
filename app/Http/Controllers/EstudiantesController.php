@@ -8,6 +8,9 @@ use App\Escuela;
 use App\Grupo;
 use App\Estudiante;
 use App\Categoria;
+use App\Rules\CategoriasTematicas;
+
+
 
 class EstudiantesController extends Controller
 {
@@ -19,6 +22,17 @@ class EstudiantesController extends Controller
     }
     return view("estudiantesPorDocente", compact("resultados_d"));
   }
+  // Prueba para consulta de docentes sin loguearse
+  public function PorDocenteNL(Request $req) {
+    if (isset($req["busqueda_DNI_docente"])) {
+        $resultados_d = Docente::where("DNI", "=", $req["busqueda_DNI_docente"])->first();
+    } else {
+        $resultados_d = null;
+    }
+    return view("estudiantesPorDocenteNL", compact("resultados_d"));
+  }
+
+  // fin de prueba para consulta de docentes sin loguearse
 
 // Esto funcionaba perfecto el 19/12 //
   public function PorEscuela(Request $req) {
@@ -79,6 +93,9 @@ $todaslasescuelas = Escuela::all();
 
     return view("inscripcionEstudiantes", compact("escuelas", "docentereg", "categorias", "dnidocente"));
   }
+  // esto lo agregué como regla para categorías temáticas
+
+// fin de lo agregado
 
   public function registrar(Request $req) {
 
@@ -88,31 +105,24 @@ $req->session()->flash('dnidocente', $req["dnidocente"]);
 
     "nombre" => "required|string|max:50",
     "apellido" => "required|string|max:50",
-    "DNIestudiante" => "required|string|min:8|max:12|unique:estudiantes,DNI",
-    // "EmailEstudiante" => "required|email|max:60",
-    // "FechaNacimientoEstudiante" => "required|date|before_or_equal:31-12-2003",
-    // "AnioQueCursa" => "required|string:4to. año,5to. año,6to. año",
+    "DNIestudiante" => "required|string|min:8|max:20|unique:estudiantes,DNI",
+    "EmailEstudiante" => "required|email|max:60",
+    "FechaNacimientoEstudiante" => "required|date",
+    "AnioQueCursa" => "required|string:4to. año,5to. año,6to. año",
     // "RestriccionAlimentaria" => "required|string:No,Celiaquía,Veganismo,Vegetarianismo,Fenilcetonuria,Otra",
     "Opcion1DeCategoriaTematica" => "required|integer",
-    "Opcion2DeCategoriaTematica" => "required|integer|different:Opcion1DeCategoriaTematica",
-// hasta acá llegan perfecto $dnidocente y $docentereg, se pierden en otro lado
-    // dd($dnidocente),
-    // dd($docentereg),
-// $req->session()->forget('dnidocente')
+  "Opcion2DeCategoriaTematica" => ['required','integer', new CategoriasTematicas],
+  "NombrePadreMadre" => "required|string|max:50",
+  "ApellidoPadreMadre" => "required|string|max:50",
+"EmailPadreMadre" => "required|string|max:30",
+  "TelefonoPadreMadre" => "required|string|max:50"
+
   ]
-
-
-// hasta acá también llega perfecto $docentereg aunque no pase la validación
 
 )
 
-
 ;
 
-    // "NombrePadreMadre" => "required|string|max:50",
-    // "ApellidoPadreMadre" => "required|string|max:50",
-    // "EmailPadreMadre" => "required|email|max:50",
-    // "TelefonoPadreMadre" => "required|string|max:50",
 
 //si no pasa la validación, no pasa por acá
     $estudiante = new Estudiante();

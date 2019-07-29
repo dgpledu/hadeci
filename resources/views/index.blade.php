@@ -141,7 +141,7 @@
 
 </div>
 
- <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
+ <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron-verde.png')">
 
 
 

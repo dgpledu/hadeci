@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Escuela;
 use App\Docente;
-use App\Mail\Bienvenido;
+use App\Mail\Bienvenidodocente;
 use App\Estudiante;
 
 class DocentesController extends Controller
@@ -113,7 +113,7 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
           $docente->escuelas()->attach($req["id_escuela"]);
 
 
-          \Mail::to($docente)->send(new Bienvenido);
+          \Mail::to($docente)->send(new Bienvenidodocente);
 
     } // cierre del else
 

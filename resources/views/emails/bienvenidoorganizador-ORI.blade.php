@@ -161,14 +161,14 @@
       <tbody><tr>
         <td>
           <table data-section="1" bgcolor="#FFFFFF" align="center" role="presentation" width="640" class="responsive-table" style="margin: 0 auto;">
-            <!-- AUTORIZACION DE USO DE IMAGEN -->
+            <!-- ACCOUNT SETUP -->
             <tbody><tr>
               <td valign="top" data-slot-container="1" style="padding: 0 0 24px 32px;" class="mobile-pad-l ui-sortable" width="100%">
                 <table role="presentation" width="100%">
                   <tbody><tr>
                     <td valign="top" style="padding-right: 24px;" width="64">
                       <div data-slot="image">
-                        <img src="https://cienciascontic.github.io/archivos/imagenes/icono-autoriz-2.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
+                        <img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/check.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
                       </div>
                     </td>
                     <td valign="top" style="padding: 0 120px 0 0;" class="mobile-pad-r">
@@ -178,14 +178,14 @@
                 </tbody></table>
               </td>
             </tr>
-            <!-- INSCRIPCIÓN DE ESTUDIANTES -->
+            <!-- PROFILE -->
             <tr>
               <td valign="top" data-slot-container="1" style="padding: 0 0 24px 32px;" class="mobile-pad-l ui-sortable" width="100%">
                 <table role="presentation" width="100%">
                   <tbody><tr>
                     <td valign="top" style="padding-right: 24px;" width="64">
                       <div data-slot="image">
-                        <img src="https://cienciascontic.github.io/archivos/imagenes/icono-inscrip-2.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
+                        <img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/profile.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
                       </div>
                     </td>
                     <td valign="top" style="padding: 0 120px 0 0;" class="mobile-pad-r">
@@ -205,14 +205,14 @@
               </td>
             </tr>
 
-            <!-- LISTADO DE ESTUDIANTES -->
+            <!-- TEAM -->
             <tr>
               <td valign="top" data-slot-container="1" style="padding: 0 0 24px 32px;" class="mobile-pad-l ui-sortable" width="100%">
                 <table role="presentation" width="100%">
                   <tbody><tr>
                     <td valign="top" style="padding-right: 24px;" width="64">
                       <div data-slot="image">
-                        <img src="https://cienciascontic.github.io/archivos/imagenes/icono-listado-2.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
+                        <img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/team.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
                       </div>
                     </td>
                     <td valign="top" style="padding: 0 120px 0 0;" class="mobile-pad-r">
@@ -311,18 +311,14 @@
                       <td style="color: #999999; font-family: 'Roboto', Arial, sans-serif; font-size: 13px; line-height: 19px;">
                         Email enviado por <strong>HADECI</strong><br />
                         Sistema de gestión del hackatón Desafíos Científicos<br />
-   Iconos creados por <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> de <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> licenciado por <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank";>CC 3.0 BY</a>
+                        {{-- <a href="http://www.hadeci.net.ar" style="color: #999999; text-decoration: underline;">Ver este mail en su navegador</a><br /><br /> --}}
+
                       </td>
-
                     </tr>
-
                   </tbody></table>
-
                 </div>
               </td>
-
             </tr>
-
           </tbody></table>
         </td>
       </tr>

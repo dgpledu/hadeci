@@ -22,7 +22,21 @@
   <div class="card-header" style="background:#f2d333"><h5>Formulario de inscripción de tutores</h5></div>
   <div class="card-body">
     <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
+<!--- prueba para ver si muestra el mensaje exitoso de registro -->
+@if (session('estado'))
+     <div class="alert alert-success">
+<h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
+        <b> {{session('estado')}} </b>
+        se ha inscripto correctamente como <b>tutor</b> en "Desafíos Científicos".
+        <br><br>
+        <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción.
+
+</h5>
+     </div>
+
+ @endif
+<!--- fin de prueba para ver si muestra el mensaje exitoso de registro -->
 <div class="alert alert-secondary w-85" role="alert">
     @if ($errors->any())
       <div class="alert alert-danger">
