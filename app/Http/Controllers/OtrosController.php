@@ -51,6 +51,9 @@ class OtrosController extends Controller
       "celular" => "required|string|max:22",
       "instit_rep" => "required|string|max:45",
       "breveCV" => "required|string|max:255",
+      "area_expertise" => "required|string|max:40",
+      "exp_robotica" => "required|string|max:2",
+      "exp_program" => "required|string|max:2",
       "foto_mentor" => "required|image|max:5000",
       "disp_horariaD1" => "required|string|max:45",
       "disp_horariaD2" => "required|string|max:45"
@@ -67,6 +70,9 @@ class OtrosController extends Controller
     $otro["contacto"] = $req["contacto"];
     $otro["instit_rep"] = $req["instit_rep"];
     $otro["CV"] = $req["breveCV"];
+    $otro["area_expertise"] = $req["area_expertise"];
+    $otro["exp_robotica"] = $req["exp_robotica"];
+    $otro["exp_program"] = $req["exp_program"];
 // esto lo agregué después de ver el video de validación de Darío y funciona perfecto!!
     $ruta = $req["foto_mentor"]->store("public");
     $nombreArchivo = basename($ruta);

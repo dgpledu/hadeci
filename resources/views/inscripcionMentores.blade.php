@@ -93,7 +93,7 @@
           <input type="text" name="instit_rep" class="form-control" placeholder="Institución">
           <small class="form-text text-muted">Ingrese el nombre de la institución que representa</small>
       </div>
-    </div>
+ </div>
   <!-- Fin tercera línea del formulario -->
   <!-- Inicio cuarta línea del formulario -->
   <div class="form-row">
@@ -110,39 +110,62 @@
 
   </div>
   <!-- Fin cuarta línea del formulario -->
-  <!-- Inicio quinta línea del formulario -->
 
-  <!-- Fin quinta línea del formulario -->
   <!-- Inicio sexta línea del formulario -->
   <div class="form-row">
     <div class="form-group col-sm-6">
       <input type="file" name="foto_mentor" class="form-control-file" placeholder="Foto personal">
       <small class="form-text text-muted">Suba su foto en formato JPG, JPEG, PNG. Tamaño máximo: <b>2 MB</b> (2048 KB).</small>
     </div>
-
-    {{-- <div class="custom-file col-sm-6">
-      <input type="file" class="custom-file-input" id="customFile">
-      <label class="custom-file-label" for="customFile">Cargar imagen</label>
-      <small class="form-text text-muted">Suba su foto en formato JPG, JPEG, PNG. Tamaño máximo: <b>2 MB</b> (2048 KB).</small>
-      <br>
-    </div> --}}
-
   </div>
+
+  <!-- Agregado para area de expertise y conocimientos de robótica y programación -->
+  <div class="form-row">
+      <div class="form-group col-sm-5">
+           <select class="form-control" name="area_expertise">
+               <option value="">Seleccione su área de expertise de preferencia</option>
+               <option value="ESP">Ciencias Espaciales</option>
+               <option value="VID">Ciencias de la Vida</option>
+               <option value="ART">Ciencia y Arte</option>
+               <option value="GES">Gestión Territorial y Urbana</option>
+          </select>
+      </div>
+ </div>
+<div class="form-row">
+      <div class="form-group col-sm-4">
+           <select class="form-control" name="exp_robotica">
+               <option value="">¿Posee experiencia en el área de robótica?</option>
+               <option value="S">Sí</option>
+               <option value="N">No</option>
+          </select>
+      </div>
+
+      <div class="form-group col-sm-6">
+           <select class="form-control" name="exp_program">
+               <option value="">¿Posee experiencia en el área de programación de software?</option>
+               <option value="S">Sí</option>
+               <option value="N">No</option>
+          </select>
+      </div>
+  </div>
+
+
+  <!-- Fin de área de expertise -->
 
 <!-- Fin quinta línea del formulario -->
 <hr>
 <h5>Disponibilidad horaria</h5>
-<h6>Completá la siguiente información según tu disponibilidad horaria. <br>No necesariamente tenés que venir ambos días (¡aunque sería buenísimo!)
+<h6>Complete por favor la siguiente información según su disponibilidad horaria. <br>No necesariamente tiene que venir ambos días (¡aunque sería buenísimo!)
 </h6>
 <div class="form-group col-sm-5">
 
     <input type="text" name="disp_horariaD1" class="form-control" placeholder="Disponibilidad día martes">
-    <small class="form-text text-muted">Ingresá el/los horario/s del día martes 1/10 en que vas a poder estar presente (Recordá que el trabajo fuerte es sobretodo de 14 a 17hs).
+    <small class="form-text text-muted">Ingrese el/los horario/s del día martes 1/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es sobretodo de 14 a 17hs).
 </small>
 </div>
 <div class="form-group col-sm-5">
     <input type="text" name="disp_horariaD2" class="form-control" placeholder="Disponibilidad día miércoles">
-    <small class="form-text text-muted">Ingresá el/los horario/s del día miércoles 2/10 en que vas a poder estar presente (Recordá que el trabajo fuerte es de 8:30 a 13:30hs).
+    <small class="form-text text-muted">Ingrese el/los horario/s del día miércoles 2/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es de 8:30 a 13:30hs).
 </small>
 </div>
 
