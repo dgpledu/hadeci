@@ -79,10 +79,17 @@
           <td>{{$estudiante["DNI"]}}</td>
           <td>{{$estudiante->escuela["nombre"]}}</td>
           <!-- agregado para mostrar grupo y tutor -->
-          <td>{{$estudiante->grupo["nombre"]}}</td>
-          <td>{{$estudiante->grupo->tutor["Nombre"]}}
-{{$estudiante->grupo->tutor["Apellido"]}}
-          </td>
+
+          @if ($estudiante->grupo["nombre"])
+            <td>{{$estudiante->grupo["nombre"]}}</td>
+            <td>{{$estudiante->grupo->tutor["Nombre"]}}
+  {{$estudiante->grupo->tutor["Apellido"]}}
+            </td>
+          @else
+            <td></td>
+            <td></td>
+          @endif
+
           <!-- fin de agregado para mostrar grupo y tutor -->
           <td>
            @if ($estudiante["pres_dia1"] == 1)
