@@ -93,7 +93,8 @@
 <div class="form-group col-sm-6">
 
       <select class="form-control" name="restric_alim">
-        <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option>
+        {{-- <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option> --}}
+<option value="" selected>¿Posee alguna restricción alimentaria? (obligatorio)</option>
         <option>No</option>
         <option>Celiaquía</option>
         <option>Veganismo</option>

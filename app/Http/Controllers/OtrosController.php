@@ -86,7 +86,12 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidomentor);
+    try {
+      \Mail::to($otro)->send(new Bienvenidomentor);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionMentores")
     ->with([
@@ -103,8 +108,8 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
       "cuilcuit" => "required|integer",
       "email" => "required|email",
       "fecha_nac" => "required|date",
-      "celular" => "required|string|max:22",
-      "foto_organizador" => "required|image|max:5000"
+      "celular" => "required|string|max:22"
+      // "foto_organizador" => "required|image|max:5000"
 
     ]);
 
@@ -116,17 +121,22 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $otro["email"] = $req["email"];
     $otro["celular"] = $req["celular"];
 // esto lo agregué después de ver el video de validación de Darío y funciona perfecto!!
-    $ruta = $req["foto_organizador"]->store("public");
-    $nombreArchivo = basename($ruta);
-$otro["nom_foto"] = $nombreArchivo;
-$otro["dir_foto"] = $ruta;
+//     $ruta = $req["foto_organizador"]->store("public");
+//     $nombreArchivo = basename($ruta);
+// $otro["nom_foto"] = $nombreArchivo;
+// $otro["dir_foto"] = $ruta;
 // fin de lo agregado después de ver el video
 
     $otro["rol"] = "Organizador";
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidoorganizador);
+    try {
+      \Mail::to($otro)->send(new Bienvenidoorganizador);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionOrganizadores")
     ->with([
@@ -139,14 +149,14 @@ $otro["dir_foto"] = $ruta;
   public function registrarAutoridades(Request $req) {
     $this->validate($req, [
       "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
-      "email" => "required|email",
-      "fecha_nac" => "required|date",
-      "celular" => "required|string|max:22",
-      "instit_rep" => "required|string|max:45",
-      "breveCV" => "required|string|max:255",
-      "foto_autoridad" => "required|image|max:5000"
+      "apellido" => "required|string|max:255"
+      // "cuilcuit" => "required|integer",
+      // "email" => "required|email",
+      // "fecha_nac" => "required|date",
+      // "celular" => "required|string|max:22",
+      // "instit_rep" => "required|string|max:45",
+      // "breveCV" => "required|string|max:255",
+      // "foto_autoridad" => "required|image|max:5000"
 
     ]);
 
@@ -170,7 +180,12 @@ $otro["dir_foto"] = $ruta;
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidoautoridad);
+    try {
+      \Mail::to($otro)->send(new Bienvenidoautoridad);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionAutoridades")
     ->with([
@@ -205,7 +220,12 @@ $otro["dir_foto"] = $ruta;
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidocolaborador);
+    try {
+      \Mail::to($otro)->send(new Bienvenidocolaborador);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionColaboradores")
     ->with([
@@ -241,7 +261,12 @@ $otro["dir_foto"] = $ruta;
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidoinvitado);
+    try {
+      \Mail::to($otro)->send(new Bienvenidoinvitado);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionInvitados")
     ->with([
@@ -275,7 +300,12 @@ $otro["dir_foto"] = $ruta;
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidoproveedor);
+    try {
+      \Mail::to($otro)->send(new Bienvenidoproveedor);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionProveedores")
     ->with([
@@ -320,7 +350,12 @@ $otro["dir_foto"] = $ruta;
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidojurado);
+    try {
+      \Mail::to($otro)->send(new Bienvenidojurado);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionJurados")
     ->with([
@@ -366,7 +401,12 @@ $otro["dir_foto"] = $ruta;
 
     $otro->save();
 
-  \Mail::to($otro)->send(new Bienvenidodisertante);
+    try {
+      \Mail::to($otro)->send(new Bienvenidodisertante);
+    } catch (\Exception $e) {
+      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+      return $e;
+    }
 
     return redirect("/inscripcionDisertantes")
     ->with([

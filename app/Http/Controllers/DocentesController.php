@@ -46,6 +46,7 @@ public function registrar(Request $req) {
             "dni_docente" => "required|numeric|min:1000000|max:99999999|unique:docentes,DNI",
             "email_docente" => "required|email",
             "fecha_nac_docente" => "required|date",
+            "restric_alim" => "required",
             "id_escuela" => "required|integer|exists:escuelas,ID"
           ], ["dni_docente.unique" => "Usted ya se encuentra registrado/a en el sistema asociado a esa misma escuela. Si desea proceder con la inscripción de estudiantes, haga clic en la opción Inscripción arriba a la derecha."]);
         }
@@ -59,6 +60,7 @@ public function registrar(Request $req) {
               "dni_docente" => "required|numeric|min:1000000|max:99999999",
               "email_docente" => "required|email",
               "fecha_nac_docente" => "required|date",
+              "restric_alim" => "required",
               "id_escuela" => "required|integer|exists:escuelas,ID"
             ], ["dni_docente.unique" => "Ese DNI ya existe y no concuerda con su apellido."]);
             $docentex->escuelas()->attach($req["id_escuela"]);
@@ -76,6 +78,7 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
     "dni_docente" => "required|unique:docentes,DNI|numeric|min:1000000|max:99999999",
     "email_docente" => "required|email",
     "fecha_nac_docente" => "required|date",
+    "restric_alim" => "required",
     "id_escuela" => "required|integer|exists:escuelas,ID"
   ]);
 
@@ -92,6 +95,7 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
           "dni_docente" => "required|numeric|min:1000000|max:99999999|",
           "email_docente" => "required|email",
           "fecha_nac_docente" => "required|date",
+          "restric_alim" => "required",
           "id_escuela" => "required|integer|exists:escuelas,ID"
                               ]);
           //Pone a la escuela como "activa"
@@ -112,8 +116,14 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
 
           $docente->escuelas()->attach($req["id_escuela"]);
 
+          try {
+            \Mail::to($docente)->send(new Bienvenidodocente);
+          } catch (\Exception $e) {
+            $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+            return $e;
+          }
 
-          \Mail::to($docente)->send(new Bienvenidodocente);
+          // \Mail::to($docente)->send(new Bienvenidodocente);
 
     } // cierre del else
 

@@ -68,6 +68,7 @@ Route::get("/listadoEstudiantesPresentesDia2", "EstudiantesController@listadoEst
 Route::get("/estudiantesPorEscuela", "EstudiantesController@PorEscuelaActiva")->middleware("auth");
 Route::get("/estudiantesPorGrupo", "EstudiantesController@PorGrupo")->middleware("auth");
 // agregado a ver si funciona
+Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido");
 // Route::get("/inscripcionPropuestas", "PropuestasController@PorGrupo")->middleware("auth");
 // fin de agregado
 Route::get("/consultaPorDesafio", "DesafiosController@consulta")->middleware("auth");

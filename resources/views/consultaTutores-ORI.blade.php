@@ -11,8 +11,8 @@
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
-      
-    <title>Listado de estudiantes</title>
+
+    <title>Consulta de tutores</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -21,89 +21,44 @@
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-  <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes inscriptos en el hackatón</h4>
-{{-- <span class="badge badge-primary badge-pill">{{$totaldeestudiantes}}</span> --}}
-
-<!-- Cartel x a y de un total de n elementos -->
-<h5>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->firstItem() }}
-</span>
-<span class="">
-a
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->lastItem() }}
-</span>
-<span class="">
-de un total de
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->total() }}
-</span>
-<!-- Fin de cartel x a y de un total de n elementos -->
-    </h5>
-  </div>
+  <div class="card-header" style="background:#f2d333"><h5>Consulta de tutores</h5></div>
   <div class="card-body">
-    <!-- tabla -->
-    @php
-      $numorden = ($estudiantes->currentpage()-1)* $estudiantes->perpage();
-    @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($estudiantes as $estudiante)
-          @php
-            $numorden++;
-          @endphp
-        <tr>
-          <th scope="row">{{ $numorden }}</th>
-          <td>{{$estudiante["apellido"]}}</td>
-          <td>{{$estudiante["nombre"]}}</td>
-          <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
-        </tr>
-      @endforeach
-      </tbody>
-    </table>
-    <!-- fin de tabla -->
+    <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
 
-<!-- Zócalo de paginador -->
-    {{-- <div class="container-fluid ml-3 mt-0 pt-1">
-      <div class="alert alert-secondary w-85" role="alert">
-        {{$estudiantes->links()}}
-      </div>
-    </div> --}}
-    <!-- fin zócalo de paginador -->
+<div class="alert alert-secondary w-85" role="alert">
+  <form class="form-group pt-2" action="" method="get">
+    {{ csrf_field() }}
+<select class="" name="busqueda_tutor">
+   <option value="">Seleccionar un tutor de la lista</option>
+   @if($todoslostutores)
+  @foreach ($todoslostutores->sortBy('Apellido') as $tutor)
+    <option value="{{$tutor["ID"]}}">{{$tutor["Nombre"]}} {{$tutor["Apellido"]}}</option>
+  @endforeach
+@endif
+  <small id="emailHelp" class="form-text text-muted">Seleccionar el tutor</small>
+</select>
+<br><br>
+<button type="submit" name="" class="btn btn-success">Listar grupos y su desafío</button>
+</form>
 
-{{-- <div class="alert alert-secondary ml-auto">
-  {{$estudiantes->links()}}
-</div> --}}
-
-<table class="table table-responsive table-striped">
-  <thead>
-    <tr>
-      {{-- <th scope="col"></th> --}}
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{$estudiantes->links()}}</th>
-    </tr>
-  </tbody>
-</table>
-
+@if ($resultados_tutor)
+<b>Tutor:</b> {{$resultados_tutor["Apellido"]}}, {{$resultados_tutor["Nombre"]}} | <b>DNI: </b> {{$resultados_tutor["DNI"]}} | <b>E-mail: </b> {{$resultados_tutor["email"]}}<br>
+<hr>
+<h5 class="card-title text-success">Grupos a cargo</h5>
+@foreach ($resultados_tutor->grupos as $grupo)
+<b>{{$grupo["nombre"]}}: </b>
+<b>{{$resultados_tutor->desafio["nombre"]}}</b><br><br>
+<ul>
+@foreach ($grupo->estudiantes->sortBy('apellido') as $estudiante)
+  <li>
+    {{$estudiante["apellido"]}}, {{$estudiante["nombre"]}} | {{$estudiante->escuela["nombre"]}}
+  </li>
+@endforeach
+</ul>
+@endforeach
+@endif
+</div>
+</div>
 </div>
 </div>
 </div><!-- fin del jumbotron secundario -->

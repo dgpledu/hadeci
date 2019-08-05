@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Consulta de estudiantes por docente</title>
+    <title>Consulta de estudiantes por apellido</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -21,7 +21,7 @@
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-  <div class="card-header" style="background:#f2d333"><h5>Consulta de estudiantes por docente registrante</h5></div>
+  <div class="card-header" style="background:#f2d333"><h5>Consulta de estudiantes por apellido</h5></div>
   <div class="card-body">
 
 
@@ -30,17 +30,15 @@
 <div class="alert alert-secondary w-85" role="alert">
   <form class="form-group pt-2" action="" method="get">
     {{-- {{ csrf_field() }} --}}
-    <input type="text" name="busqueda_DNI_docente" value="" placeholder="DNI del docente">
+    <input class="form-control-lg col-lg-4" type="text" name="busqueda_apellido_estudiante" value="" placeholder="apellido o parte del apellido">
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
-    <small id="emailHelp" class="form-text text-muted">Tipee el DNI del docente registrante sin puntos ni espacios. Por ejemplo: <b>11111111</b></small>
+    <small id="emailHelp" class="form-text text-muted">Tipee el apellido o parte del apellido del estudiante que busca.</small>
   </form>
   <!-- Prueba de tabla linda -->
-  @if ($resultados_d)
-    <b>Docente:</b> {{$resultados_d["apellido"]}}, {{$resultados_d["nombre"]}} |
-    <b>DNI:</b> {{$resultados_d["DNI"]}}<br>
-    <b>Cantidad de estudiantes: </b>{{count($resultados_d->estudiantes)}}
+  @if ($resultados_e)
+
     <br><hr>
-    <b>Estudiantes registrados por el docente</b><br><br>
+    <b>Estudiantes inscriptos</b><br><br>
     @php
       $numorden = 0;
     @endphp
@@ -52,19 +50,22 @@
         <th scope="col">Nombre</th>
         <th scope="col">DNI</th>
         <th scope="col">Escuela</th>
+        <th scope="col">Grupo</th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($resultados_d->estudiantes->sortBy('apellido') as $estudiante)
-        @php
-          $numorden++;
-        @endphp
+
+      @foreach ($resultados_e->sortBy('apellido') as $estudiante)
+                  @php
+                    $numorden++;
+                  @endphp
       <tr>
         <th scope="row">{{ $numorden }}</th>
         <td>{{$estudiante["apellido"]}}</td>
         <td>{{$estudiante["nombre"]}}</td>
         <td>{{$estudiante["DNI"]}}</td>
         <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
+        <td>{{$estudiante->grupo["nombre"]}}</td>
       </tr>
     @endforeach
     </tbody>

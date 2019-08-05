@@ -22,6 +22,29 @@ class EstudiantesController extends Controller
     }
     return view("estudiantesPorDocente", compact("resultados_d"));
   }
+  // Prueba de consulta de estudiantes por Apellido
+  // public function PorApellido(Request $req) {
+  //   if (isset($req["busqueda_apellido_estudiante"])) {
+  //       $resultados_e = Estudiante::where("apellido", "=", $req["busqueda_apellido_estudiante"])->first();
+  //   } else {
+  //       $resultados_e = null;
+  //   }
+  //   return view("estudiantesPorApellido", compact("resultados_e"));
+  // }
+
+
+  public function PorApellido(Request $req) {
+    if (isset($req["busqueda_apellido_estudiante"])) {
+        $resultados_e = Estudiante::where("apellido", "like", "%" . $req["busqueda_apellido_estudiante"] . "%")->get();
+    } else {
+        $resultados_e = [];
+    }
+    return view("estudiantesPorApellido", compact("resultados_e"));
+  }
+
+
+  // fin de prueba de estudiantes por apellido
+
   // Prueba para consulta de docentes sin loguearse
   public function PorDocenteNL(Request $req) {
     if (isset($req["busqueda_DNI_docente"])) {
@@ -110,12 +133,14 @@ $req->session()->flash('dnidocente', $req["dnidocente"]);
     "FechaNacimientoEstudiante" => "required|date",
     "AnioQueCursa" => "required|string:4to. año,5to. año,6to. año",
     // "RestriccionAlimentaria" => "required|string:No,Celiaquía,Veganismo,Vegetarianismo,Fenilcetonuria,Otra",
+"RestriccionAlimentaria" => "required",
     "Opcion1DeCategoriaTematica" => "required|integer",
   "Opcion2DeCategoriaTematica" => ['required','integer', new CategoriasTematicas],
   "NombrePadreMadre" => "required|string|max:50",
   "ApellidoPadreMadre" => "required|string|max:50",
 "EmailPadreMadre" => "required|string|max:30",
-  "TelefonoPadreMadre" => "required|string|max:50"
+  "TelefonoPadreMadre" => "required|string|max:50",
+  "escuela" => "required|integer"
 
   ]
 

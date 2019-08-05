@@ -101,46 +101,8 @@ de un total de
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.6/xls.core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-  {{-- <script src="https://unpkg.com/tableexport/dist/js/tableexport.min.js"></script> --}}
-    <script src="/js/tableexport.min.js"></script>
-    {{-- <script>
-    $("table").tableExport({
-    formats: ["csv", "xlsx","xls", "txt"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
-    position: "bottom",  // Posicion que se muestran los botones puedes ser: (top, bottom)
-    bootstrap: true,//Usar lo estilos de css de bootstrap para los botones (true, false)
-    fileName: "Listado",    //Nombre del archivo
-    });
-    </script> --}}
-    {{-- <script>
-    /* Defaults */
-TableExport(document.getElementsByTagName("table"), {
-  headers: true,                      // (Boolean), display table headers (th or td elements) in the <thead>, (default: true)
-  footers: true,                      // (Boolean), display table footers (th or td elements) in the <tfoot>, (default: false)
-  formats: ["xlsx", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
-  filename: "id",                     // (id, String), filename for the downloaded file, (default: 'id')
-  bootstrap: true,                   // (Boolean), style buttons using bootstrap, (default: true)
-  exportButtons: true,                // (Boolean), automatically generate the built-in export buttons for each of the specified formats (default: true)
-  position: 'bottom',                 // (top, bottom), position of the caption element relative to table, (default: 'bottom')
-  ignoreRows: null,                   // (Number, Number[]), row indices to exclude from the exported file(s) (default: null)
-  ignoreCols: null,                   // (Number, Number[]), column indices to exclude from the exported file(s) (default: null)
-  trimWhitespace: true,               // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
-  RTL: false,                         // (Boolean), set direction of the worksheet to right-to-left (default: false)
-  sheetname: "id"                     // (id, String), sheet name for the exported spreadsheet, (default: 'id')
-});
-</script> --}}
-{{-- <script>
-TableExport.prototype.ignoreCSS = ".tableexport-ignore";
-var table = TableExport(document.getElementById("tabla-listado"));
-</script> --}}
 
-{{-- <script>
-TableExport(document.getElementsByTagName("table"), {
-  bootstrap: true,
-  position: 'bottom',
-  formats: ["xls", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
-  filename: "listadoDe"                     // (id, String), filename for the downloaded file, (default: 'id')
-});
-</script> --}}
+    <script src="/js/tableexport.min.js"></script>
 
 
   <!-- tabla para paginación -->
@@ -158,15 +120,9 @@ TableExport(document.getElementsByTagName("table"), {
     </table>
   <!-- fin de tabla para paginación -->
 
-
-
-
 </div><!-- fin del contenedor de la tabla -->
 </div><!-- fin del contenedor principal -->
 </div><!-- fin del jumbotron secundario -->
-
-
-
 
   @include('segundabarranav')
   <!-- Optional JavaScript -->
@@ -174,9 +130,7 @@ TableExport(document.getElementsByTagName("table"), {
   {{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> --}}
   {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> --}}
   {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> --}}
-
-
-  </body>
+</body>
 <script>
   var table = TableExport(document.getElementById("tabla-listado"), {
     formats: ["xls", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])

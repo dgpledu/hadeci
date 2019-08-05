@@ -86,8 +86,9 @@
   <div class="form-row">
     <div class="form-group col-sm-6">
       <select class="form-control" name="restric_alim">
-      <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option>
-<option>No</option>
+      {{-- <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option> --}}
+        <option value="" selected>¿Posee alguna restricción alimentaria? (obligatorio)</option>
+        <option>No</option>
         <option>Celiaquía</option>
         <option>Veganismo</option>
         <option>Vegetarianismo</option>
@@ -97,6 +98,12 @@
       <small class="form-text text-muted">Si selecciona la opción "Otra", por favor envíe un mail a <a href="mailto:desafios.cientificos@bue.edu.ar">desafios.cientificos@bue.edu.ar</a> detallando en qué consiste dicha restricción alimentaria.
       </small>
     </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-sm-5">
+    <input type="text" name="instit_rep" class="form-control" placeholder="Institución">
+    <small class="form-text text-muted">Ingrese el nombre de la institución que usted representa en este evento. Ej: Telefónica o Escuela XX DE XX.</small>
+  </div>
 </div>
   <!-- fin de la tercera línea del formulario -->
   <hr>

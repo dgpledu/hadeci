@@ -100,7 +100,8 @@ La inscripción de
   <div class="form-row">
     <div class="form-group col-sm-6">
       <select class="form-control" name="RestriccionAlimentaria">
-        <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option>
+        {{-- <option value="No" selected>Si posee alguna restricción alimentaria, selecciónela haciendo clic acá</option> --}}
+        <option value="" selected>¿Posee alguna restricción alimentaria? (obligatorio)</option>
 <option>No</option>
         <option value="Celiaquía">Celiaquía</option>
         <option value="Veganismo">Veganismo</option>

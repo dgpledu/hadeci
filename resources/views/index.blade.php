@@ -151,9 +151,18 @@
          <img class="card-img-top" src="/imgs/hdc2017-1.jpg" alt="estudiantes en hackatón">
          <div class="card-body">
            <h5 class="card-title"><a name="que_es">¿Qué es?</a></h5>
-           <p class="card-text">Desafíos Científicos es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas de trabajo.
+           <p class="card-text">
+
+             Desafíos Científicos es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas. <br>
+             Los estudiantes trabajan en equipos <b>(5 a 8 integrantes cada uno)</b> para encontrar soluciones a problemas actuales vinculados al enfoque de ciencia y tecnología en sociedad.<br><br>
+             Durante la actividad se promueve la imaginación, el trabajo colaborativo y el “espíritu emprendedor”.
+
+
+             {{-- Desafíos Científicos es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas de trabajo.
            <br>
-             Los estudiantes trabajan en equipos de entre <strong>5 a 8 estudiantes</strong> y eligen una entre <strong><a href="#tematicas">cuatro temáticas</a></strong> posibles a las cuales pertenecen los problemas. Los problemas abordan aspectos del mundo real.
+             Los estudiantes trabajan en equipos de entre <strong>5 a 8 estudiantes</strong> y eligen una entre <strong><a href="#tematicas">cuatro temáticas</a></strong> posibles a las cuales pertenecen los problemas. Los problemas abordan aspectos del mundo real. --}}
+
+
            <br>
            </p>
          </div>
@@ -164,9 +173,14 @@
          <div class="card-body">
            <h5 class="card-title"><a name="quienes_pueden_participar">¿Quiénes pueden participar?</a></h5>
            <p class="card-text">Desafíos Científicos está destinado a <b>estudiantes de 4º, 5º y 6º año</b> de cualquier institución oficial del sistema educativo de la Ciudad de Buenos Aires.
-         <br>Los grupos de estudiante participantes debe ser <b>acompañados por un adulto cada 10 (diez) estudiantes</b>.
 
-         Los equipos son armados por un equipo central en base a las <a href="#tematicas">temáticas</a> elegida por cada estudiante para asegurar la heterogeneidad. <br>Los equipos trabajan durante un día y medio para encontrar soluciones a problemas reales vinculados al enfoque de ciencia y tecnología en sociedad.
+         Los grupos participantes deben ser acompañados por un adulto cada <b>10 (diez) estudiantes</b>. Los equipos son armados por los organizadores del evento:
+         <ul>
+<li>en base a las <a href="#tematicas">temáticas</a> elegidas por cada estudiante;</li>
+<li>integrando estudiantes de diferentes escuelas.</li></ul>
+No se requieren conocimientos previos.
+
+         {{-- Los equipos son armados por un equipo central en base a las <a href="#tematicas">temáticas</a> elegida por cada estudiante para asegurar la heterogeneidad. <br>Los equipos trabajan durante un día y medio para encontrar soluciones a problemas reales vinculados al enfoque de ciencia y tecnología en sociedad. --}}
            <br></p><a name="tematicas">
          </div>
        </div> <!-- fin de segunda tarjeta -->
@@ -175,7 +189,19 @@
          <img class="card-img-top" src="/imgs/hdc2017-3.jpg" alt="estudiantes en hackatón">
          <div class="card-body">
            <h5 class="card-title"><a name="como_participar">¿Cómo participar?</a></h5>
-           <p class="card-text">Para participar en Desafíos Científicos se debe realizar la inscripción correspondiente. Cada estudiante debe registrarse a través de un docente o de otro personal responsable de la institución escolar. Para participar no es necesario llevar ningún elemento en especial aunque está más que bienvenido si desean llevar sus dispositivos portátiles como smartphones, netbooks o tablets.</p>
+           <p class="card-text">
+
+
+             Para participar en <b>Desafíos Científicos</b> se debe realizar la inscripción correspondiente. Cada estudiante debe ser registrado por un docente o directivo de la institución escolar a la que pertenece.
+             Los cupos son limitados. Las vacantes serán confirmadas a partir del <b>20/09</b>.
+             No es necesario llevar al evento ningún elemento en especial, aunque es más que bienvenido si desean concurrir con sus dispositivos portátiles como smartphones, netbooks o tablets.
+
+
+             {{-- Para participar en Desafíos Científicos se debe realizar la inscripción correspondiente. Cada estudiante debe registrarse a través de un docente o de otro personal responsable de la institución escolar. Para participar no es necesario llevar ningún elemento en especial aunque está más que bienvenido si desean llevar sus dispositivos portátiles como smartphones, netbooks o tablets. --}}
+
+
+
+           </p>
          </div>
        </div> <!-- fin de tercera tarjeta -->
 
@@ -186,8 +212,20 @@
        <div class="card"> <!-- primera tarjeta -->
          <img class="card-img-top" src="/imgs/hdc2017-4.jpg" alt="estudiantes en hackatón">
          <div class="card-body">
-           <h5 class="card-title"><a name="donde_se_realiza">¿Dónde se realiza?</a></h5>
-           <p class="card-text">El evento se llevará a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, donde más de 600 estudiantes se repartirán en equipos conformados por representantes de escuelas diferentes. Durante la actividad se promoverá la imaginación, el trabajo colaborativo y el espíritu emprendedor. Los docentes acompañantes participarán de actividades específicas, formativas e informativas.</p>
+           <h5 class="card-title"><a name="donde_se_realiza">¿Cuándo y dónde se realiza?</a></h5>
+           <p class="card-text">
+
+
+             <span h6>Edición 2019:</span h6> <b>martes 1 y miércoles 2 de octubre (8:30 a 17:00)</b>.
+             El evento se lleva a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas.
+
+
+{{-- El evento se lleva a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas. --}}
+
+             {{-- El evento se llevará a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, donde más de 600 estudiantes se repartirán en equipos conformados por representantes de escuelas diferentes. Durante la actividad se promoverá la imaginación, el trabajo colaborativo y el espíritu emprendedor. Los docentes acompañantes participarán de actividades específicas, formativas e informativas. --}}
+
+
+           </p>
          </div>
        </div> <!-- fin de primera tarjeta -->
 
@@ -195,7 +233,7 @@
          <img class="card-img-top" src="/imgs/hdc2017-5.jpg" alt="estudiantes en hackatón">
          <div class="card-body">
            <h5 class="card-title">Temáticas</h5>
-           <p class="card-text">Las cuatro temáticas que aborda el hackatón Desafíos Científicos son:
+           <p class="card-text">Las cuatro temáticas que aborda el hackatón:
              <ul>
   <li>
     <div class="popup" onclick="myFunction1()">
@@ -221,14 +259,14 @@
   </li>
   <li>
     <div class="popup" onclick="myFunction4()">
-        <a href="#" onclick="return false;">Cienciay Arte</a>
+        <a href="#" onclick="return false;">Ciencia y Arte</a>
           <span class="popuptext" id="myPopup4">Dos formas de entrar en contacto con el mundo que nos rodea se combinan para alimentarse mutuamente. Los desafíos abarcan el diseño de parques temáticos científicos con un fuerte componente de actividades artísticas y apreciación estética, campañas de difusión y divulgación a través de expresiones artísticas como obras de teatro, videos, spots publicitarios, instalaciones participativas, juegos y zonas de actividades físicas. <br>Diseño de obras de arte sobre la base de principios de las diferentes ciencias naturales: esculturas sonoras, bioarte, música y genética, etc. El cruce del mundo del arte con el de las ciencias y la tecnología es una invitación a la creatividad de un territorio por explorar.
           </span>
     </div>
   </li>
 
              </ul>
-            Los trabajos son evaluados por un jurado y los ganadores de cada temática ingresan al <b>Programa Desafíos Científicos</b> que involucra actividades en centros de ciencia, tecnología y arte de vanguardia en el país.</p>
+            Los trabajos son evaluados por un jurado y los ganadores de cada temática ingresan al <a href="https://drive.google.com/file/d/1t2H_FGB7sZwphauQxaSY4lH1iHU75Ud1/view?usp=sharing" target="_blank">Programa Desafíos Científicos</a>, que involucra actividades en centros de ciencia, tecnología y arte de vanguardia en el país.</p>
          </div>
        </div> <!-- fin de segunda tarjeta -->
 

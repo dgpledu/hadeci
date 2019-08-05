@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes presentes Día 2</title>
+    <title>Consulta de estudiantes por apellido</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -21,75 +21,46 @@
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-  <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes presentes en el hackatón Día 2</h4>
-    <h5>
-    <span class="badge badge-primary badge-pill">
-    {{ $estudiantesPresentesDia2->firstItem() }}
-    </span>
-    <span class="">
-    a
-    </span>
-    <span class="badge badge-primary badge-pill">
-    {{ $estudiantesPresentesDia2->lastItem() }}
-    </span>
-    <span class="">
-    de un total de
-    </span>
-    <span class="badge badge-primary badge-pill">
-    {{ $estudiantesPresentesDia2->total() }}
-    </span>
-    <!-- Fin de cartel x a y de un total de n elementos -->
-        </h5>
-  </div>
+  <div class="card-header" style="background:#f2d333"><h5>Consulta de estudiantes por apellido</h5></div>
   <div class="card-body">
-    <!-- tabla -->
-    @php
-      $numorden = ($estudiantesPresentesDia2->currentpage()-1)* $estudiantesPresentesDia2->perpage();
-    @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($estudiantesPresentesDia2 as $estudiante)
-          @php
-            $numorden++;
-          @endphp
-        <tr>
-          <th scope="row">{{ $numorden }}</th>
-          <td>{{$estudiante["apellido"]}}</td>
-          <td>{{$estudiante["nombre"]}}</td>
-          <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
-        </tr>
-      @endforeach
-      </tbody>
-    </table>
-    <!-- fin de tabla -->
-    <table class="table table-responsive table-striped">
-      <thead style="background:#F2D333">
-        <tr>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">{{$estudiantesPresentesDia2->links()}}</th>
-        </tr>
-      </tbody>
-    </table>
 
+
+    <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
+
+<div class="alert alert-secondary w-85" role="alert">
+  <form class="form-group pt-2" action="" method="get">
+    {{-- {{ csrf_field() }} --}}
+    <input class="form-control-lg col-lg-4" type="text" name="busqueda_apellido_estudiante" value="" placeholder="apellido o parte del apellido">
+    <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
+    <small id="emailHelp" class="form-text text-muted">Tipee el apellido o parte del apellido del estudiante que busca.</small>
+  </form>
+  <!-- Prueba de ficha -->
+  @if ($resultados_e)
+    <div class="card">
+      <div class="card-body">
+        @foreach ($resultados_e->sortBy('apellido') as $estudiante)
+          <h3 class="card-title">{{$estudiante["apellido"]}}, {{$estudiante["nombre"]}}</h5>
+            <p class="card-subtitle">DNI: {{$estudiante["DNI"]}}</p>
+            <p class="card-text">Escuela: {{$estudiante->escuela["nombre"]}}</p>
+            <p class="card-text">Grupo: {{$estudiante->grupo["nombre"]}}</p>
+        @endforeach
+      </div>
     </div>
-    </div>
+    <div class="card-header">
+  <ul class="nav nav-pills card-header-pill">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">1</a>
+    </li>
+
+  </ul>
+</div>
+@endif
+  <!-- Fin de prueba con tabla linda -->
+
+</div>
+</div>
+</div>
+</div>
 </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')
@@ -104,7 +75,8 @@
     <script src="/js/tableexport.min.js"></script>
   </body>
   <script>
-    var table = TableExport(document.getElementById("tabla-listado"), {
+    var table = TableExport(document.getElementById("tabla-listado"),
+    {
       formats: ["xls", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
       filename: "miListado",                     // (id, String), filename for the downloaded file, (default: 'id')
       bootstrap: true,

@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Consulta de estudiantes por docente</title>
+    <title>Consulta de estudiantes por apellido</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -21,7 +21,7 @@
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-  <div class="card-header" style="background:#f2d333"><h5>Consulta de estudiantes por docente registrante</h5></div>
+  <div class="card-header" style="background:#f2d333"><h5>Consulta de estudiantes por apellido</h5></div>
   <div class="card-body">
 
 
@@ -30,72 +30,49 @@
 <div class="alert alert-secondary w-85" role="alert">
   <form class="form-group pt-2" action="" method="get">
     {{-- {{ csrf_field() }} --}}
-    <input type="text" name="busqueda_DNI_docente" value="" placeholder="DNI del docente">
+    <input class="form-control-lg col-lg-4" type="text" name="busqueda_apellido_estudiante" value="" placeholder="apellido o parte del apellido">
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
-    <small id="emailHelp" class="form-text text-muted">Tipee el DNI del docente registrante sin puntos ni espacios. Por ejemplo: <b>11111111</b></small>
+    <small id="emailHelp" class="form-text text-muted">Tipee el apellido o parte del apellido del estudiante que busca.</small>
   </form>
-  <!-- Prueba de tabla linda -->
-  @if ($resultados_d)
-    <b>Docente:</b> {{$resultados_d["apellido"]}}, {{$resultados_d["nombre"]}} |
-    <b>DNI:</b> {{$resultados_d["DNI"]}}<br>
-    <b>Cantidad de estudiantes: </b>{{count($resultados_d->estudiantes)}}
-    <br><hr>
-    <b>Estudiantes registrados por el docente</b><br><br>
+  <!-- Prueba de ficha -->
+  @if ($resultados_e)
+    <br>
+    <b>Estudiantes inscriptos</b><br><br>
     @php
       $numorden = 0;
     @endphp
-  <table id="tabla-listado" class="table table-responsive table-striped">
-    <thead style="background:#F2D333">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">DNI</th>
-        <th scope="col">Escuela</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($resultados_d->estudiantes->sortBy('apellido') as $estudiante)
-        @php
-          $numorden++;
-        @endphp
-      <tr>
-        <th scope="row">{{ $numorden }}</th>
-        <td>{{$estudiante["apellido"]}}</td>
-        <td>{{$estudiante["nombre"]}}</td>
-        <td>{{$estudiante["DNI"]}}</td>
-        <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-      </tr>
-    @endforeach
-    </tbody>
-  </table>
+
+          @foreach ($resultados_e->sortBy('apellido') as $estudiante)
+              @php
+                $numorden++;
+              @endphp
+              <div class="card">
+                  <div class="card-header" style="background:#F2D333">{{$estudiante["apellido"]}}, {{$estudiante["nombre"]}}</div>
+                      <div class="card-body">
+                    <h5 class="card-title">DNI: {{$estudiante["DNI"]}}</h5>
+                    <p class="card-text">Escuela: {{$estudiante->escuela["nombre"]}}</p>
+                    <p class="card-text">Grupo: {{$estudiante->grupo["nombre"]}}</p>
+                    <p class="card-text">E-mail: {{$estudiante["email"]}}</p>
+                    <p class="card-text">Fecha de nacimiento: {{$estudiante["fecha_nac"]}}</p>
+                    <p class="card-text">Año: {{$estudiante["anio_cursa"]}}</p>
+                    <p class="card-text">Restricción alim.: {{$estudiante["restric_alim"]}}</p>
+            Datos de los padres
+                    <p class="card-text">Padre/Madre/Enc: {{$estudiante["nom_padre"]}} {{$estudiante["ape_padre"]}}</p>
+                    <p class="card-text">Teléfono: {{$estudiante["telefono_padre"]}}</p>
+                    <p class="card-text">Mail: {{$estudiante["mail_padre"]}}</p>
+</div></div><br>
+          @endforeach
+
+
+
 @endif
   <!-- Fin de prueba con tabla linda -->
-  {{-- @if ($resultados_d)
-    <b>Docente:</b> {{$resultados_d["apellido"]}}, {{$resultados_d["nombre"]}} |
-    <b>DNI:</b> {{$resultados_d["DNI"]}}<br>
-    <b>Cantidad de estudiantes: </b>{{count($resultados_d->estudiantes)}}
-    <br><hr>
-    <b>Estudiantes registrados por el docente</b><br><br>
-    @php
-      $cant_est = 0;
-    @endphp
-
-    @foreach ($resultados_d->estudiantes->sortBy('apellido') as $estudiante)
-      @php
-        $cant_est++;
-      @endphp
-
-      {{$cant_est}}. {{$estudiante["apellido"]}}, {{$estudiante["nombre"]}}, {{$estudiante["DNI"]}}<br>
-    @endforeach
-
-  @endif --}}
+</div>
 </div>
 </div>
 </div>
 </div>
 </div><!-- fin del jumbotron secundario -->
-
 @include('segundabarranav')
 
     <!-- Optional JavaScript -->

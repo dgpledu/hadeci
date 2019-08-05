@@ -38,7 +38,7 @@ class Bienvenidotutor extends Mailable
 public function build()
 {
     return $this->attach('https://cienciascontic.github.io/archivos/autorizacion_de_imagen_2019_hackaton.pdf')
-                ->subject('Bienvenido tutor!')->view('emails.bienvenidotutor');
+                ->subject('Bienvenido/a tutor/a!')->view('emails.bienvenidotutor');
 
 }
 

@@ -78,8 +78,8 @@
       <small class="form-text text-muted">Ingrese su fecha de nacimiento</small>
   </div>
   <div class="form-group col-sm-2.5">
-    <input type="text" name="celular" class="form-control" placeholder="Teléfono de contacto">
-    <small class="form-text text-muted">Preferentemente su número de celular (con 0 y sin 15)</small>
+    <input type="text" name="celular" class="form-control" placeholder="Celular de contacto">
+    <small class="form-text text-muted">Con 0 y sin 15. Los organizadores lo utilizarán para ubicarlo/a en el evento.</small>
   </div>
   </div>
   <!-- Fin segunda línea del formulario -->
@@ -160,7 +160,7 @@
 <div class="form-group col-sm-5">
 
     <input type="text" name="disp_horariaD1" class="form-control" placeholder="Disponibilidad día martes">
-    <small class="form-text text-muted">Ingrese el/los horario/s del día martes 1/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es sobretodo de 14 a 17hs).
+    <small class="form-text text-muted">Ingrese el/los horario/s del día martes 1/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es sobre todo de 14 a 17hs).
 </small>
 </div>
 <div class="form-group col-sm-5">

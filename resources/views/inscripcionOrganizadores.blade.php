@@ -83,12 +83,12 @@
   </div>
   <!-- Fin segunda línea del formulario -->
   <!-- Inicio tercera línea del formulario -->
-  <div class="form-row">
+  {{-- <div class="form-row">
     <div class="form-group col-sm-6">
       <input type="file" name="foto_organizador" class="form-control-file" placeholder="Foto personal">
-      <small class="form-text text-muted">Suba su foto en formato JPG, JPEG, PNG. Tamaño máximo: <b>2 MB</b> (2048 KB).</small>
+      <small class="form-text text-muted">Opcional: Suba su foto en formato JPG, JPEG, PNG. Tamaño máximo: <b>2 MB</b> (2048 KB).</small>
     </div>
-  </div>
+  </div> --}}
   <!-- Fin tercera línea del formulario -->
 <hr>
 
