@@ -44,11 +44,8 @@ La inscripción de
       </div>
   @endif
 
-<h6><span class="text-body"><b>INSTRUCTIVO:</b></span><span class="text-secondary"> A continuación podrá cargar los datos de sus estudiantes, uno tras otro. Al final del formulario de carga,  podrá ver que el sistema seleccionó automáticamente la escuela para la cual usted está inscribiendo estudiantes. Si usted tiene estudiantes de más de una escuela, podrá seleccionar de un menú la escuela para la cual realizará la inscripción del estudiante. Al finalizar la carga, haga clic en el botón <kbd style="background-color:#0275d8";>Inscribir estudiante</kbd> (ubicado al final de este formulario) y recibirá un mensaje de que el/la estudiante fue inscripto/a correctamente. Luego de un envío, el formulario se limpiará y podrá cargar los datos para el/la siguiente estudiante. </span> </h6>
-
-
-
-
+<h6><span class="text-body"><b>INSTRUCTIVO:</b></span><span class="text-secondary"> A continuación podrá cargar los datos de sus estudiantes, uno tras otro. Al finalizar cada carga, haga clic en el botón <kbd style="background-color:#0275d8";>Inscribir estudiante</kbd> (ubicado al final de este formulario) y verá un mensaje en pantalla confirmando que el/la estudiante fue inscripto/a correctamente. <br>
+Luego de un envío, el formulario se limpiará y podrá cargar los datos para el/la siguiente estudiante. En caso de que usted necesite registrar estudiantes de diferentes escuelas, deberá primero inscribirse como docente de cada una de ellas (completando un formulario de inscripción como docente por cada institución con la que participará). <br><br>Al final de este formulario de inscripción de estudiantes podrá seleccionar la escuela correspondiente de una lista desplegable.</span> </h6>
 
 <hr>
 
@@ -75,12 +72,19 @@ La inscripción de
 
 </div>
   <!-- fin de la primera línea del formulario -->
+<div class="form-row">
+  <div class="form-group col-sm-5">
+    <input type="email" name="EmailEstudiante" value="{{old('EmailEstudiante')}}" class="form-control" placeholder="E-mail">
+      <small class="form-text text-muted">Ingrese email del/la estudiante</small>
+  </div>
+  <div class="form-group col-sm-5">
+    <input type="text" name="celular" value="{{old('celular')}}" class="form-control" placeholder="Celular">
+      <small class="form-text text-muted">Ingrese celular del/la estudiante sin 0, sin 15, sin guiones ni espacios, solo números consecutivos.</small>
+  </div>
+</div>
   <!-- Inicio segunda línea del formulario -->
   <div class="form-row">
-    <div class="form-group col-sm-5">
-      <input type="email" name="EmailEstudiante" value="{{old('EmailEstudiante')}}" class="form-control" placeholder="E-mail">
-        <small class="form-text text-muted">Ingrese email del/la estudiante</small>
-    </div>
+
   <div class="form-group col-sm-3">
     <input type="date" name="FechaNacimientoEstudiante" value="{{old('FechaNacimientoEstudiante')}}" class="form-control" placeholder="Fecha de nacimiento del/la estudiante">
       <small class="form-text text-muted">Ingrese fecha de nacimiento del/la estudiante</small>
@@ -136,8 +140,8 @@ La inscripción de
     </div>
   </div>
   <!-- fin de la tercera línea del formulario -->
-  <hr>
-  <h5>Datos padre/madre/tutor del/la estudiante</h5>
+
+  {{-- <h5>Datos padre/madre/tutor del/la estudiante</h5>
   <h6 style="color: red">*Si el estudiante es mayor de edad, puede rellenar los campos de nombre, apellido y teléfono con "---" y en el mail repetir el del estudiante.</h6>
   <!-- Inicio cuarta línea del formulario -->
     <div class="form-row">
@@ -160,7 +164,7 @@ La inscripción de
             <input type="text" class="form-control" name="TelefonoPadreMadre" value="{{old('TelefonoPadreMadre')}}" placeholder="Teléfono del padre/madre/tutor">
               <small class="form-text text-muted">Ingrese el teléfono de padre/madre/tutor</small>
           </div>
-    </div>
+    </div> --}}
 
 <!-- Fin de carga de datos del estudiante -->
 <hr>

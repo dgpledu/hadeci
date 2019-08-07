@@ -10,21 +10,6 @@ use App\Estudiante;
 
 class DocentesController extends Controller
 {
-  // public function consulta(Request $req) {
-  // $todoslosdocentes = Docente::all();
-  //   if (isset($req["busqueda_docente"])) {
-  //       $resultados_docente = Docente::where("ID", "=", $req["busqueda_docente"])->first();
-  //   } else {
-  //       $resultados_docente = null;
-  //   }
-  //   return view("consultaDocentes", compact("resultados_docente", "todoslosdocentes"));
-  // }
-  //
-  // public function listado(Request $req) {
-  // $docentes = Docente::orderBy('apellido')->paginate(15);
-  // $todoslosdocentes = Tutor::all();
-  //   return view("listadoDocentes", compact("todoslosdocentes", "docentes"));
-  // }
 
 public function inscribir() {
 
@@ -45,7 +30,8 @@ public function registrar(Request $req) {
             "apellido" => "required|string|max:40",
             "dni_docente" => "required|numeric|min:1000000|max:99999999|unique:docentes,DNI",
             "email_docente" => "required|email",
-            "fecha_nac_docente" => "required|date",
+            "fecha_nac_docente" => "required|date|before:2012",
+            "celular" => "required|string|max:30",
             "restric_alim" => "required",
             "id_escuela" => "required|integer|exists:escuelas,ID"
           ], ["dni_docente.unique" => "Usted ya se encuentra registrado/a en el sistema asociado a esa misma escuela. Si desea proceder con la inscripción de estudiantes, haga clic en la opción Inscripción arriba a la derecha."]);
@@ -58,17 +44,28 @@ public function registrar(Request $req) {
               "nombre" => "required|string|max:30",
               "apellido" => "required|string|max:40",
               "dni_docente" => "required|numeric|min:1000000|max:99999999",
-              "email_docente" => "required|email",
-              "fecha_nac_docente" => "required|date",
-              "restric_alim" => "required",
+              // "email_docente" => "required|email",
+              // "fecha_nac_docente" => "required|date|before:2012",
+              // "celular" => "required|string|max:30",
+              // "restric_alim" => "required",
               "id_escuela" => "required|integer|exists:escuelas,ID"
-            ], ["dni_docente.unique" => "Ese DNI ya existe y no concuerda con su apellido."]);
+            ],
+            ["dni_docente.unique" => "Ese DNI ya existe y no concuerda con su apellido."]);
             $docentex->escuelas()->attach($req["id_escuela"]);
 
 // Graba una nueva escuela para un docente que ya existía
             $escuela = Escuela::find($req["id_escuela"]);
             $escuela["activa"] = 1; //también puede ser $escuela->activa=1
             $escuela->save();
+
+//lo agregué para mandar un mail también cuando se inscribe por segunda vez
+            try {
+              \Mail::to($docentex)->send(new Bienvenidodocente);
+            } catch (\Exception $e) {
+              $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+              return $e;
+            }
+// fin del agregado
 
           }
 else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
@@ -77,7 +74,8 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
     "apellido" => "required|string|max:40",
     "dni_docente" => "required|unique:docentes,DNI|numeric|min:1000000|max:99999999",
     "email_docente" => "required|email",
-    "fecha_nac_docente" => "required|date",
+    "fecha_nac_docente" => "required|date|before:2012",
+    "celular" => "required|string|max:30",
     "restric_alim" => "required",
     "id_escuela" => "required|integer|exists:escuelas,ID"
   ]);
@@ -94,7 +92,8 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
           "apellido" => "required|string|max:40",
           "dni_docente" => "required|numeric|min:1000000|max:99999999|",
           "email_docente" => "required|email",
-          "fecha_nac_docente" => "required|date",
+          "fecha_nac_docente" => "required|date|before:2012",
+          "celular" => "required|string|max:30",
           "restric_alim" => "required",
           "id_escuela" => "required|integer|exists:escuelas,ID"
                               ]);
@@ -137,5 +136,62 @@ return redirect("/inscripcionDocentes")
 
 } // cierre de la función
 
+public function acreditarDia1(Request $req) {
+  if (isset($req["busqueda_DNI_docente"])) {
+      $resultados_d = Docente::where("DNI", $req["busqueda_DNI_docente"])->get();
+  } else {
+      $resultados_d = [];
+  }
+  return view("acreditacionDocentesDia1", compact("resultados_d"));
+}
+
+public function confirmarDia1(Request $req) {
+  if ($req["presente"] == "Acreditarse")
+        $docentesPres = Docente::where("DNI", "=", $req["busqueda_DNI_docente"])->first();
+        $docentesPres->pres_dia1 = 1;
+        $docentesPres->save();
+        // dd($req["apellido"]);
+  return redirect("/acreditacionDocentesDia1")
+  ->with([
+  // "estado" => $req["nombre"]." ".$req["apellido"],
+    "estado" => $docentesPres["nombre"]." ".$docentesPres["apellido"],
+  ])
+  ;
+
+}
+
+public function listado(Request $req) {
+$docentes = Docente::orderBy('apellido')->paginate(50);
+$todoslosdocentes = Docente::all();
+  return view("listadoDocentes", compact("todoslosdocentes", "docentes"));
+}
+
+public function listadoD1(Request $req) {
+$todoslosdocentesD1 = Docente::where("pres_dia1", "=", 1)->orderBy('apellido')->paginate(50);
+  return view("listadoDocentesD1", compact("todoslosdocentesD1"));
+}
+
+public function listadoD2(Request $req) {
+$todoslosdocentesD2 = Docente::where("pres_dia2", "=", 1)->orderBy('apellido')->paginate(50);
+  return view("listadoDocentesD2", compact("todoslosdocentesD2"));
+}
+
+public function listadoD1D2(Request $req) {
+$todoslosdocentesD1D2 = Docente::where("pres_dia1", "=", 1)
+->where("pres_dia2", "=", 1)
+->orderBy('apellido')
+->paginate(50);
+  return view("listadoDocentesD1D2", compact("todoslosdocentesD1D2"));
+}
+
+public function PorDNI(Request $req) {
+  if (isset($req["busqueda_DNI_docente"])) {
+      // $resultados_d = Docente::where("DNI", "like", "%" . $req["busqueda_DNI_docente"] . "%")->get();
+      $resultados_d = Docente::where("DNI", $req["busqueda_DNI_docente"])->get();
+  } else {
+      $resultados_d = [];
+  }
+  return view("acreditarDocentesDia1", compact("resultados_d"));
+}
 
 }

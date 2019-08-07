@@ -28,9 +28,9 @@
 <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
         <b> {{session('estado')}}, </b>
-        se ha inscripto correctamente en "Desafíos Científicos".
-        <br><br>
-        <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción y detallando información necesaria para el evento.
+        se ha inscripto correctamente en el hackatón "Desafíos Científicos".<br>
+        {{-- <br><br>
+        <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción y detallando información necesaria para el evento. --}}
 
 </h5>
      </div>
@@ -69,7 +69,7 @@
   <!-- Inicio segunda línea del formulario -->
   <div class="form-row">
     <div class="form-group col-sm-4">
-      <input type="email" name="email" class="form-control" placeholder="E-mail">
+      <input type="email" name="email" class="form-control" placeholder="ejemplo@email.com">
         <small class="form-text text-muted">Ingrese su email</small>
     </div>
   <div class="form-group col-sm-2.5">
@@ -101,12 +101,12 @@
   </div>
   <!-- Fin cuarta línea del formulario -->
   <!-- Inicio quinta línea del formulario -->
-  <div class="form-row">
+  {{-- <div class="form-row">
     <div class="form-group col-sm-6">
       <input type="file" name="foto_autoridad" class="form-control-file" placeholder="Foto personal">
       <small class="form-text text-muted">Suba su foto en formato JPG, JPEG, PNG. Tamaño máximo: <b>2 MB</b> (2048 KB).</small>
     </div>
-  </div>
+  </div> --}}
 
 <!-- Fin quinta línea del formulario -->
 <hr>

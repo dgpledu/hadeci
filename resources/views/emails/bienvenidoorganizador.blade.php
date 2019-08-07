@@ -149,7 +149,7 @@
           <table data-section="1" bgcolor="#FFFFFF" align="center" role="presentation" width="640" class="responsive-table" style="margin: 0 auto;">
             <tbody><tr>
               <td data-slot-container="1" style="padding: 0 32px 24px;" class="mobile-pad-x ui-sortable">
-                <div data-slot="text"><table align="center" width="100%"><tbody><tr><td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;">¡Le damos una cordial bienvenida en calidad de organizador y le agradecemos por colaborar en este evento!<br /><br /><a href="http://www.hadeci.net.ar" style="color: #e59e24; text-decoration: underline;" target="_blank">Desafíos Científicos</a> es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas de trabajo. <br><br>Aprovechamos este mail de bienvenida para compartirle información <b>muy importante</b> sobre el evento:</td></tr></tbody></table></div>
+                <div data-slot="text"><table align="center" width="100%"><tbody><tr><td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;">¡Le damos una cordial bienvenida en calidad de organizador/a y le agradecemos por colaborar en este evento!<br /><br /><a href="http://www.hadeci.net.ar" style="color: #e59e24; text-decoration: underline;" target="_blank">Desafíos Científicos</a> es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas de trabajo. <br><br>Aprovechamos este mail de bienvenida para compartirle información <b>muy importante</b> sobre el evento:</td></tr></tbody></table></div>
               </td>
             </tr>
           </tbody></table>
@@ -178,94 +178,9 @@
                 </tbody></table>
               </td>
             </tr>
-            <!-- INSCRIPCIÓN DE ESTUDIANTES -->
-            <tr>
-              <td valign="top" data-slot-container="1" style="padding: 0 0 24px 32px;" class="mobile-pad-l ui-sortable" width="100%">
-                <table role="presentation" width="100%">
-                  <tbody><tr>
-                    <td valign="top" style="padding-right: 24px;" width="64">
-                      <div data-slot="image">
-                        <img src="https://cienciascontic.github.io/archivos/imagenes/icono-inscrip-2.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
-                      </div>
-                    </td>
-                    <td valign="top" style="padding: 0 120px 0 0;" class="mobile-pad-r">
-                      <div data-slot="text">
-                        <table role="presentation" width="100%" class="responsive-table">
-                          <tbody><tr>
-                            <td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;">
-                              <span style="color: #2F2F33; font-weight: bold;">Inscripción de estudiantes</span><br />
-                              Cada estudiante debe ser registrado por un docente o autoridad responsable de la escuela. Esta persona será quien acompañe al estudiante al día del evento.
-                            </td>
-                          </tr>
-                        </tbody></table>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </td>
-            </tr>
-
-            <!-- LISTADO DE ESTUDIANTES -->
-            <tr>
-              <td valign="top" data-slot-container="1" style="padding: 0 0 24px 32px;" class="mobile-pad-l ui-sortable" width="100%">
-                <table role="presentation" width="100%">
-                  <tbody><tr>
-                    <td valign="top" style="padding-right: 24px;" width="64">
-                      <div data-slot="image">
-                        <img src="https://cienciascontic.github.io/archivos/imagenes/icono-listado-2.png" alt="" style="border: 0px; color: rgb(85, 85, 85); display: block; font-family: Roboto, Arial, sans-serif; font-size: 16px; line-height: 22px; max-width: 100%;" width="64" class="fr-view" />
-                      </div>
-                    </td>
-                    <td valign="top" style="padding: 0 120px 0 0;" class="mobile-pad-r">
-                      <div data-slot="text">
-                        <table role="presentation" width="100%" class="responsive-table">
-                          <tbody><tr>
-                            <td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;">
-                              <span style="color: #2F2F33; font-weight: bold;">Comprobar el listado de estudiantes inscriptos por usted</span><br />
-                              Haciendo clic en el botón naranja que aparece más abajo, podrá acceder a una pantalla que le permitirá, a través del ingreso de su DNI, constatar cuáles son los estudiantes que usted ha inscripto hasta el momento. Incluso, si el estudiante ya hubiera sido asignado a un grupo, dicho grupo aparecerá en el listado.
-                            </td>
-                          </tr>
-                        </tbody></table>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </td>
-            </tr>
-
-    <!-- CTA -->
-    <table data-section-wrapper="1" bgcolor="#F2F2F2" role="presentation" width="100%">
-      <tbody><tr>
-        <td>
-          <table data-section="1" bgcolor="#FFFFFF" align="center" role="presentation" width="640" class="responsive-table" style="margin: 0 auto;">
-            <tbody><tr>
-              <td style="padding: 8px 32px 0;" class="mobile-pad-x0">
-                <table bgcolor="#FAFAFA" align="center" role="presentation" width="100%" style="border: 1px solid #EEEEEE;">
-                  <tbody><tr>
-                    <td data-slot-container="1" style="padding: 32px 56px 32px;" class="mobile-pad-x ui-sortable">
-                      <div data-slot="text">
-                        <table align="center" role="presentation" width="100%">
-                          <tbody><tr>
-                            <td align="center" style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 24px; line-height: 30px; padding-bottom: 20px;">
-                              <strong>Consultar el listado de estudiantes que usted ha inscripto:</strong>
-                            </td>
-                          </tr>
-                        </tbody></table>
-                      </div>
-                      <div data-slot="button" data-param-background-color="e59e24" data-param-color="FFFFFF" data-param-float="1" data-param-href="#" data-param-link-text="" data-param-border-radius="30" align="center">
-                                              <a href="http://bit.ly/2YqVpcw18hjG6XxE3ee9ILliIIwRT" class="button" target="_blank" style="border-color: #e59e24; border-width: 15px 30px; border-style: solid; text-decoration: none; border-radius: 30px; background-color: #e59e24; display: inline-block; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; color: #FFFFFF;" background="#555555">IR AL LISTADO </a>
 
 
 
-                                            </div>
-                      </td>
-                  </tr>
-                </tbody></table>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </tbody></table>
     <!-- COPY -->
     <table data-section-wrapper="1" bgcolor="#F2F2F2" role="presentation" width="100%">
       <tbody><tr>
@@ -292,13 +207,13 @@
                     <tbody><tr>
 
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/twitter.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://twitter.com/EducacionBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/twitter.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/facebook.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://www.facebook.com/EducacionBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/facebook.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/youtube.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://www.youtube.com/user/educacionGCBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/youtube.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                     </tr>
                   </tbody></table>

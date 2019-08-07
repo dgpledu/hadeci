@@ -130,16 +130,17 @@ $req->session()->flash('dnidocente', $req["dnidocente"]);
     "apellido" => "required|string|max:50",
     "DNIestudiante" => "required|string|min:8|max:20|unique:estudiantes,DNI",
     "EmailEstudiante" => "required|email|max:60",
-    "FechaNacimientoEstudiante" => "required|date",
+    "celular" => "required|integer|max:9999999999999999999",
+    "FechaNacimientoEstudiante" => "required|date|after:01-01-1989|before:30-09-2009",
     "AnioQueCursa" => "required|string:4to. año,5to. año,6to. año",
-    // "RestriccionAlimentaria" => "required|string:No,Celiaquía,Veganismo,Vegetarianismo,Fenilcetonuria,Otra",
+    //"RestriccionAlimentaria" => "required|string:No,Celiaquía,Veganismo,Vegetarianismo,Fenilcetonuria,Otra",
 "RestriccionAlimentaria" => "required",
     "Opcion1DeCategoriaTematica" => "required|integer",
   "Opcion2DeCategoriaTematica" => ['required','integer', new CategoriasTematicas],
-  "NombrePadreMadre" => "required|string|max:50",
-  "ApellidoPadreMadre" => "required|string|max:50",
-"EmailPadreMadre" => "required|string|max:30",
-  "TelefonoPadreMadre" => "required|string|max:50",
+//   "NombrePadreMadre" => "required|string|max:50",
+//   "ApellidoPadreMadre" => "required|string|max:50",
+// "EmailPadreMadre" => "required|string|max:30",
+//   "TelefonoPadreMadre" => "required|string|max:50",
   "escuela" => "required|integer"
 
   ]
@@ -155,16 +156,17 @@ $req->session()->flash('dnidocente', $req["dnidocente"]);
     $estudiante["apellido"] = $req["apellido"];
     $estudiante["DNI"] = $req["DNIestudiante"];
     $estudiante["email"] = $req["EmailEstudiante"];
+    $estudiante["celular"] = $req["celular"];
     $estudiante["fecha_nac"] = $req["FechaNacimientoEstudiante"];
     $estudiante["ID_escuela"] = $req["escuela"];
     $estudiante["ID_cat_tem1"] = $req["Opcion1DeCategoriaTematica"];
     $estudiante["ID_cat_tem2"] = $req["Opcion2DeCategoriaTematica"];
     $estudiante["anio_cursa"] = $req["AnioQueCursa"];
     $estudiante["restric_alim"] = $req["RestriccionAlimentaria"];
-    $estudiante["nom_padre"] = $req["NombrePadreMadre"];
-    $estudiante["ape_padre"] = $req["ApellidoPadreMadre"];
-    $estudiante["mail_padre"] = $req["EmailPadreMadre"];
-    $estudiante["telefono_padre"] = $req["TelefonoPadreMadre"];
+    // $estudiante["nom_padre"] = $req["NombrePadreMadre"];
+    // $estudiante["ape_padre"] = $req["ApellidoPadreMadre"];
+    // $estudiante["mail_padre"] = $req["EmailPadreMadre"];
+    // $estudiante["telefono_padre"] = $req["TelefonoPadreMadre"];
 
     $estudiante["ID_docente_reg"] = Docente::where("DNI", "=", $req["dnidocente"])->first()["ID"];
     $estudiante->save();

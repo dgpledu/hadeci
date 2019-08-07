@@ -172,7 +172,7 @@
                       </div>
                     </td>
                     <td valign="top" style="padding: 0 120px 0 0;" class="mobile-pad-r">
-                      <div data-slot="text"><table class="responsive-table" width="100%"><tbody><tr><td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;"><span style="color: #2F2F33; font-weight: bold;">Autorización de uso de imagen</span><br />Adjunto a este correo encontrará un documento en formato PDF que representa la autorización de uso de imagen. Por favor, si está de acuerdo con los términos, <b>imprima</b> dicho documento y llévelo <b>firmado</b> el día del evento.</td></tr></tbody></table></div>
+                      <div data-slot="text"><table class="responsive-table" width="100%"><tbody><tr><td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;"><span style="color: #2F2F33; font-weight: bold;">Autorización de uso de imagen</span><br>Adjunto a este correo encontrará un documento en formato PDF que representa la autorización de uso de imagen. <b>Es necesario que imprima dicho documento y sea firmado por el responsable (madre/padre/tutor) a cargo de cada estudiante participante</b>. Para el caso de los mayores de edad, pueden firmarlo ellos/as mismos/as. <b>Esta documentación</b>, junto con la autorización de uso de imagen del docente, <b>será requerida en el evento</b>.</td></tr></tbody></table></div>
                     </td>
                   </tr>
                 </tbody></table>
@@ -194,7 +194,9 @@
                           <tbody><tr>
                             <td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;">
                               <span style="color: #2F2F33; font-weight: bold;">Inscripción de estudiantes</span><br />
-                              Cada estudiante debe ser registrado por un docente o autoridad responsable de la escuela. Esta persona será quien acompañe al estudiante al día del evento.
+                              Cada estudiante debe ser registrado/a por un/a docente o autoridad responsable de la escuela. <br>
+Al momento de la acreditación en el evento, <b>será requerido el número de DNI del docente que haya registrado a los estudiantes</b> (esta información es importante conocerla, en caso de que sea una persona diferente al docente que efectivamente acompañará a los estudiantes en el evento).
+
                             </td>
                           </tr>
                         </tbody></table>
@@ -292,13 +294,13 @@
                     <tbody><tr>
 
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/twitter.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://twitter.com/EducacionBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/twitter.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/facebook.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://www.facebook.com/EducacionBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/facebook.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/youtube.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://www.youtube.com/user/educacionGCBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/youtube.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                     </tr>
                   </tbody></table>

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Bienvenido a Desafíos Científicos</title>
+  <title>Bienvenido/a a Desafíos Científicos</title>
 </head>
 
 <body>
@@ -233,13 +233,13 @@
                     <tbody><tr>
 
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/twitter.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://twitter.com/EducacionBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/twitter.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/facebook.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://www.facebook.com/EducacionBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/facebook.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                       <td align="left">
-                        <a href="#" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/youtube.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
+                        <a href="https://www.youtube.com/user/educacionGCBA" target="_blank"><img src="https://marketing.ndash.co/mautic/themes/ndash_theme3/img/youtube.png" alt="" style="border: 0; display: block; max-width: 100%;" width="40" /></a>
                       </td>
                     </tr>
                   </tbody></table>

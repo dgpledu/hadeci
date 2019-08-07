@@ -97,10 +97,6 @@
   <!-- Fin tercera línea del formulario -->
   <!-- Inicio cuarta línea del formulario -->
   <div class="form-row">
-      {{-- <div class="form-group col-sm-5">
-          <input style="height:75px; width:900px" type="text" name="campo_exp" class="form-control" placeholder="Breve CV">
-          <small class="form-text text-muted">Ingrese una breve descripción de su perfil laboral. Esto será de utilidad para que los estudiantes sepan sobre qué cuestiones consultarle.</small>
-      </div> --}}
 
       <div class="form-group col-sm-5">
           <label for="TextAreaBreveCV"></label>
@@ -121,9 +117,18 @@
 
   <!-- Agregado para area de expertise y conocimientos de robótica y programación -->
   <div class="form-row">
-      <div class="form-group col-sm-5">
-           <select class="form-control" name="area_expertise">
-               <option value="">Seleccione su área de expertise de preferencia</option>
+      <div class="form-group col-sm-4">
+           <select class="form-control" name="area_expertise1">
+               <option value="">Seleccione área de expertise primaria</option>
+               <option value="ESP">Ciencias Espaciales</option>
+               <option value="VID">Ciencias de la Vida</option>
+               <option value="ART">Ciencia y Arte</option>
+               <option value="GES">Gestión Territorial y Urbana</option>
+          </select>
+      </div>
+      <div class="form-group col-sm-4">
+           <select class="form-control" name="area_expertise2">
+               <option value="">Seleccione área de expertise secundaria</option>
                <option value="ESP">Ciencias Espaciales</option>
                <option value="VID">Ciencias de la Vida</option>
                <option value="ART">Ciencia y Arte</option>

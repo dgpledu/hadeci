@@ -38,7 +38,7 @@ class Bienvenidoorganizador extends Mailable
 public function build()
 {
     return $this->attach('https://cienciascontic.github.io/archivos/autorizacion_de_imagen_2019_hackaton.pdf')
-                ->subject('¡Le damos la bienvenida!')->view('emails.bienvenidoorganizador');
+                ->subject('¡Bienvenido/a al hackatón Desafíos Científicos!')->view('emails.bienvenidoorganizador');
 
 }
 

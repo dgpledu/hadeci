@@ -19,7 +19,8 @@
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-  <div class="card-header" style="background:#f2d333"><h5>Formulario de inscripción de docentes</h5></div>
+  <div class="card-header" style="background:#f2d333"><h5>Formulario de inscripción de docentes</h5><span><img src="/img/alert-icon.png" "height=40 width=40" <h6><b>IMPORTANTE:</b> En caso de que usted necesite registrar estudiantes de diferentes escuelas, luego de completar el siguiente formulario deberá volver a inscribirse como docente asociado a otra escuela. Sin embargo, en esta segunda inscripción solo deberá ingresar como datos su <b>nombre</b> y <b>apellido</b>, su <b>DNI</b> y el <b>ID</b> de la nueva escuela.</span></h6> </div>
+
   <div class="card-body">
     <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
 
@@ -32,9 +33,9 @@
              <b> {{session('estado')}}, </b>
              docente de la escuela <b>{{session('escuela')}}</b> se ha inscripto correctamente en "Desafíos Científicos".
              <br><br>
-             <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción.
+             <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción desde la dirección <font color="#2E9AFE">desafios.cientificos@gmail.com</font><br> Por favor, verifique que el correo no haya ido a la carpeta SPAM.<hr>
              <!-- prueba de botón para dirigir a inscripción de estudiantes -->
-             <br><br>
+
              Si desea inscribir ahora a sus estudiantes, haga clic en el botón siguiente: <a class="btn btn-success" href="/preinscripcionEstudiantes" role="button">Inscribir estudiantes</a>
              <!-- fin prueba de botón  -->
              </h5>
@@ -83,8 +84,8 @@
       <small class="form-text text-muted">Ingrese su fecha de nacimiento</small>
   </div>
   <div class="form-group col-sm-3">
-    <input type="text" name="celular" class="form-control" placeholder="Teléfono">
-    <small class="form-text text-muted">Ingrese un teléfono de contacto (preferentemente su número de celular)</small>
+    <input type="text" name="celular" class="form-control" placeholder="Celular">
+    <small class="form-text text-muted">Ingrese su celular de contacto (lo utilizaremos solo para localizarlo dentro del evento)</small>
   </div>
   </div>
   <!-- fin de la segunda línea del formulario -->

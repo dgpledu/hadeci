@@ -65,7 +65,7 @@ de un total de
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
+          <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
           <th scope="col">Breve CV</th>

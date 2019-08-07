@@ -36,19 +36,38 @@ Route::get('/inscripcion', function () {
     return view('inscripcion');
 });
 
+// Prueba a ver si se necesita también
+
+Route::get('/acreditacion', function () {
+    return view('acreditacion');
+});
+// fin de prueba
+
 Route::get("/consultaEstablecimientos", "EscuelasParticipantesController@listadotodas");
 Route::get("/acreditarEstudiantes", "EstudiantesController@acreditacion");
 Route::post("/estudiantesAcreditados", "EstudiantesController@acreditados");
 
-Route::get("/acreditarEstudiantesDia1", "EstudiantesController@acreditacionDia1");
-Route::post("/estudiantesAcreditadosDia1", "EstudiantesController@acreditadosDia1");
+Route::get("/acreditarEstudiantesDia1", "EstudiantesController@acreditacionDia1")->middleware("auth");
+Route::post("/estudiantesAcreditadosDia1", "EstudiantesController@acreditadosDia1")->middleware("auth");
 
-Route::get("/acreditarEstudiantesDia2", "EstudiantesController@acreditacionDia2");
-Route::post("/estudiantesAcreditadosDia2", "EstudiantesController@acreditadosDia2");
+// Prueba de acreditar docentes
+Route::get("/acreditacionDocentesDia1", "DocentesController@acreditarDia1")->middleware("auth");
+Route::post("/acreditacionDocentesDia1", "DocentesController@confirmarDia1")->middleware("auth");
+// fin prueba acreditar docentes
+
+// Route::get("/acreditarDocentesDia1", "DocentesController@porDNI");// probando ANDA como listado...
+Route::post("/estudiantesDocentesDia1", "DocentesController@acreditadosDia1");
+// fin otra prueba acreditar docentes
+Route::get("/acreditarEstudiantesDia2", "EstudiantesController@acreditacionDia2")->middleware("auth");
+Route::post("/estudiantesAcreditadosDia2", "EstudiantesController@acreditadosDia2")->middleware("auth");
 
 Route::get("/consultaEscuelasParticipantes", "EscuelasParticipantesController@consultaactivas")->middleware("auth");
 Route::get("/consultaTutores", "TutoresController@consulta")->middleware("auth");
 Route::get("/listadoTutores", "TutoresController@listado")->middleware("auth");
+Route::get("/listadoDocentes", "DocentesController@listado")->middleware("auth");
+Route::get("/listadoDocentesD1", "DocentesController@listadoD1")->middleware("auth");
+Route::get("/listadoDocentesD2", "DocentesController@listadoD2")->middleware("auth");
+Route::get("/listadoDocentesD1D2", "DocentesController@listadoD1D2")->middleware("auth");
 Route::get("/listadoMentores", "OtrosController@listadoMentores")->middleware("auth");
 Route::get("/listadoJurados", "OtrosController@listadoJurados")->middleware("auth");
 Route::get("/listadoDisertantes", "OtrosController@listadoDisertantes")->middleware("auth");
@@ -68,7 +87,8 @@ Route::get("/listadoEstudiantesPresentesDia2", "EstudiantesController@listadoEst
 Route::get("/estudiantesPorEscuela", "EstudiantesController@PorEscuelaActiva")->middleware("auth");
 Route::get("/estudiantesPorGrupo", "EstudiantesController@PorGrupo")->middleware("auth");
 // agregado a ver si funciona
-Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido");
+Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido")->middleware("auth");
+// Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido");
 // Route::get("/inscripcionPropuestas", "PropuestasController@PorGrupo")->middleware("auth");
 // fin de agregado
 Route::get("/consultaPorDesafio", "DesafiosController@consulta")->middleware("auth");

@@ -60,16 +60,20 @@
       </button>
         <small id="emailHelp" class="form-text text-muted">Elegir el tipo de listado a visualizar seleccionando una de las opciones</small>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="/listadoTutores">Listado de tutores</a>
-        <a class="dropdown-item" href="/listadoMentores">Listado de mentores</a>
-        <a class="dropdown-item" href="/listadoJurados">Listado de jurados</a>
-        <a class="dropdown-item" href="/listadoDisertantes">Listado de disertantes</a>
-        <a class="dropdown-item" href="/listadoOrganizadores">Listado de organizadores</a>
-        <a class="dropdown-item" href="/listadoAutoridades">Listado de autoridades</a>
-        <a class="dropdown-item" href="/listadoColaboradores">Listado de colaboradores</a>
-        <a class="dropdown-item" href="/listadoInvitados">Listado de invitados</a>
-        <a class="dropdown-item" href="/listadoProveedores">Listado de proveedores</a>
-        <a class="dropdown-item" href="/listadoEscuelas">Listado de escuelas participantes</a>
+        <a class="dropdown-item" href="/listadoDocentes">Listado de docentes inscriptos</a>
+        <a class="dropdown-item" href="/listadoDocentesD1">Listado de docentes presentes (día 1)</a>
+        <a class="dropdown-item" href="/listadoDocentesD2">Listado de docentes presentes (día 2)</a>
+        <a class="dropdown-item" href="/listadoDocentesD1D2">Listado de docentes presentes ambos días</a>
+        <a class="dropdown-item" href="/listadoTutores">Listado de tutores inscriptos</a>
+        <a class="dropdown-item" href="/listadoMentores">Listado de mentores inscriptos</a>
+        <a class="dropdown-item" href="/listadoJurados">Listado de jurados inscriptos</a>
+        <a class="dropdown-item" href="/listadoDisertantes">Listado de disertantes inscriptos</a>
+        <a class="dropdown-item" href="/listadoOrganizadores">Listado de organizadores inscriptos</a>
+        <a class="dropdown-item" href="/listadoAutoridades">Listado de autoridades inscriptas</a>
+        <a class="dropdown-item" href="/listadoColaboradores">Listado de colaboradores inscriptos</a>
+        <a class="dropdown-item" href="/listadoInvitados">Listado de invitados inscriptos</a>
+        <a class="dropdown-item" href="/listadoProveedores">Listado de proveedores inscriptos</a>
+        <a class="dropdown-item" href="/listadoEscuelas">Listado de escuelas inscriptas</a>
         <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia1">Listado de estudiantes presentes (día 1)</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia2">Listado de estudiantes presentes (día 2)</a>

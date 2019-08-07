@@ -47,11 +47,12 @@ class OtrosController extends Controller
       "apellido" => "required|string|max:255",
       "cuilcuit" => "required|integer",
       "email" => "required|email",
-      "fecha_nac" => "required|date",
+      "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22",
       "instit_rep" => "required|string|max:45",
       "breveCV" => "required|string|max:255",
-      "area_expertise" => "required|string|max:40",
+      "area_expertise1" => "required|string|max:40",
+      "area_expertise2" => "required|string|max:40|different:area_expertise1",
       "exp_robotica" => "required|string|max:2",
       "exp_program" => "required|string|max:2",
       "foto_mentor" => "required|image|max:5000",
@@ -70,7 +71,8 @@ class OtrosController extends Controller
     $otro["contacto"] = $req["contacto"];
     $otro["instit_rep"] = $req["instit_rep"];
     $otro["CV"] = $req["breveCV"];
-    $otro["area_expertise"] = $req["area_expertise"];
+    $otro["area_expertise1"] = $req["area_expertise1"];
+    $otro["area_expertise2"] = $req["area_expertise2"];
     $otro["exp_robotica"] = $req["exp_robotica"];
     $otro["exp_program"] = $req["exp_program"];
 // esto lo agregué después de ver el video de validación de Darío y funciona perfecto!!
@@ -107,7 +109,7 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
       "apellido" => "required|string|max:255",
       "cuilcuit" => "required|integer",
       "email" => "required|email",
-      "fecha_nac" => "required|date",
+      "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22"
       // "foto_organizador" => "required|image|max:5000"
 
@@ -149,13 +151,13 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
   public function registrarAutoridades(Request $req) {
     $this->validate($req, [
       "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255"
-      // "cuilcuit" => "required|integer",
-      // "email" => "required|email",
-      // "fecha_nac" => "required|date",
-      // "celular" => "required|string|max:22",
-      // "instit_rep" => "required|string|max:45",
-      // "breveCV" => "required|string|max:255",
+      "apellido" => "required|string|max:255",
+      "cuilcuit" => "sometimes|nullable|integer",
+      "email" => "sometimes|nullable||email",
+      "fecha_nac" => "sometimes|nullable|date|after:01-01-1900|before:30-09-2001",
+      "celular" => "sometimes|nullable|string|max:22",
+      "instit_rep" => "sometimes|nullable|string|max:45",
+      "breveCV" => "sometimes|nullable|string|max:255"
       // "foto_autoridad" => "required|image|max:5000"
 
     ]);
@@ -170,27 +172,27 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $otro["instit_rep"] = $req["instit_rep"];
     $otro["CV"] = $req["breveCV"];
 // esto lo agregué después de ver el video de validación de Darío y funciona perfecto!!
-    $ruta = $req["foto_autoridad"]->store("public");
-    $nombreArchivo = basename($ruta);
-$otro["nom_foto"] = $nombreArchivo;
-$otro["dir_foto"] = $ruta;
+//     $ruta = $req["foto_autoridad"]->store("public");
+//     $nombreArchivo = basename($ruta);
+// $otro["nom_foto"] = $nombreArchivo;
+// $otro["dir_foto"] = $ruta;
 // fin de lo agregado después de ver el video
 
     $otro["rol"] = "Autoridad";
 
     $otro->save();
 
-    try {
-      \Mail::to($otro)->send(new Bienvenidoautoridad);
-    } catch (\Exception $e) {
-      $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
-      return $e;
-    }
+    // try {
+    //   \Mail::to($otro)->send(new Bienvenidoautoridad);
+    // } catch (\Exception $e) {
+    //   $e = "No se pudo enviar el mail. Revise su conexión a Internet. Si aún así continúa el error, escríbanos a desafios.cientificos@bue.edu.ar";
+    //   return $e;
+    // }
 
     return redirect("/inscripcionAutoridades")
     ->with([
     "estado" => $req["nombre"] ." ". $req["apellido"],
-    "correo" => $req["email"],
+    // "correo" => $req["email"],
     ])
     ;
   }
@@ -201,8 +203,8 @@ $otro["dir_foto"] = $ruta;
       "apellido" => "required|string|max:255",
       "cuilcuit" => "required|integer",
       "email" => "required|email",
-      "fecha_nac" => "required|date",
-      "celular" => "required|string|max:22",
+      "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
+      "celular" => "sometimes|nullable|string|max:22",
       "contacto" => "required|string|max:45"
 
     ]);
@@ -241,8 +243,8 @@ $otro["dir_foto"] = $ruta;
       "apellido" => "required|string|max:255",
       "cuilcuit" => "required|integer",
       "email" => "required|email",
-      "fecha_nac" => "required|date",
-      "celular" => "required|string|max:22",
+      "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
+      "celular" => "sometimes|nullable|string|max:22",
       "instit_rep" => "required|string|max:45",
       "contacto" => "required|string|max:45"
     ]);
@@ -281,7 +283,7 @@ $otro["dir_foto"] = $ruta;
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
       "cuilcuit" => "required|integer",
-      "fecha_nac" => "required|date",
+      "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "email" => "required|email",
       "celular" => "required|string|max:22",
       "instit_rep" => "required|string|max:45"
@@ -322,10 +324,10 @@ $otro["dir_foto"] = $ruta;
       "apellido" => "required|string|max:255",
       "cuilcuit" => "required|integer",
       "email" => "required|email",
-      "fecha_nac" => "required|date",
+      "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22",
       "breveCV" => "required|string|max:255",
-        "foto_jurado" => "required|image|max:5000"
+      "foto_jurado" => "required|image|max:5000"
 
     ]);
 
@@ -371,7 +373,7 @@ $otro["dir_foto"] = $ruta;
       "apellido" => "required|string|max:255",
       "cuilcuit" => "required|integer",
       "email" => "required|email",
-      "fecha_nac" => "required|date",
+      "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22",
       "titulo_charla" => "required|string|max:45",
       "descrip_charla" => "required|string|max:255",

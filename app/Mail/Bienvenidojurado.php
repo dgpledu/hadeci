@@ -38,7 +38,7 @@ class Bienvenidojurado extends Mailable
 public function build()
 {
     return $this->attach('https://cienciascontic.github.io/archivos/autorizacion_de_imagen_2019_hackaton.pdf')
-                ->subject('Bienvenido jurado!')->view('emails.bienvenidojurado');
+                ->subject('¡Bienvenido/a al hackatón Desafíos Científicos!')->view('emails.bienvenidojurado');
 
 }
 

@@ -114,17 +114,14 @@
           <li class="nav-item">
             <a class="nav-link" href="mailto:desafios.cientificos@bue.edu.ar"><b>Contacto</b></a>
           </li>
-          <!-- Módulo de login oculto hasta resolver tema servidor
-          <li class="nav-item">
-            <a class="nav-link" href="login.php"><b>Login</b></a>
-          </li>
-           fin módulo de login -->
-            <li class="nav-item">
+<!-- Cajita de búsqueda (la tuve que sacar porque no funcionaba) -->
+            {{-- <li class="nav-item">
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" style="margin-left:155px" type="search" placeholder="¿Qué buscás?" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
           </form>
-        </li>
+        </li> --}}
+        <!-- Fin de cajita de búsqueda -->
         </ul>
       </div>
     </nav>

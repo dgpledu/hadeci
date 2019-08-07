@@ -47,7 +47,13 @@ El estudiante
       </div>
   @endif
 
-    <h6>Ingrese su DNI y luego haga clic en el botón <kbd style="background-color:#808080";>Ir al formulario</kbd> para realizar la carga de datos de estudiantes:</h6>
+
+<h6><b>¡ATENCIÓN!:</b>  Para poder inscribir estudiantes, debe haberse <b>inscripto previamente</b> como docente en el hackatón actual, si no, el sistema tomará su DNI como inválido (la inscripción de años anteriores no sirve). <br> <br>
+  Si aún no está inscripto/a, haga clic <kbd style="background-color:#808080";><a href="/inscripcionDocentes" style="color:white"; >en éste enlace</a></kbd>  para ir a la página de inscripción de docentes.
+</h6>
+
+
+    {{-- <h6></h6> --}}
   <!-- Inicio sección datos del docente registrante -->
   <div class="form-row">
         <div class="form-group col-sm-4">
@@ -55,9 +61,9 @@ El estudiante
           <form class="form-group pt-2" action="/preinscripcionEstudiantes" method="post">
                     {{-- <form class="form-group pt-2" action="/inscripcionEstudiantes" method="get"> --}} <!-- esto era cuando validaba el DNI del docente en la página de INSCRIPCIÓN -->
             {{ csrf_field() }}
-          <input type="number" name="dnidocente" class="form-control" placeholder="DNI del docente registrante">
-            <small class="form-text text-muted"><b>¡ATENCIÓN!:</b>  Para poder inscribir estudiantes, debe haberse inscripto previamente como docente en el hackatón actual, si no, el sistema tomará su DNI como inválido (la inscripción de años anteriores no sirve). <br> <br>
-              Si aún no está inscripto/a, haga clic <kbd style="background-color:#808080";><a href="/inscripcionDocentes" style="color:white"; >en éste enlace</a></kbd>  para ir a la página de inscripción de docentes.</small>
+<small class="form-text text-muted">1. Ingrese el número de DNI</small>
+          <input type="number" name="dnidocente" class="form-control" placeholder="DNI del docente registrante"><br>
+            <small class="form-text text-muted">2. Haga clic en el botón verde ubicado a continuación, para acceder al <b>formulario</b> donde realizar la carga de datos de sus estudiantes.</small>
             <div class="form-group col-sm-3">
               <br>
               <button type="submit" name="" class="btn btn-success">Ir al formulario</button>
