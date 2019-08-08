@@ -33,6 +33,7 @@
           </button>
             <small id="emailHelp" class="form-text text-muted">Elegir la consulta a realizar seleccionando una de las opciones</small>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/estudiantesPorApellido">Estudiantes por apellido</a>
             <a class="dropdown-item" href="/estudiantesPorDocente">Estudiantes por docente (por DNI)</a>
             <a class="dropdown-item" href="/estudiantesPorEscuela">Estudiantes por escuela</a>
             <a class="dropdown-item" href="/estudiantesPorGrupo">Estudiantes por grupo</a>
@@ -64,6 +65,7 @@
         <a class="dropdown-item" href="/listadoDocentesD1">Listado de docentes presentes (día 1)</a>
         <a class="dropdown-item" href="/listadoDocentesD2">Listado de docentes presentes (día 2)</a>
         <a class="dropdown-item" href="/listadoDocentesD1D2">Listado de docentes presentes ambos días</a>
+        <a class="dropdown-item" href="/listadoDocentesTotales">Listado de docentes totales</a>
         <a class="dropdown-item" href="/listadoTutores">Listado de tutores inscriptos</a>
         <a class="dropdown-item" href="/listadoMentores">Listado de mentores inscriptos</a>
         <a class="dropdown-item" href="/listadoJurados">Listado de jurados inscriptos</a>

@@ -45,7 +45,11 @@ La inscripción de
   @endif
 
 <h6><span class="text-body"><b>INSTRUCTIVO:</b></span><span class="text-secondary"> A continuación podrá cargar los datos de sus estudiantes, uno tras otro. Al finalizar cada carga, haga clic en el botón <kbd style="background-color:#0275d8";>Inscribir estudiante</kbd> (ubicado al final de este formulario) y verá un mensaje en pantalla confirmando que el/la estudiante fue inscripto/a correctamente. <br>
-Luego de un envío, el formulario se limpiará y podrá cargar los datos para el/la siguiente estudiante. En caso de que usted necesite registrar estudiantes de diferentes escuelas, deberá primero inscribirse como docente de cada una de ellas (completando un formulario de inscripción como docente por cada institución con la que participará). <br><br>Al final de este formulario de inscripción de estudiantes podrá seleccionar la escuela correspondiente de una lista desplegable.</span> </h6>
+Luego de un envío, el formulario se limpiará y podrá cargar los datos para el/la siguiente estudiante. <br><br>Recuerde que en caso de que necesite registrar <b>estudiantes de diferentes escuelas</b>, deberá primero inscribirse como docente de cada una de ellas (completando un formulario de inscripción como docente por cada institución con la que participará).
+
+{{-- Luego, al final de este formulario de inscripción de estudiantes podrá seleccionar la escuela correspondiente de una lista desplegable. --}}
+
+</span> </h6>
 
 <hr>
 

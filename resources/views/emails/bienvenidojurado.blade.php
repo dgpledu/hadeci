@@ -193,7 +193,7 @@
                         <table role="presentation" width="100%" class="responsive-table">
                           <tbody><tr>
                             <td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;">
-                              <span style="color: #2F2F33; font-weight: bold;">Desafíos y asignación de equipos de estudiantes</span><br />
+                              <span style="color: #2F2F33; font-weight: bold;">Desafíos del hackatón y rol del jurado</span><br />
                               A partir del 20/09 el coordinador de jurados le enviará información acerca de los desafíos por temática.<br>El jurado está convocado en el evento el día <b>miércoles 2/10 al mediodía</b>. Allí les informaremos en detalle acerca de su participación. La evaluación de los equipos está prevista hasta las <b>17:00 de ese día</b>.  <br><br>¡Gracias por sumarse a HDC19!
                             </td>
                           </tr>

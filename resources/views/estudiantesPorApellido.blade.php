@@ -29,6 +29,7 @@
 
 <div class="alert alert-secondary w-85" role="alert">
   <form class="form-group pt-2" action="" method="get">
+  {{-- <form class="form-group pt-2" action="" method="post"> --}}
     {{-- {{ csrf_field() }} --}}
     <input class="form-control-lg col-lg-4" type="text" name="busqueda_apellido_estudiante" value="" placeholder="apellido o parte del apellido">
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
@@ -47,19 +48,19 @@
                 $numorden++;
               @endphp
               <div class="card">
-                  <div class="card-header" style="background:#F2D333">{{$estudiante["apellido"]}}, {{$estudiante["nombre"]}}</div>
-                      <div class="card-body">
-                    <h5 class="card-title">DNI: {{$estudiante["DNI"]}}</h5>
-                    <p class="card-text">Escuela: {{$estudiante->escuela["nombre"]}}</p>
-                    <p class="card-text">Grupo: {{$estudiante->grupo["nombre"]}}</p>
-                    <p class="card-text">E-mail: {{$estudiante["email"]}}</p>
-                    <p class="card-text">Fecha de nacimiento: {{$estudiante["fecha_nac"]}}</p>
-                    <p class="card-text">Año: {{$estudiante["anio_cursa"]}}</p>
-                    <p class="card-text">Restricción alim.: {{$estudiante["restric_alim"]}}</p>
-            Datos de los padres
+                  <div class="card-header" style="background:#F2D333"><h5>{{$estudiante["apellido"]}}, {{$estudiante["nombre"]}}</h5></div>
+                      <div class="card-body" style="background:#c2f7bc">
+                    <p class="card-title"><b>DNI:</b> {{$estudiante["DNI"]}}</p>
+                    <p class="card-text"><b>Escuela:</b> {{$estudiante->escuela["nombre"]}}</p>
+                    <p class="card-text"><b>Grupo:</b> {{$estudiante->grupo["nombre"]}}</p>
+                    <p class="card-text"><b>E-mail:</b> {{$estudiante["email"]}}</p>
+                    <p class="card-text"><b>Fecha de nacimiento:</b> {{$estudiante["fecha_nac"]}}</p>
+                    <p class="card-text"><b>Año:</b> {{$estudiante["anio_cursa"]}}</p>
+                    <p class="card-text"><b>Restricción alim.:</b> {{$estudiante["restric_alim"]}}</p>
+            {{-- Datos de los padres
                     <p class="card-text">Padre/Madre/Enc: {{$estudiante["nom_padre"]}} {{$estudiante["ape_padre"]}}</p>
                     <p class="card-text">Teléfono: {{$estudiante["telefono_padre"]}}</p>
-                    <p class="card-text">Mail: {{$estudiante["mail_padre"]}}</p>
+                    <p class="card-text">Mail: {{$estudiante["mail_padre"]}}</p> --}}
 </div></div><br>
           @endforeach
 

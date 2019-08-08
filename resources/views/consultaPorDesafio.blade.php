@@ -81,12 +81,16 @@
 
 </div>
 
-</div>
 
+
+</div>
+<br>
+<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
 <!-- fin card -->
 
 
 </div>
+
 </div>
 </div>
 

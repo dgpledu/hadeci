@@ -21,7 +21,6 @@
   @if (Auth::check())
 <!-- Opción de menú: Acreditación D1 -->
       @if(Date(today()) < '2019-10-01 00:00:00') <!-- tiene que ser MENOR A -->
-
 <!-- Probando menú descolgable -->
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acreditación</a>
@@ -29,22 +28,22 @@
 <a class="dropdown-item" href="/acreditarEstudiantesDia1">Estudiantes</a>
 <div class="dropdown-divider"></div>
 <a class="dropdown-item" href="/acreditacionDocentesDia1">Docentes</a>
-<a class="dropdown-item" href="#">Tutores</a>
-<a class="dropdown-item" href="#">Mentores</a>
-<a class="dropdown-item" href="#">Jurados</a>
-<a class="dropdown-item" href="#">Organizadores</a>
-<a class="dropdown-item" href="#">Colaboradores</a>
-<a class="dropdown-item" href="#">Disertantes</a>
-<a class="dropdown-item" href="#">Invitados</a>
-<a class="dropdown-item" href="#">Proveedores</a>
-<a class="dropdown-item" href="#">Autoridades</a>
+<a class="dropdown-item" href="/acreditacionTutoresDia1">Tutores</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1"><i>Otros</i></a>
+{{-- <a class="dropdown-item" href="/acreditacionOtrosDia1">Mentores</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1">Jurados</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1">Organizadores</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1">Colaboradores</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1">Disertantes</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1">Invitados</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1">Proveedores</a>
+<a class="dropdown-item" href="/acreditacionOtrosDia1">Autoridades</a> --}}
 </div>
 </li>
 <!-- Fin prueba menú descolgable -->
 
-      {{-- <li class="nav-item">
-        <a class="nav-link" href="/acreditarEstudiantesDia1">Acreditación</a>
-      </li> --}}
+
+
     @endif
 
       <li class="nav-item"></li>

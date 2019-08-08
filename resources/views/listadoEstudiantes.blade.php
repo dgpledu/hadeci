@@ -11,7 +11,7 @@
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
-      
+
     <title>Listado de estudiantes</title>
   </head>
   <body>
@@ -99,7 +99,7 @@ de un total de
   </thead>
   <tbody>
     <tr>
-      <th scope="row">{{$estudiantes->links()}}</th>
+      <th scope="row">{{$estudiantes->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
     </tr>
   </tbody>
 </table>

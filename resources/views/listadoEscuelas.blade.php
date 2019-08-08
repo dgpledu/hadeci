@@ -77,7 +77,7 @@
   @endforeach
   </tbody>
 </table>
-{{$escuelasordenadas->links()}}
+{{$escuelasordenadas->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
 <!-- fin prueba de tabla -->
 </div>
 </div>

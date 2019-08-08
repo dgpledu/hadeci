@@ -18,63 +18,49 @@
 
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
 
+     {{-- <div class="jumbotron bg-light" > <!-- jumbotron secundario --> --}}
+      <!-- Dos columnas -->
+      {{-- <div class="row"> --}}
   <div class="col-sm-12 ml-auto">
     <div class="card">
 
     </div>
   </div>
+  <!-- Fin columna 1 -->
 
+<!-- Probando meter las búsquedas acá -->
 <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
 <div class="card-header" style="background:#f2d333"><h5>Acreditación</h5></div>
 <div class="card-body">
   <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
-        @if (session('estado'))
-             <div class="alert alert-success">
-        <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
-                <b> {{session('estado')}} </b>
-                ha confirmado su presencia en el día de la fecha.
-        </h5>
-             </div>
-         @endif
-<!-- Acá va la búsqueda propia de cada perfil -->
 
-<div class="alert alert-secondary w-85" role="alert">
-  <form class="form-group pt-2" action="" method="get">
-    {{-- {{ csrf_field() }} --}}
-    <input class="form-control-lg col-lg-4" type="text" name="busqueda_DNI_docente" value="" placeholder="DNI del docente">
-    <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
-    <small id="emailHelp" class="form-text text-muted">Tipee el DNI completo del docente a acreditar.</small>
-  </form>
-
-  @if ($resultados_d)
-        @foreach ($resultados_d->sortBy('apellido') as $docente)
-              <div class="card">
-                  <div class="card-header" style="background:#F2D333">
-                      {{$docente["apellido"]}}, {{$docente["nombre"]}}
-                  </div>
-
-                  <div class="card-body">
-                    <h5 class="card-title">DNI: {{$docente["DNI"]}}</h5>
-                    <p class="card-text">Escuela: {{$docente->escuela["nombre"]}}</p>
-                    <p class="card-text">E-mail: {{$docente["email"]}}</p>
-                        <form class="" method="post">
-                          {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" name="presente" value="Acreditarse">
-                        </form>
-                  </div>
-              </div>
-                      <br>
-          @endforeach
-   @endif
-
-</div>
-
-<!-- Fin búsqueda propia de cada perfil -->
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Docentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tutores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Estudiantes</a>
+          </li>
+          {{-- <li class="nav-item">
+            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Tutores</a>
+          </li> --}}
+        </ul>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
+<!-- Fin de meter las búsquedas acá -->
 
-
-</div></div></div></div></div>
+</div></div></div>
 
 </div><!-- fin del jumbotron secundario -->
 

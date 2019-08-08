@@ -92,7 +92,7 @@ de un total de
       </thead>
       <tbody>
         <tr>
-          <th scope="row">{{$tutores->links()}}</th>
+          <th scope="row">{{$tutores->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
         </tr>
       </tbody>
     </table>

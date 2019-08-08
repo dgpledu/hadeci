@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
         <!-- ¡Esto debe ir antes que ningún otro stylesheet!!! -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -12,7 +11,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes presentes Día 2</title>
+    <title>Acreditación tutores</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,76 +21,61 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes presentes en el hackatón Día 2</h4>
-    <h5>
-    <span class="badge badge-primary badge-pill">
-    {{ $estudiantesPresentesDia2->firstItem() }}
-    </span>
-    <span class="">
-    a
-    </span>
-    <span class="badge badge-primary badge-pill">
-    {{ $estudiantesPresentesDia2->lastItem() }}
-    </span>
-    <span class="">
-    de un total de
-    </span>
-    <span class="badge badge-primary badge-pill">
-    {{ $estudiantesPresentesDia2->total() }}
-    </span>
-    <!-- Fin de cartel x a y de un total de n elementos -->
-        </h5>
+          <h5>
+              Acreditación de tutores
+          </h5>
   </div>
+
   <div class="card-body">
-    <!-- tabla -->
-    @php
-      $numorden = ($estudiantesPresentesDia2->currentpage()-1)* $estudiantesPresentesDia2->perpage();
-    @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($estudiantesPresentesDia2 as $estudiante)
-          @php
-            $numorden++;
-          @endphp
-        <tr>
-          <th scope="row">{{ $numorden }}</th>
-          <td>{{$estudiante["apellido"]}}</td>
-          <td>{{$estudiante["nombre"]}}</td>
-          <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
-        </tr>
-      @endforeach
-      </tbody>
-    </table>
-    <!-- fin de tabla -->
-    <table class="table table-responsive table-striped">
-      <thead style="background:#F2D333">
-        <tr>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">{{$estudiantesPresentesDia2->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
-        </tr>
-      </tbody>
-    </table>
+    <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
+<!-- prueba para confirmar que está presente -->
+      @if (session('estado'))
+           <div class="alert alert-success">
+      <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
-    </div>
-    </div>
+              <b> {{session('estado')}} </b>
+              ha confirmado su presencia en el día de la fecha.
+      </h5>
+           </div>
+       @endif
+      <!-- Fin de prueba para confirmar que está presente -->
+
+<div class="alert alert-secondary w-85" role="alert">
+  <form class="form-group pt-2" action="" method="get">
+    {{-- {{ csrf_field() }} --}}
+    <input class="form-control-lg col-lg-4" type="text" name="busqueda_DNI_tutor" value="" placeholder="CUIL/CUIT del tutor">
+    <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
+    <small id="emailHelp" class="form-text text-muted">Tipee el CUIL/CUIT completo del tutor a acreditar (sin puntos ni guiones ni espacios)</small>
+  </form>
+  <!-- Prueba de ficha -->
+
+  @if ($resultados_t)
+        @foreach ($resultados_t->sortBy('Apellido') as $tutor)
+              <div class="card">
+                  <div class="card-header" style="background:#F2D333">
+                    <h5>  {{$tutor["Apellido"]}}, {{$tutor["Nombre"]}}</h5>
+                  </div>
+
+                  <div class="card-body">
+                    <h6 class="card-title"><b>CUIL/CUIT:</b> {{$tutor["DNI"]}}</h6>
+                    <p class="card-text"><b>Institución:</b> {{$tutor["instit_rep"]}}</p>
+                    <p class="card-text"><b>E-mail:</b> {{$tutor["email"]}}</p>
+                        <form class="" method="post">
+                          {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary" name="presente" value="Acreditarse">
+                        </form>
+                  </div>
+              </div>
+                      <br>
+          @endforeach
+   @endif
+
+</div>
+</div>
+</div>
+</div>
+</div>
 </div><!-- fin del jumbotron secundario -->
-
 @include('segundabarranav')
 
     <!-- Optional JavaScript -->
@@ -104,7 +88,8 @@
     <script src="/js/tableexport.min.js"></script>
   </body>
   <script>
-    var table = TableExport(document.getElementById("tabla-listado"), {
+    var table = TableExport(document.getElementById("tabla-listado"),
+    {
       formats: ["xls", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
       filename: "miListado",                     // (id, String), filename for the downloaded file, (default: 'id')
       bootstrap: true,

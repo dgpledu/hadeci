@@ -80,4 +80,28 @@ try {
 
   }
 
+  public function acreditarDia1(Request $req) {
+    if (isset($req["busqueda_DNI_tutor"])) {
+        $resultados_t = Tutor::where("DNI", $req["busqueda_DNI_tutor"])->get();
+        // dd($resultados_t);
+    } else {
+        $resultados_t = [];
+    }
+    return view("acreditacionTutoresDia1", compact("resultados_t"));
+  }
+
+  public function confirmarDia1(Request $req) {
+    if ($req["presente"] == "Acreditarse")
+          $tutoresPres = Tutor::where("DNI", "=", $req["busqueda_DNI_tutor"])->first();
+          $tutoresPres->pres_dia1 = 1;
+          $tutoresPres->save();
+          // dd($req["apellido"]);
+    return redirect("/acreditacionTutoresDia1")
+    ->with([
+      "estado" => $tutoresPres["Nombre"]." ".$tutoresPres["Apellido"],
+    ])
+    ;
+
+  }
+
 }

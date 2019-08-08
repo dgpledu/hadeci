@@ -43,6 +43,9 @@
 <b>Teléfono: </b>{{$escuela["telefono"]}}<br>
   =============================================<br>
 @endforeach
+
+<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
+
 </div>
 </div>
   @include('segundabarranav')

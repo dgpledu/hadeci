@@ -30,7 +30,7 @@ public function registrar(Request $req) {
             "apellido" => "required|string|max:40",
             "dni_docente" => "required|numeric|min:1000000|max:99999999|unique:docentes,DNI",
             "email_docente" => "required|email",
-            "fecha_nac_docente" => "required|date|before:2012",
+            "fecha_nac_docente" => "required|date|after:01-01-1900|before:30-09-2001",
             "celular" => "required|string|max:30",
             "restric_alim" => "required",
             "id_escuela" => "required|integer|exists:escuelas,ID"
@@ -74,7 +74,7 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
     "apellido" => "required|string|max:40",
     "dni_docente" => "required|unique:docentes,DNI|numeric|min:1000000|max:99999999",
     "email_docente" => "required|email",
-    "fecha_nac_docente" => "required|date|before:2012",
+    "fecha_nac_docente" => "required|date|after:01-01-1900|before:30-09-2001",
     "celular" => "required|string|max:30",
     "restric_alim" => "required",
     "id_escuela" => "required|integer|exists:escuelas,ID"
@@ -92,7 +92,7 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
           "apellido" => "required|string|max:40",
           "dni_docente" => "required|numeric|min:1000000|max:99999999|",
           "email_docente" => "required|email",
-          "fecha_nac_docente" => "required|date|before:2012",
+          "fecha_nac_docente" => "required|date|after:01-01-1900|before:30-09-2001",
           "celular" => "required|string|max:30",
           "restric_alim" => "required",
           "id_escuela" => "required|integer|exists:escuelas,ID"
@@ -182,6 +182,13 @@ $todoslosdocentesD1D2 = Docente::where("pres_dia1", "=", 1)
 ->orderBy('apellido')
 ->paginate(50);
   return view("listadoDocentesD1D2", compact("todoslosdocentesD1D2"));
+}
+
+public function listadoDocentesTotales(Request $req) {
+$docentestotales = Docente::where("pres_dia1", "=", 1, 'OR', "pres_dia2", "=", 1 )
+->orderBy('apellido')
+->paginate(50);
+  return view("listadoDocentesTotales", compact("docentestotales"));
 }
 
 public function PorDNI(Request $req) {

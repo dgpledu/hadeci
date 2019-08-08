@@ -132,7 +132,7 @@
 </div>
 </div>
 </div><!-- fin del jumbotron secundario -->
-
+</div></div></div>
 @include('segundabarranav')
 
     <!-- Optional JavaScript -->

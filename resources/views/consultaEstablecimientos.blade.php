@@ -56,7 +56,11 @@
 @endforeach
 @endif
 </div>
-</div></div></div>
+</div>
+
+<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
+
+</div></div>
 </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')

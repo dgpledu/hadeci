@@ -146,7 +146,7 @@ TableExport(document.getElementsByTagName("table"), {
       </thead>
       <tbody>
         <tr>
-          <th scope="row">{{$otros->links()}}</th>
+          <th scope="row">{{$otros->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
         </tr>
       </tbody>
     </table>

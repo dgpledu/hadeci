@@ -25,7 +25,7 @@
   </div>
 
 <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-<div class="card-header" style="background:#f2d333"><h5>Acreditación</h5></div>
+<div class="card-header" style="background:#f2d333"><h5>Acreditación otros (jurados, organizadores, colaboradores, disertantes, invitados, proveedores, autoridades)</h5></div>
 <div class="card-body">
   <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
         @if (session('estado'))
@@ -33,7 +33,7 @@
         <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
                 <b> {{session('estado')}} </b>
-                ha confirmado su presencia en el día de la fecha.
+                ha confirmado su presencia como <b>{{session('rol')}}</b> en el día de la fecha.
         </h5>
              </div>
          @endif
@@ -42,22 +42,34 @@
 <div class="alert alert-secondary w-85" role="alert">
   <form class="form-group pt-2" action="" method="get">
     {{-- {{ csrf_field() }} --}}
-    <input class="form-control-lg col-lg-4" type="text" name="busqueda_DNI_docente" value="" placeholder="DNI del docente">
+    <input class="form-control-lg col-lg-4" type="text" name="busqueda_cuilcuit_otro" value="" placeholder="CUIL/CUIT de la persona">
+
+<!-- prueba para especificar el rol -->
+<select class="form-control" name="rol">
+  <option value="" selected>Seleccione el rol a acreditar</option>
+  <option>Jurado</option>
+  <option>Disertante</option>
+</select>
+<!-- fin de prueba para especificar el rol -->
+
+
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
-    <small id="emailHelp" class="form-text text-muted">Tipee el DNI completo del docente a acreditar.</small>
+    <small id="emailHelp" class="form-text text-muted">Tipee el CUIL/CUIT completo de la persona a acreditar (sin puntos ni guiones ni espacios)</small>
   </form>
 
-  @if ($resultados_d)
-        @foreach ($resultados_d->sortBy('apellido') as $docente)
+  @if ($resultados_o)
+        @foreach ($resultados_o->sortBy('apellido') as $otro)
               <div class="card">
                   <div class="card-header" style="background:#F2D333">
-                      {{$docente["apellido"]}}, {{$docente["nombre"]}}
+                    <h5>  {{$otro["apellido"]}}, {{$otro["nombre"]}}</h5>
                   </div>
 
                   <div class="card-body">
-                    <h5 class="card-title">DNI: {{$docente["DNI"]}}</h5>
-                    <p class="card-text">Escuela: {{$docente->escuela["nombre"]}}</p>
-                    <p class="card-text">E-mail: {{$docente["email"]}}</p>
+                    <h6 class="card-title"><b>CUIL/CUIT:</b> {{$otro["cuilcuit"]}}</h6>
+                    <p class="card-text"><b>Rol:</b> {{$otro["rol"]}}</p>
+                    <p class="card-text"><b>Institución:</b> {{$otro["instit_rep"]}}</p>
+                    <p class="card-text"><b>Contacto:</b> {{$otro["contacto"]}}</p>
+                    <p class="card-text"><b>E-mail:</b> {{$otro["email"]}}</p>
                         <form class="" method="post">
                           {{ csrf_field() }}
                             <input type="submit" class="btn btn-primary" name="presente" value="Acreditarse">

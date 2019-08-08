@@ -45,7 +45,7 @@ class OtrosController extends Controller
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
+      "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22",
@@ -107,7 +107,7 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
+      "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22"
@@ -152,7 +152,7 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "sometimes|nullable|integer",
+      "cuilcuit" => "sometimes|nullable|integer|max:999999999999|min:10000000",
       "email" => "sometimes|nullable||email",
       "fecha_nac" => "sometimes|nullable|date|after:01-01-1900|before:30-09-2001",
       "celular" => "sometimes|nullable|string|max:22",
@@ -201,7 +201,7 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
+      "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "sometimes|nullable|string|max:22",
@@ -241,7 +241,7 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
+      "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "sometimes|nullable|string|max:22",
@@ -282,7 +282,7 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
+      "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "email" => "required|email",
       "celular" => "required|string|max:22",
@@ -322,7 +322,7 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
+      "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22",
@@ -367,16 +367,45 @@ $otro["dir_foto"] = $ruta;
     ;
   }
 
+  public function acreditarOtroDia1(Request $req) {
+    if (isset($req["busqueda_cuilcuit_otro"])) {
+        $resultados_o = Otro::where("cuilcuit", $req["busqueda_cuilcuit_otro"])
+        ->where("pres_dia1", "=", 0)
+        ->where("rol", "=", $req["rol"])->get();
+        // dd($resultados_o);
+    } else {
+        $resultados_o = [];
+    }
+    return view("acreditacionOtrosDia1", compact("resultados_o"));
+  }
+
+  public function confirmarOtroDia1(Request $req) {
+    if ($req["presente"] == "Acreditarse")
+          $otrosPres = Otro::where("cuilcuit", "=", $req["busqueda_cuilcuit_otro"])
+          ->where("rol", "=", $req["rol"])->first();
+          $otrosPres->pres_dia1 = 1;
+          $otrosPres->save();
+          // dd($req["apellido"]);
+    return redirect("/acreditacionOtrosDia1")
+    ->with([
+      "estado" => $otrosPres["nombre"]." ".$otrosPres["apellido"],
+      "rol" => $otrosPres["rol"],
+    ])
+    ;
+
+  }
+
   public function registrarDisertantes(Request $req) {
     $this->validate($req, [
       "nombre" => "required|string|max:255",
       "apellido" => "required|string|max:255",
-      "cuilcuit" => "required|integer",
+      "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|string|max:22",
       "titulo_charla" => "required|string|max:45",
       "descrip_charla" => "required|string|max:255",
+      "instit_rep" => "required|string|max:50",
       "breveCV" => "required|string|max:255",
       "foto_disertante" => "required|image|max:5000"
 
@@ -390,6 +419,7 @@ $otro["dir_foto"] = $ruta;
     $otro["email"] = $req["email"];
     $otro["celular"] = $req["celular"];
     $otro["titulo_charla"] = $req["titulo_charla"];
+    $otro["instit_rep"] = $req["instit_rep"];
     $otro["descrip_charla"] = $req["descrip_charla"];
     $otro["CV"] = $req["breveCV"];
 // esto lo agregué después de ver el video de validación de Darío y funciona perfecto!!

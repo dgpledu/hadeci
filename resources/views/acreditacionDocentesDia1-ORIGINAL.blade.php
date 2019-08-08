@@ -1,43 +1,40 @@
-
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
         <!-- ¡Esto debe ir antes que ningún otro stylesheet!!! -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
+      <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Consultas</title>
+    <title>Acreditación docentes</title>
   </head>
   <body>
   @include('primerabarranav')
 
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
+  <!-- Formulario de inscripción -->
+  <!-- Cabecera -->
+  <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
+  <div class="card-header" style="background:#f2d333"><h5>Acreditación de docentes</h5></div>
+  <div class="card-body">
 
-  <div class="col-sm-12 ml-auto">
-    <div class="card">
+    <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
+<!-- prueba para confirmar que está presente -->
+      @if (session('estado'))
+           <div class="alert alert-success">
+      <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
-    </div>
-  </div>
-
-<div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-<div class="card-header" style="background:#f2d333"><h5>Acreditación</h5></div>
-<div class="card-body">
-  <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
-        @if (session('estado'))
-             <div class="alert alert-success">
-        <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
-
-                <b> {{session('estado')}} </b>
-                ha confirmado su presencia en el día de la fecha.
-        </h5>
-             </div>
-         @endif
-<!-- Acá va la búsqueda propia de cada perfil -->
+              <b> {{session('estado')}} </b>
+              ha confirmado su presencia en el día de la fecha.
+      </h5>
+           </div>
+       @endif
+      <!-- Fin de prueba para confirmar que está presente -->
 
 <div class="alert alert-secondary w-85" role="alert">
   <form class="form-group pt-2" action="" method="get">
@@ -46,6 +43,7 @@
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
     <small id="emailHelp" class="form-text text-muted">Tipee el DNI completo del docente a acreditar.</small>
   </form>
+  <!-- Prueba de ficha -->
 
   @if ($resultados_d)
         @foreach ($resultados_d->sortBy('apellido') as $docente)
@@ -69,21 +67,31 @@
    @endif
 
 </div>
-
-<!-- Fin búsqueda propia de cada perfil -->
-    </div>
-
-
-</div></div></div></div></div>
-
+</div>
+</div>
+</div>
+</div>
 </div><!-- fin del jumbotron secundario -->
-
 @include('segundabarranav')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blob-polyfill/4.0.20190430/Blob.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.6/xls.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+
+    <script src="/js/tableexport.min.js"></script>
   </body>
+  <script>
+    var table = TableExport(document.getElementById("tabla-listado"),
+    {
+      formats: ["xls", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
+      filename: "miListado",                     // (id, String), filename for the downloaded file, (default: 'id')
+      bootstrap: true,
+      position: 'bottom'                   // (Boolean), style buttons using bootstrap, (default: true)
+      // exportButtons: true,                // (Boolean), automatically generate the built-in export buttons for each of the specified formats (default: true)
+      // position: 'bottom'                 // (top, bottom), position of the caption element relative to table, (default: 'bottom')
+    });
+    </script>
 </html>

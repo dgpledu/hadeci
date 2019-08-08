@@ -70,7 +70,7 @@ de un total de
           <th scope="col">Email</th>
           <th scope="col">Institución</th>
           <th scope="col">Breve CV</th>
-          <th scope="col">Foto</th>
+          {{-- <th scope="col">Foto</th> --}}
         </tr>
       </thead>
       <tbody>
@@ -88,7 +88,7 @@ de un total de
           <td><a href="mailto:{{$otro["email"]}}">{{$otro["email"]}}</a></td>
           <td>{{$otro["instit_rep"]}}</td>
           <td>{{$otro["CV"]}}</td>
-          <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td>
+          {{-- <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td> --}}
         </tr>
       @endforeach
       </tbody>
@@ -150,7 +150,7 @@ TableExport(document.getElementsByTagName("table"), {
       </thead>
       <tbody>
         <tr>
-          <th scope="row">{{$otros->links()}}</th>
+          <th scope="row">{{$otros->links()}} <a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
         </tr>
       </tbody>
     </table>

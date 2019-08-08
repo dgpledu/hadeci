@@ -151,7 +151,7 @@
            <p class="card-text">
 
              Desafíos Científicos es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas. <br>
-             Los estudiantes trabajan en equipos <b>(5 a 8 integrantes cada uno)</b> para encontrar soluciones a problemas actuales vinculados al enfoque de ciencia y tecnología en sociedad.<br><br>
+             <br>Los estudiantes trabajan en equipos <b>(5 a 8 integrantes cada uno)</b> para encontrar soluciones a problemas actuales vinculados al enfoque de ciencia y tecnología en sociedad.<br><br>
              Durante la actividad se promueve la imaginación, el trabajo colaborativo y el “espíritu emprendedor”.
 
 
@@ -189,9 +189,9 @@ No se requieren conocimientos previos.
            <p class="card-text">
 
 
-             Para participar en <b>Desafíos Científicos</b> se debe realizar la inscripción correspondiente. Cada estudiante debe ser registrado por un docente o directivo de la institución escolar a la que pertenece.
-             Los cupos son limitados. Las vacantes serán confirmadas a partir del <b>20/09</b>.
-             No es necesario llevar al evento ningún elemento en especial, aunque es más que bienvenido si desean concurrir con sus dispositivos portátiles como smartphones, netbooks o tablets.
+             Para participar en Desafíos Científicos se debe realizar la inscripción correspondiente. <b>Cada estudiante debe ser registrado por un docente o directivo</b> de la institución escolar a la que pertenece.
+             Los cupos son limitados. <br>
+             <br>No es necesario llevar al evento ningún elemento en especial, aunque es más que bienvenido si desean concurrir con sus dispositivos portátiles como smartphones, netbooks o tablets.
 
 
              {{-- Para participar en Desafíos Científicos se debe realizar la inscripción correspondiente. Cada estudiante debe registrarse a través de un docente o de otro personal responsable de la institución escolar. Para participar no es necesario llevar ningún elemento en especial aunque está más que bienvenido si desean llevar sus dispositivos portátiles como smartphones, netbooks o tablets. --}}
@@ -214,7 +214,7 @@ No se requieren conocimientos previos.
 
 
              <span h6>Edición 2019:</span h6> <b>martes 1 y miércoles 2 de octubre (8:30 a 17:00)</b>.
-             El evento se lleva a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas.
+             <br><br>El evento se lleva a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas.
 
 
 {{-- El evento se lleva a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas. --}}
@@ -272,7 +272,7 @@ No se requieren conocimientos previos.
          <img class="card-img-top" src="/imgs/hdc2017-6.jpg" alt="estudiantes en hackatón">
          <div class="card-body">
            <h5 class="card-title"><a name="equipo_organizador">Equipo organizador</a></h5>
-           <p class="card-text">El hackatón Desafíos Científicos está organizador por el <a href="http://www.buenosaires.gob.ar/educacion/escuelas/planeamiento-educativo/enlace-ciencias" target="_blank">Programa Enlace Ciencias</a>, una iniciativa para la mejora de la enseñanza de las ciencias y la tecnología. Enlace Ciencias es impulsado por la <a href="http://www.buenosaires.gob.ar/educacion/institucional-subsecretaria-de-planeamiento-e-innovacion-educativa/dg-planeamiento-educativo" target="_blank">Dirección General de Planeamiento Educativo</a> del Ministerio de Educación e Innovación del Gobierno de la Ciudad Autónoma de Buenos Aires.</p>
+           <p class="card-text">El hackatón Desafíos Científicos está organizador por el <a href="http://www.buenosaires.gob.ar/educacion/escuelas/planeamiento-educativo/enlace-ciencias" target="_blank">Programa Enlace Ciencias</a>, una iniciativa para la mejora de la enseñanza de las ciencias y la tecnología. <br><br>Enlace Ciencias es impulsado por la <a href="http://www.buenosaires.gob.ar/educacion/institucional-subsecretaria-de-planeamiento-e-innovacion-educativa/dg-planeamiento-educativo" target="_blank">Dirección General de Planeamiento Educativo</a> del Ministerio de Educación e Innovación del Gobierno de la Ciudad Autónoma de Buenos Aires.</p>
          </div>
        </div> <!-- fin de tercera tarjeta -->
 

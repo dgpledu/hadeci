@@ -193,7 +193,7 @@
                         <table role="presentation" width="100%" class="responsive-table">
                           <tbody><tr>
                             <td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;">
-                              <span style="color: #2F2F33; font-weight: bold;">Desafíos y asignación de equipos de estudiantes</span><br />
+                              <span style="color: #2F2F33; font-weight: bold;">Desafíos y rol de mentores/as</span><br />
                               A partir del 20/09 la coordinadora de mentores le enviará información acerca de los desafíos por temática y el rol que desempeñarán los mentores durante el evento. <br><br>¡Gracias por sumarse a HDC19!
 
                             </td>
