@@ -30,7 +30,7 @@
         <b> {{session('estado')}}, </b>
         Se ha inscripto correctamente como <b>disertante</b> en "Desafíos Científicos".
         <br><br>
-        <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción.
+        <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción desde la dirección <font color="#2E9AFE">desafios.cientificos@gmail.com</font><br> Por favor, verifique que el correo no haya ido a la carpeta SPAM.<hr>
 
 </h5>
      </div>

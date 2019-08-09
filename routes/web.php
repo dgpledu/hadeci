@@ -36,6 +36,10 @@ Route::get('/inscripcion', function () {
     return view('inscripcion');
 });
 
+Route::get('/mentores', function () {
+    return view('mentoresPresentes');
+});
+
 // Prueba a ver si se necesita también
 
 Route::get('/acreditacion', function () {
@@ -52,6 +56,8 @@ Route::get('/acreditacionxmenu', function () {
 Route::get("/consultaEstablecimientos", "EscuelasParticipantesController@listadotodas");
 Route::get("/acreditarEstudiantes", "EstudiantesController@acreditacion");
 Route::post("/estudiantesAcreditados", "EstudiantesController@acreditados");
+
+Route::get("/mentores", "OtrosController@listadoMentoresPresentes");
 
 Route::get("/acreditarEstudiantesDia1", "EstudiantesController@acreditacionDia1")->middleware("auth");
 Route::post("/estudiantesAcreditadosDia1", "EstudiantesController@acreditadosDia1")->middleware("auth");

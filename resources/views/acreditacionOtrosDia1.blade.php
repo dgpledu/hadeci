@@ -25,7 +25,9 @@
   </div>
 
 <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-<div class="card-header" style="background:#f2d333"><h5>Acreditación otros (jurados, organizadores, colaboradores, disertantes, invitados, proveedores, autoridades)</h5></div>
+<div class="card-header" style="background:#f2d333"><h5>Acreditación otros (jurados, organizadores, colaboradores, disertantes, invitados, proveedores, autoridades)</h5>
+<span h6><img src="/imgs/alerta.png" style="height:40px">Para acreditar a las personas deberá seleccionar el rol con el que la persona se registró. Si lo hizo con más de un rol (por ejemplo "jurado" y "disertante"), es importante que acredite presencia con ambos roles. Si al ingresar el CUIL/CUIT, la persona no aparece en la consulta, puede deberse a que se acreditó con anterioridad. Para verificarlo puede acceder al listado por roles en la sección del menú <b>Consultas</b>.</span></h6>
+</div>
 <div class="card-body">
   <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
         @if (session('estado'))
@@ -45,13 +47,19 @@
     <input class="form-control-lg col-lg-4" type="text" name="busqueda_cuilcuit_otro" value="" placeholder="CUIL/CUIT de la persona">
 
 <!-- prueba para especificar el rol -->
-<select class="form-control" name="rol">
+<br><br>
+<select class="form-control col-lg-3" name="rol">
   <option value="" selected>Seleccione el rol a acreditar</option>
-  <option>Jurado</option>
+  <option>Colaborador</option>
   <option>Disertante</option>
+  <option>Invitado</option>
+  <option>Jurado</option>
+  <option>Organizador</option>
+  <option>Proveedor</option>
 </select>
-<!-- fin de prueba para especificar el rol -->
 
+<!-- fin de prueba para especificar el rol -->
+<br>
 
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
     <small id="emailHelp" class="form-text text-muted">Tipee el CUIL/CUIT completo de la persona a acreditar (sin puntos ni guiones ni espacios)</small>

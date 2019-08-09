@@ -13,7 +13,7 @@
                       <hr class="clearfix w-100 d-md-none pb-3">
                         <div class="col-md-3 mb-md-0 mb-3"></div>
                         <div class="col-md-3 mb-md-0 mb-3">
-                            <div class="footer-copyright text-right  py-3" style="color: gray; font-size: 13px;">Sistema HADECI v1.2 <br>©2019
+                            <div class="footer-copyright text-right  py-3" style="color: gray; font-size: 13px;">Sistema HADECI v1.3 <br>©2019
                               <a href="https://www.buenosaires.gob.ar/educacion/escuelas/planeamiento-educativo/enlace-ciencias"> Enlace Ciencias</a>
                             </div>
                         </div>

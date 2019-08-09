@@ -457,6 +457,13 @@ $todoslosmentores = Otro::all();
     return view("listadoMentores", compact("todoslosmentores", "otros"));
   }
 
+  public function listadoMentoresPresentes(Request $req) {
+$todoslosmentorespresentes = Otro::where('rol', 'Mentor')
+->where('pres_dia1', 1)->get();
+$otros = Otro::all();
+    return view("mentoresPresentes", compact("todoslosmentorespresentes", "otros"));
+  }
+
   public function listadoDisertantes(Request $req) {
   $otros = Otro::orderBy('apellido')->where('rol', 'Disertante')->paginate(10);
   $todoslosdisertantes = Otro::all();
