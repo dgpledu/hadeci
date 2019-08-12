@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
 
-    <title>Consultas</title>
+    <title>Acreditación</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -25,7 +25,7 @@
   </div>
 
 <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-<div class="card-header" style="background:#f2d333"><h5>Acreditación</h5></div>
+<div class="card-header" style="background:#f2d333"><h5>Acreditación de tutores (día 1)</h5></div>
 <div class="card-body">
   <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
         @if (session('estado'))

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
 
-    <title>Consultas</title>
+    <title>Acreditación</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -25,8 +25,8 @@
   </div>
 
 <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-<div class="card-header" style="background:#f2d333"><h5>Acreditación otros (jurados, organizadores, colaboradores, disertantes, invitados, proveedores, autoridades)</h5>
-<span h6><img src="/imgs/alerta.png" style="height:40px">Para acreditar a las personas deberá seleccionar el rol con el que la persona se registró. Si lo hizo con más de un rol (por ejemplo "jurado" y "disertante"), es importante que acredite presencia con ambos roles. Si al ingresar el CUIL/CUIT, la persona no aparece en la consulta, puede deberse a que se acreditó con anterioridad. Para verificarlo puede acceder al listado por roles en la sección del menú <b>Consultas</b>.</span></h6>
+<div class="card-header" style="background:#f2d333"><h5>Acreditación otros Día 1 (mentores, jurados, organizadores, colaboradores, disertantes, invitados, proveedores, autoridades)</h5>
+<span h6><img src="/imgs/alerta.png" style="height:40px">Para acreditar a las personas deberá seleccionar el rol con el que la persona se registró. Si lo hizo con más de un rol (por ejemplo "jurado" y "disertante"), es importante que acredite presencia con ambos roles. Si al ingresar el CUIL/CUIT, la persona no aparece en la consulta, puede deberse a que se haya acreditado con anterioridad. Para verificarlo puede acceder al listado por roles en la sección del menú <b>Consultas</b>.</span></h6>
 </div>
 <div class="card-body">
   <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
@@ -54,6 +54,7 @@
   <option>Disertante</option>
   <option>Invitado</option>
   <option>Jurado</option>
+  <option>Mentor</option>
   <option>Organizador</option>
   <option>Proveedor</option>
 </select>

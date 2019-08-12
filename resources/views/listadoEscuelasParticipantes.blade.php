@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes presentes (día 1)</title>
+    <title>Listado de escuelas participantes</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,76 +22,65 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes presentes en el hackatón Día 1</h4>
-{{-- <span class="badge badge-primary badge-pill">{{$totaldeestudiantesPresentesDia1}}</span> --}}
-<!-- Cartel x a y de un total de n elementos -->
-<h5>
+
+    <h4>Listado de escuelas participantes</h4>
+
+      <!-- Cartel x a y de un total de n elementos -->
+      <h5>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantesPresentesDia1->firstItem() }}
+  {{ $escuelasordenadas->firstItem() }}
 </span>
 <span class="">
-a
+  a
 </span>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantesPresentesDia1->lastItem() }}
+  {{ $escuelasordenadas->lastItem() }}
 </span>
 <span class="">
-de un total de
+  de un total de
 </span>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantesPresentesDia1->total() }}
+  {{ $escuelasordenadas->total() }}
 </span>
 <!-- Fin de cartel x a y de un total de n elementos -->
+
     </h5>
   </div>
   <div class="card-body">
-    <!-- tabla -->
-    @php
-      $numorden = ($estudiantesPresentesDia1->currentpage()-1)* $estudiantesPresentesDia1->perpage();
-    @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($estudiantesPresentesDia1 as $estudiante)
-          @php
-            $numorden++;
-          @endphp
-        <tr>
-          <th scope="row">{{ $numorden }}</th>
-          <td>{{$estudiante["apellido"]}}</td>
-          <td>{{$estudiante["nombre"]}}</td>
-          <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
-        </tr>
-      @endforeach
-      </tbody>
-    </table>
-    <!-- fin de tabla -->
-    <table class="table table-responsive table-striped">
-      <thead>
-        <tr>
-          {{-- <th scope="col"></th> --}}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">{{$estudiantesPresentesDia1->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
-        </tr>
-      </tbody>
-    </table>
+<!-- Prueba de tabla -->
+@php
+  $numorden = ($escuelasordenadas->currentpage()-1)* $escuelasordenadas->perpage();
+@endphp
+<table id="tabla-listado" class="table table-responsive table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">CUE</th>
+      <th scope="col">Teléfono</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($escuelasordenadas as $clave => $escuela)
+      @php
+        $numorden++;
+      @endphp
+    <tr>
 
-    </div>
-    </div>
+      <th scope="row">{{ $numorden }}</th>
+      <td>{{$escuela["nombre"]}}</td>
+      <td>{{$escuela["dom_edific"]}}</td>
+      <td>{{$escuela["cue"]}}</td>
+      <td>{{$escuela["telefono"]}}</td>
+    </tr>
+  @endforeach
+  </tbody>
+</table>
+{{$escuelasordenadas->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
+<!-- fin prueba de tabla -->
+</div>
+</div>
 </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')

@@ -97,31 +97,47 @@
           <li class="nav-item active">
             <a class="nav-link" href="/"><b>Inicio</b> <span class="sr-only">(ésta)</span></a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item">
+            <a class="nav-link" href="#PMF">
               <b>Preguntas frecuentes</b>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#que_es">¿Qué es?</a>
-              <a class="dropdown-item" href="#quienes_pueden_participar">¿Quiénes pueden participar?</a>
-              <a class="dropdown-item" href="#como_participar">¿Cómo participar?</a>
-              <a class="dropdown-item" href="#donde_se_realiza">¿Dónde se realiza?</a>
-              <a class="dropdown-item" href="#tematicas">Temáticas</a>
-              <a class="dropdown-item" href="#equipo_organizador">Equipo organizador</a>
-              <div class="dropdown-divider"></div>
-            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="mailto:desafios.cientificos@bue.edu.ar"><b>Contacto</b></a>
           </li>
-<!-- Cajita de búsqueda (la tuve que sacar porque no funcionaba) -->
-            {{-- <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" style="margin-left:155px" type="search" placeholder="¿Qué buscás?" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
-        </li> --}}
-        <!-- Fin de cajita de búsqueda -->
+<!-- prueba de FAQ -->
+<div class="collapse" id="que_escuelas_pueden_participar">
+  <div class="card card-body">
+    Todas las escuelas de gestión estatal o privada de la Ciudad Autónoma de Buenos Aires
+  </div>
+</div>
+
+<div class="collapse" id="quienes_participar_en_evento">
+  <div class="card card-body">
+    Estudiantes de 4°, 5° y 6° año del secundario. Los grupos de estudiante participantes debe ser acompañados por un adulto cada 10 (diez) estudiantes.
+  </div>
+</div>
+
+
+
+
+
+
+
+{{-- <p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    ¿Qué escuelas pueden participar?
+  </a>
+
+</p>
+<div class="collapse" id="que_escuelas_pueden_participar">
+  <div class="card card-body">
+    Todas las escuelas de gestión estatal o privada de la Ciudad Autónoma de Buenos Aires
+  </div>
+</div> --}}
+
+<!-- fin de prueba de FAQ -->
+
         </ul>
       </div>
     </nav>
@@ -272,11 +288,264 @@ No se requieren conocimientos previos.
          <img class="card-img-top" src="/imgs/hdc2017-6.jpg" alt="estudiantes en hackatón">
          <div class="card-body">
            <h5 class="card-title"><a name="equipo_organizador">Equipo organizador</a></h5>
-           <p class="card-text">El hackatón Desafíos Científicos está organizador por el <a href="http://www.buenosaires.gob.ar/educacion/escuelas/planeamiento-educativo/enlace-ciencias" target="_blank">Programa Enlace Ciencias</a>, una iniciativa para la mejora de la enseñanza de las ciencias y la tecnología. <br><br>Enlace Ciencias es impulsado por la <a href="http://www.buenosaires.gob.ar/educacion/institucional-subsecretaria-de-planeamiento-e-innovacion-educativa/dg-planeamiento-educativo" target="_blank">Dirección General de Planeamiento Educativo</a> del Ministerio de Educación e Innovación del Gobierno de la Ciudad Autónoma de Buenos Aires.</p>
+           <p class="card-text">El hackatón Desafíos Científicos está organizado por el <a href="http://www.buenosaires.gob.ar/educacion/escuelas/planeamiento-educativo/enlace-ciencias" target="_blank">Programa Enlace Ciencias</a>, una iniciativa para la mejora de la enseñanza de las ciencias y la tecnología. <br><br>Enlace Ciencias es impulsado por la <a href="http://www.buenosaires.gob.ar/educacion/institucional-subsecretaria-de-planeamiento-e-innovacion-educativa/dg-planeamiento-educativo" target="_blank">Dirección General de Planeamiento Educativo</a> del Ministerio de Educación e Innovación del Gobierno de la Ciudad Autónoma de Buenos Aires.</p>
          </div>
        </div> <!-- fin de tercera tarjeta -->
 
-     </div> <!-- fin del segundo juego de tarjetas -->
+    </div> <br>
+
+<!-- Preguntas frecuentes -->
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <h4 class="card-header" style="background-color:#f2d333"><a name="PMF">Preguntas más frecuentes</a></h4>
+<!-- Nueva pregunta -->
+<div class="card">
+  <div class="card-header" id="primeraPregunta">
+    <h2 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaUno" aria-expanded="false" aria-controls="collapseTwo">
+          ¿Qué escuelas pueden participar?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaUno" class="collapse" aria-labelledby="primeraPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+        Todas las escuelas de gestión estatal o privada de la Ciudad Autónoma de Buenos Aires.
+      </div>
+    </div>
+  </div>
+  <!-- fin de la pregunta -->
+    <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="segundaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaDos" aria-expanded="false" aria-controls="collapseTwo">
+          ¿Quiénes pueden participar en el evento?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaDos" class="collapse" aria-labelledby="segundaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+        Estudiantes de 4°, 5° y 6° año del secundario. Los grupos de estudiante participantes debe ser acompañados por un adulto cada 10 (diez) estudiantes.
+      </div>
+    </div>
+  </div>
+  <!-- fin de la pregunta -->
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="terceraPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaTres" aria-expanded="false" aria-controls="collapseThree">
+          ¿Cómo puedo hacer para inscribirme?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaTres" class="collapse" aria-labelledby="terceraPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+        Todas las personas asistentes al evento deben completar su registro.<br>
+Cada estudiante debe ser registrado por un docente o directivo de la institución escolar a la que pertenece. <br>Los cupos son limitados. <br>
+Los docentes deben primero inscribirse como tales, para poder luego inscribir estudiantes. <br>En el caso de que los estudiantes sean registrados por personal de la escuela que no se desempeña como docente, igualmente debe inscribirse antes como “docente” (aunque no tenga estudiantes a cargo en este evento).
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="cuartaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaCuatro" aria-expanded="false" aria-controls="collapseThree">
+          ¿Puede un/a mismo/a docente inscribir estudiantes de diferentes escuelas?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaCuatro" class="collapse" aria-labelledby="cuartaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      Sí. En caso de que el/la docente necesite registrar estudiantes de diferentes escuelas, deberá volver a inscribirse como docente asociado/a a cada una de esas escuelas (antes de inscribir a los estudiantes).
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="quintaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaCinco" aria-expanded="false" aria-controls="collapseThree">
+          ¿Cómo sé si estoy inscripto/a?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaCinco" class="collapse" aria-labelledby="quintaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      Una vez que el/la docente o directivo/a haya completado el formulario de inscripción de cada estudiante, recibirá automáticamente una confirmación de correcto registro en el correo electrónico que haya indicado.
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="sextaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaSeis" aria-expanded="false" aria-controls="collapseThree">
+          ¿Cómo me entero sobre la temática y el equipo asignados a cada estudiante?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaSeis" class="collapse" aria-labelledby="sextaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      Unos días antes del evento, se enviará un mensaje confirmando la asignación de vacantes de estudiantes, y con la temática y equipo al que haya sido asignado/a cada alumno/a. Los equipos de trabajo estarán integrados por estudiantes de diferentes escuelas.
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="septimaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaSiete" aria-expanded="false" aria-controls="collapseThree">
+          ¿Los estudiantes pueden ir solos hasta el evento o necesitan ir acompañados por su docente?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaSiete" class="collapse" aria-labelledby="septimaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      Cada estudiante pueden llegar hasta la Usina del Arte solo, llegado el caso, pero al momento de la acreditación en el evento deberá estar acompañado/a por su docente a cargo.
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="octavaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaOcho" aria-expanded="false" aria-controls="collapseThree">
+          ¿Es necesario preparar algo antes del evento?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaOcho" class="collapse" aria-labelledby="octavaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      No es necesario llevar algo ya resuelto al comienzo del encuentro.
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="novenaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaNueve" aria-expanded="false" aria-controls="collapseThree">
+          ¿Es necesario que los estudiantes conozcan contenidos específicos para participar?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaNueve" class="collapse" aria-labelledby="novenaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      No es necesario contar con saberes específicos para participar en el hackatón. Se alienta la diversidad de saberes y conocimientos entre los miembros de cada equipo de estudiantes.
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="decimaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaDiez" aria-expanded="false" aria-controls="collapseThree">
+          ¿Qué necesito llevar a la Usina para ingresar al evento?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaDiez" class="collapse" aria-labelledby="decimaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+        Es importante asistir con el DNI para corroborar identidad; junto con la autorización de uso de imagen impresa y firmada. En el caso de que les sea posible, los estudiantes pueden concurrir con su notebook, netbook o smartphone para trabajar.<br><br>
+
+        <b>IMPORTANTE:</b> Para la acreditación es indispensable conocer el DNI del docente registrante (quien efectivamente haya inscrito a los estudiantes de la escuela), si no coincide con el docente acompañante (quien esté a cargo de los alumnos/as en el día del evento).
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="undecimaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaOnce" aria-expanded="false" aria-controls="collapseThree">
+          ¿Tengo que asistir los dos días al evento?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaOnce" class="collapse" aria-labelledby="undecimaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      Los estudiantes participantes deben asistir los dos días del evento y solo pueden ingresar con un docente que se haya registrado previamente. Los docentes acompañantes pueden ser diferentes personas por día (deben registrarse en cada caso).
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="duocecimaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaDoce" aria-expanded="false" aria-controls="collapseThree">
+          ¿Tengo que llevar mi propia comida y/o bebida?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaDoce" class="collapse" aria-labelledby="duocecimaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+        Podés llevar lo que desees. Desde la organización del evento brindaremos desayuno, almuerzo y merienda para los dos días del encuentro.
+<br>
+        En caso de tener alguna restricción alimentaria, se puede indicar esto al momento de completar el formulario de inscripción.
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="decimoterceraPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaTrece" aria-expanded="false" aria-controls="collapseThree">
+          ¿Cómo llego a la Usina del Arte?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaTrece" class="collapse" aria-labelledby="decimoterceraPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+        Líneas de colectivo que te acercan: 10, 20, 22, 24, 29, 33, 39, 46, 54, 64, 70, 74, 86, 93, 102, 129, 130, 152, 168 y 186.
+        <br><br>
+        Estación BAEcobici #108 – Usina del Arte.
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+  <!-- Nueva pregunta -->
+  <div class="card">
+    <div class="card-header" id="decimocuartaPregunta">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaCatorce" aria-expanded="false" aria-controls="collapseThree">
+          ¿Cómo puedo despejar otras dudas?
+        </button>
+      </h2>
+    </div>
+    <div id="preguntaCatorce" class="collapse" aria-labelledby="decimocuartaPregunta" data-parent="#accordionExample">
+      <div class="card-body">
+      Podés escribirnos a <a href="mailto:desafíos.cientificos@bue.edu.ar">desafios.cientificos@bue.edu.ar</a>
+      </div>
+    </div>
+  </div>
+  <!-- fin de nueva pregunta -->
+
+
+</div></div>
+
+<!-- fin de preguntas frecuentes -->
 
 
    <!-- Recursos -->

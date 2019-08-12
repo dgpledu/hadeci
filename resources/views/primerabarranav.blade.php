@@ -23,41 +23,35 @@
       @if(Date(today()) < '2019-10-01 00:00:00') <!-- tiene que ser MENOR A -->
 <!-- Probando menú descolgable -->
 <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acreditación</a>
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AcreditaciónD1</a>
 <div class="dropdown-menu">
 <a class="dropdown-item" href="/acreditarEstudiantesDia1">Estudiantes</a>
 <div class="dropdown-divider"></div>
 <a class="dropdown-item" href="/acreditacionDocentesDia1">Docentes</a>
 <a class="dropdown-item" href="/acreditacionTutoresDia1">Tutores</a>
 <a class="dropdown-item" href="/acreditacionOtrosDia1"><i>Otros</i></a>
-{{-- <a class="dropdown-item" href="/acreditacionOtrosDia1">Mentores</a>
-<a class="dropdown-item" href="/acreditacionOtrosDia1">Jurados</a>
-<a class="dropdown-item" href="/acreditacionOtrosDia1">Organizadores</a>
-<a class="dropdown-item" href="/acreditacionOtrosDia1">Colaboradores</a>
-<a class="dropdown-item" href="/acreditacionOtrosDia1">Disertantes</a>
-<a class="dropdown-item" href="/acreditacionOtrosDia1">Invitados</a>
-<a class="dropdown-item" href="/acreditacionOtrosDia1">Proveedores</a>
-<a class="dropdown-item" href="/acreditacionOtrosDia1">Autoridades</a> --}}
+<div class="dropdown-divider"></div>
+<a class="dropdown-item bg-warning" href="/checkoutMentoresDia1">Check-out Mentores</a>
 </div>
 </li>
 <!-- Fin prueba menú descolgable -->
-
-
-
     @endif
 
       <li class="nav-item"></li>
 
 <!-- Opción de menú: Acreditación D2 -->
       @if(Date(today()) == '2019-10-02 00:00:00')
+        {{-- @if(Date(today()) < '2019-10-02 00:00:00') --}}
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acreditación</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AcreditaciónD2</a>
         <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Docentes</a>
-        <a class="dropdown-item" href="#">Mentores</a>
-        <a class="dropdown-item" href="#">Jurados</a>
-        <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/acreditarEstudiantesDia2">Estudiantes</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/acreditacionDocentesDia2">Docentes</a>
+        <a class="dropdown-item" href="/acreditacionTutoresDia2">Tutores</a>
+        <a class="dropdown-item" href="/acreditacionOtrosDia2"><i>Otros</i></a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item bg-warning" href="/checkoutMentoresDia2">Check-out Mentores</a>
         </div>
         </li>
     @endif

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Tutor;
 use App\Grupo;
 use App\Mail\Bienvenidotutor;
+use App\Rules\LetrasYEspacios;
 
 class TutoresController extends Controller
 {
@@ -26,6 +27,16 @@ $todoslostutores = Tutor::all();
     return view("listadoTutores", compact("todoslostutores", "tutores"));
   }
 
+  public function listadoD1(Request $req) {
+  $todoslostutoresD1 = Tutor::where("pres_dia1", "=", 1)->orderBy('Apellido')->paginate(50);
+    return view("listadoTutoresD1", compact("todoslostutoresD1"));
+  }
+
+  public function listadoD2(Request $req) {
+  $todoslostutoresD2 = Tutor::where("pres_dia2", "=", 1)->orderBy('Apellido')->paginate(50);
+    return view("listadoTutoresD2", compact("todoslostutoresD2"));
+  }
+
   public function inscribir() {
     // $escuelas = Escuela::orderBy("nombre")->get();
     // $categorias = Categoria::orderBy("ID")->get();
@@ -35,12 +46,12 @@ $todoslostutores = Tutor::all();
 
   public function registrar(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
-      "dni_tutor" => "required|integer",
-      "fecha_nac_tutor" => "required|string",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
+      "dni_tutor" => "required|string|max:20",
+      "fecha_nac_tutor" => "required|date|after:01-01-1900|before:30-09-2001",
       "email_tutor" => "required|email",
-      "celular" => "required|string|max:40",
+      "celular" => "required|integer|max:99999999999",
       "instit_rep"=> "required|string|max:45",
       "restric_alim" => "required"
     ]);
@@ -97,6 +108,30 @@ try {
           $tutoresPres->save();
           // dd($req["apellido"]);
     return redirect("/acreditacionTutoresDia1")
+    ->with([
+      "estado" => $tutoresPres["Nombre"]." ".$tutoresPres["Apellido"],
+    ])
+    ;
+
+  }
+
+  public function acreditarDia2(Request $req) {
+    if (isset($req["busqueda_DNI_tutor"])) {
+        $resultados_t = Tutor::where("DNI", $req["busqueda_DNI_tutor"])->get();
+        // dd($resultados_t);
+    } else {
+        $resultados_t = [];
+    }
+    return view("acreditacionTutoresDia2", compact("resultados_t"));
+  }
+
+  public function confirmarDia2(Request $req) {
+    if ($req["presente"] == "Acreditarse")
+          $tutoresPres = Tutor::where("DNI", "=", $req["busqueda_DNI_tutor"])->first();
+          $tutoresPres->pres_dia2 = 1;
+          $tutoresPres->save();
+          // dd($req["apellido"]);
+    return redirect("/acreditacionTutoresDia2")
     ->with([
       "estado" => $tutoresPres["Nombre"]." ".$tutoresPres["Apellido"],
     ])

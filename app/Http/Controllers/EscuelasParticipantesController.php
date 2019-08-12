@@ -48,17 +48,27 @@ $resultados_esc = Escuela::where("activa", "=", 1)
 //       return view("listadoEscuelas", compact("numerototaldeescuelas", "escuelasordenadas"));
 //     }
 
-public function listado() {
+public function listadoParticipantes() {
 
 $escuelasordenadas = Escuela::where("activa", "=", 1)->orderBy("nombre")->paginate(10);
 
 // $escuelasordenadas = Escuela::orderBy('nombre')->paginate(10);
  $numerototaldeescuelas = $escuelasordenadas->count();
 
-  return view("listadoEscuelas", compact("numerototaldeescuelas", "escuelasordenadas"));
+  return view("listadoEscuelasParticipantes", compact("numerototaldeescuelas", "escuelasordenadas"));
 }
 
-    public function listadotodas(Request $req) {
+public function listadoInscriptas() {
+
+$escuelasordenadas = Escuela::where("activa", "=", 1)->orderBy("nombre")->paginate(10);
+
+// $escuelasordenadas = Escuela::orderBy('nombre')->paginate(10);
+ $numerototaldeescuelas = $escuelasordenadas->count();
+
+  return view("listadoEscuelasInscriptas", compact("numerototaldeescuelas", "escuelasordenadas"));
+}
+
+public function listadotodas(Request $req) {
       if (isset($req["busqueda_establecimiento"])) {
           $resultados_e = Escuela::where("nombre", "like", "%" . $req["busqueda_establecimiento"] . "%")->get();
       } else {

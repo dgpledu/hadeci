@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes presentes Día 2</title>
+    <title>Listado de estudiantes presentes (día 2)</title>
   </head>
   <body>
   @include('primerabarranav')

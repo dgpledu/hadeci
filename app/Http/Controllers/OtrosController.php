@@ -12,6 +12,7 @@ use App\Mail\Bienvenidoautoridad;
 use App\Mail\Bienvenidocolaborador;
 use App\Mail\Bienvenidoinvitado;
 use App\Mail\Bienvenidoproveedor;
+use App\Rules\LetrasYEspacios;
 
 class OtrosController extends Controller
 {
@@ -43,16 +44,16 @@ class OtrosController extends Controller
 
   public function registrarMentores(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
-      "celular" => "required|string|max:22",
+      "celular" => "required|integer|max:99999999999",
       "instit_rep" => "required|string|max:45",
       "breveCV" => "required|string|max:255",
       "area_expertise1" => "required|string|max:40",
-      "area_expertise2" => "required|string|max:40|different:area_expertise1",
+      "area_expertise2" => "required|string|max:40",
       "exp_robotica" => "required|string|max:2",
       "exp_program" => "required|string|max:2",
       "foto_mentor" => "required|image|max:5000",
@@ -105,12 +106,12 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
   //Seguidilla
   public function registrarOrganizadores(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
-      "celular" => "required|string|max:22"
+      "celular" => "required|integer|max:99999999999"
       // "foto_organizador" => "required|image|max:5000"
 
     ]);
@@ -150,12 +151,12 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
 
   public function registrarAutoridades(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "sometimes|nullable|integer|max:999999999999|min:10000000",
       "email" => "sometimes|nullable||email",
       "fecha_nac" => "sometimes|nullable|date|after:01-01-1900|before:30-09-2001",
-      "celular" => "sometimes|nullable|string|max:22",
+      "celular" => "sometimes|nullable|integer|max:99999999999",
       "instit_rep" => "sometimes|nullable|string|max:45",
       "breveCV" => "sometimes|nullable|string|max:255"
       // "foto_autoridad" => "required|image|max:5000"
@@ -199,12 +200,12 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
 
   public function registrarColaboradores(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
-      "celular" => "sometimes|nullable|string|max:22",
+      "celular" => "sometimes|nullable|integer|max:99999999999",
       "contacto" => "required|string|max:45"
 
     ]);
@@ -239,12 +240,12 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
 
   public function registrarInvitados(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
-      "celular" => "sometimes|nullable|string|max:22",
+      "celular" => "sometimes|nullable|integer|max:99999999999",
       "instit_rep" => "required|string|max:45",
       "contacto" => "required|string|max:45"
     ]);
@@ -280,12 +281,12 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
 
   public function registrarProveedores(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "email" => "required|email",
-      "celular" => "required|string|max:22",
+      "celular" => "required|integer|max:99999999999",
       "instit_rep" => "required|string|max:45"
     ]);
 
@@ -320,12 +321,12 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
 
   public function registrarJurados(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
-      "celular" => "required|string|max:22",
+      "celular" => "required|integer|max:99999999999",
       "breveCV" => "required|string|max:255",
       "foto_jurado" => "required|image|max:5000"
 
@@ -395,14 +396,102 @@ $otro["dir_foto"] = $ruta;
 
   }
 
+  public function acreditarOtroDia2(Request $req) {
+    if (isset($req["busqueda_cuilcuit_otro"])) {
+        $resultados_o = Otro::where("cuilcuit", $req["busqueda_cuilcuit_otro"])
+        ->where("pres_dia2", "=", 0)
+        ->where("rol", "=", $req["rol"])->get();
+        // dd($resultados_o);
+    } else {
+        $resultados_o = [];
+    }
+    return view("acreditacionOtrosDia2", compact("resultados_o"));
+  }
+
+  public function confirmarOtroDia2(Request $req) {
+    if ($req["presente"] == "Acreditarse")
+          $otrosPres = Otro::where("cuilcuit", "=", $req["busqueda_cuilcuit_otro"])
+          ->where("rol", "=", $req["rol"])->first();
+          $otrosPres->pres_dia2 = 1;
+          $otrosPres->save();
+          // dd($req["apellido"]);
+    return redirect("/acreditacionOtrosDia2")
+    ->with([
+      "estado" => $otrosPres["nombre"]." ".$otrosPres["apellido"],
+      "rol" => $otrosPres["rol"],
+    ])
+    ;
+
+  }
+
+  // Check-out mentores
+
+  public function acreditarCheckOutDia1(Request $req) {
+    if (isset($req["busqueda_cuilcuit_otro"])) {
+        $resultados_o = Otro::where("cuilcuit", $req["busqueda_cuilcuit_otro"])
+        ->where("pres_dia1", "=", 1)
+        ->where("rol", "=", 'Mentor')->get();
+        // dd($resultados_o);
+    } else {
+        $resultados_o = [];
+    }
+    return view("checkoutMentoresDia1", compact("resultados_o"));
+  }
+
+  public function confirmarCheckOutDia1(Request $req) {
+    if ($req["presente"] == "checkout")
+          $otrosPres = Otro::where("cuilcuit", "=", $req["busqueda_cuilcuit_otro"])
+          ->where("rol", "=", 'Mentor')->first();
+          $otrosPres->pres_dia1 = 0;
+          $otrosPres->save();
+          // dd($req["apellido"]);
+    return redirect("/checkoutMentoresDia1")
+    ->with([
+      "estado" => $otrosPres["nombre"]." ".$otrosPres["apellido"],
+      // "rol" => $otrosPres["rol"],
+    ])
+    ;
+
+  }
+
+  public function acreditarCheckOutDia2(Request $req) {
+    if (isset($req["busqueda_cuilcuit_otro"])) {
+        $resultados_o = Otro::where("cuilcuit", $req["busqueda_cuilcuit_otro"])
+        ->where("pres_dia2", "=", 1)
+        ->where("rol", "=", 'Mentor')->get();
+        // dd($resultados_o);
+    } else {
+        $resultados_o = [];
+    }
+    return view("checkoutMentoresDia2", compact("resultados_o"));
+  }
+
+  public function confirmarCheckOutDia2(Request $req) {
+    if ($req["presente"] == "checkout")
+          $otrosPres = Otro::where("cuilcuit", "=", $req["busqueda_cuilcuit_otro"])
+          ->where("rol", "=", 'Mentor')->first();
+          $otrosPres->pres_dia2 = 0;
+          $otrosPres->save();
+          // dd($req["apellido"]);
+    return redirect("/checkoutMentoresDia2")
+    ->with([
+      "estado" => $otrosPres["nombre"]." ".$otrosPres["apellido"],
+      // "rol" => $otrosPres["rol"],
+    ])
+    ;
+
+  }
+
+  // fin de checkout
+
   public function registrarDisertantes(Request $req) {
     $this->validate($req, [
-      "nombre" => "required|string|max:255",
-      "apellido" => "required|string|max:255",
+      "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+      "apellido" => ['required',new LetrasYEspacios, 'max:20'],
       "cuilcuit" => "required|integer|max:999999999999|min:10000000",
       "email" => "required|email",
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
-      "celular" => "required|string|max:22",
+      "celular" => "required|integer|max:99999999999",
       "titulo_charla" => "required|string|max:45",
       "descrip_charla" => "required|string|max:255",
       "instit_rep" => "required|string|max:50",
@@ -457,11 +546,25 @@ $todoslosmentores = Otro::all();
     return view("listadoMentores", compact("todoslosmentores", "otros"));
   }
 
-  public function listadoMentoresPresentes(Request $req) {
-$todoslosmentorespresentes = Otro::where('rol', 'Mentor')
+//   public function listadoMentoresPresentes(Request $req) {
+// $todoslosmentorespresentes = Otro::where('rol', 'Mentor')
+// ->where('pres_dia1', 1)->get();
+// $otros = Otro::all();
+//     return view("mentoresPresentes", compact("todoslosmentorespresentes", "otros"));
+//   }
+
+  public function listadoMentoresPresentesD1(Request $req) {
+$todoslosmentorespresentesD1 = Otro::where('rol', 'Mentor')
 ->where('pres_dia1', 1)->get();
 $otros = Otro::all();
-    return view("mentoresPresentes", compact("todoslosmentorespresentes", "otros"));
+    return view("mentoresPresentesD1", compact("todoslosmentorespresentesD1", "otros"));
+  }
+
+  public function listadoMentoresPresentesD2(Request $req) {
+$todoslosmentorespresentesD2 = Otro::where('rol', 'Mentor')
+->where('pres_dia2', 1)->get();
+$otros = Otro::all();
+    return view("mentoresPresentesD2", compact("todoslosmentorespresentesD2", "otros"));
   }
 
   public function listadoDisertantes(Request $req) {

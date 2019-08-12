@@ -33,7 +33,8 @@
              <b> {{session('estado')}}, </b>
              docente de la escuela <b>{{session('escuela')}}</b> se ha inscripto correctamente en "Desafíos Científicos".
              <br><br>
-             <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción desde la dirección <font color="#2E9AFE">desafios.cientificos@gmail.com</font><br> Por favor, verifique que el correo no haya ido a la carpeta SPAM.<hr>
+             <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción desde la dirección <font color="#2E9AFE">desafios.cientificos@gmail.com</font><br> Por favor, verifique que el correo no se encuentre en la carpeta de correo no deseado o SPAM.
+.<hr>
              <!-- prueba de botón para dirigir a inscripción de estudiantes -->
 
              Si desea inscribir ahora a sus estudiantes, haga clic en el botón siguiente: <a class="btn btn-success" href="/preinscripcionEstudiantes" role="button">Inscribir estudiantes</a>
@@ -68,7 +69,7 @@
         <small class="form-text text-muted">Ingrese su apellido tal como figura en su DNI</small>
     </div>
     <div class="form-group col-sm-3">
-      <input type="number" name="dni_docente" class="form-control" placeholder="DNI">
+      <input type="text" name="dni_docente" class="form-control" placeholder="DNI">
         <small class="form-text text-muted">Ingrese su DNI sin puntos ni espacios</small>
     </div>
   </div>
@@ -114,7 +115,7 @@
       <small class="form-text text-muted">Ingrese el ID de su escuela (solamente el número). Si no conoce el número de ID de su escuela para este hackatón, haga clic
 
 
-<kbd style="background-color:#b2b4b7";><a href="/consultaEstablecimientos" target="_blank" style="color:#0066CC"; >en éste enlace</a></kbd>
+<kbd style="background-color:#b2b4b7";><a href="/consultaEstablecimientos" target="_blank" style="color:#0066CC"; >aquí</a></kbd>
 
         para consultarlo (se abrirá una nueva pestaña) y luego vuelva aquí para finalizar su inscripción.</small>
     </div>

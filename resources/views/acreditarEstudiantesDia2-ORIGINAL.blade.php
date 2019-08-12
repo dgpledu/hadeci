@@ -78,18 +78,12 @@
           <td>{{$estudiante["nombre"]}}</td>
           <td>{{$estudiante["DNI"]}}</td>
           <td>{{$estudiante->escuela["nombre"]}}</td>
-          <!-- agregado para mostrar grupo y tutor -->
-          @if ($estudiante->grupo["nombre"])
-            <td>{{$estudiante->grupo["nombre"]}}</td>
-            <td>{{$estudiante->grupo->tutor["Nombre"]}}
-  {{$estudiante->grupo->tutor["Apellido"]}}
-            </td>
-          @else
-            <td></td>
-            <td></td>
-          @endif
-
-          <!-- fin de agregado para mostrar grupo y tutor -->
+          <!-- agregado para mostrar grupo -->
+          <td>{{$estudiante->grupo["nombre"]}}</td>
+          <td>{{$estudiante->grupo->tutor["Nombre"]}}
+{{$estudiante->grupo->tutor["Apellido"]}}
+          </td>
+          <!-- fin de agregado para mostrar grupo -->
           <td>
            @if ($estudiante["pres_dia2"] == 1)
                <input type="checkbox" checked name="presente[]" value="{{$estudiante["DNI"]}}" >

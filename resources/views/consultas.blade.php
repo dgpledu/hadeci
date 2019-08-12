@@ -33,6 +33,8 @@
           </button>
             <small id="emailHelp" class="form-text text-muted">Elegir la consulta a realizar seleccionando una de las opciones</small>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/mentoresD1">Mentores presentes (día 1)</a>
+            <a class="dropdown-item" href="/mentoresD2">Mentores presentes (día 2)</a>
             <a class="dropdown-item" href="/estudiantesPorApellido">Estudiantes por apellido</a>
             <a class="dropdown-item" href="/estudiantesPorDocente">Estudiantes por docente (por DNI)</a>
             <a class="dropdown-item" href="/estudiantesPorEscuela">Estudiantes por escuela</a>
@@ -66,8 +68,17 @@
         <a class="dropdown-item" href="/listadoDocentesD2">Listado de docentes presentes (día 2)</a>
         <a class="dropdown-item" href="/listadoDocentesD1D2">Listado de docentes presentes ambos días</a>
         <a class="dropdown-item" href="/listadoDocentesTotales">Listado de docentes totales</a>
-        <a class="dropdown-item" href="/listadoTutores">Listado de tutores inscriptos</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/listadoEstudiantesPresentesDia1">Listado de estudiantes presentes (día 1)</a>
+        <a class="dropdown-item" href="/listadoEstudiantesPresentesDia2">Listado de estudiantes presentes (día 2)</a>
+        <a class="dropdown-item" href="#">Listado de estudiantes presentes ambos días</a>
+        <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/listadoMentores">Listado de mentores inscriptos</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/listadoTutores">Listado de tutores inscriptos</a>
+        <a class="dropdown-item" href="/listadoTutoresD1">Listado de tutores presentes (día 1)</a>
+        <a class="dropdown-item" href="/listadoTutoresD2">Listado de tutores presentes (día 2)</a>
+        <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/listadoJurados">Listado de jurados inscriptos</a>
         <a class="dropdown-item" href="/listadoDisertantes">Listado de disertantes inscriptos</a>
         <a class="dropdown-item" href="/listadoOrganizadores">Listado de organizadores inscriptos</a>
@@ -75,10 +86,9 @@
         <a class="dropdown-item" href="/listadoColaboradores">Listado de colaboradores inscriptos</a>
         <a class="dropdown-item" href="/listadoInvitados">Listado de invitados inscriptos</a>
         <a class="dropdown-item" href="/listadoProveedores">Listado de proveedores inscriptos</a>
-        <a class="dropdown-item" href="/listadoEscuelas">Listado de escuelas inscriptas</a>
+        <a class="dropdown-item" href="/listadoEscuelasInscriptas">Listado de escuelas inscriptas</a>
+        <a class="dropdown-item" href="/listadoEscuelasParticipantes">Listado de escuelas participantes</a>
         <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos</a>
-        <a class="dropdown-item" href="/listadoEstudiantesPresentesDia1">Listado de estudiantes presentes (día 1)</a>
-        <a class="dropdown-item" href="/listadoEstudiantesPresentesDia2">Listado de estudiantes presentes (día 2)</a>
         </div>
         </div>
         </div>

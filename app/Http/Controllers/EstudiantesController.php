@@ -9,6 +9,7 @@ use App\Grupo;
 use App\Estudiante;
 use App\Categoria;
 use App\Rules\CategoriasTematicas;
+use App\Rules\LetrasYEspacios;
 
 
 
@@ -90,7 +91,7 @@ $todaslasescuelas = Escuela::all();
 
   public function preregistrar (Request $req) {
   $this->validate($req, [
-  "dnidocente" => "required|integer|exists:docentes,DNI",
+  "dnidocente" => "required|alpha_dash|exists:docentes,DNI",
   ]);
 
   return redirect("/inscripcionEstudiantes")
@@ -126,11 +127,11 @@ $todaslasescuelas = Escuela::all();
 $req->session()->flash('dnidocente', $req["dnidocente"]);
     $this->validate($req, [
 
-    "nombre" => "required|string|max:50",
-    "apellido" => "required|string|max:50",
-    "DNIestudiante" => "required|string|min:8|max:20|unique:estudiantes,DNI",
+    "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+    "apellido" => ['required',new LetrasYEspacios, 'max:20'],
+    "DNIestudiante" => "required|string|min:7|max:20|unique:estudiantes,DNI",
     "EmailEstudiante" => "required|email|max:60",
-    "celular" => "required|integer|max:9999999999999999999",
+    "celular" => "sometimes|nullable|integer|max:99999999999",
     "FechaNacimientoEstudiante" => "required|date|after:01-01-1989|before:30-09-2009",
     "AnioQueCursa" => "required|string:4to. año,5to. año,6to. año",
     //"RestriccionAlimentaria" => "required|string:No,Celiaquía,Veganismo,Vegetarianismo,Fenilcetonuria,Otra",
@@ -148,8 +149,6 @@ $req->session()->flash('dnidocente', $req["dnidocente"]);
 )
 
 ;
-
-
 //si no pasa la validación, no pasa por acá
     $estudiante = new Estudiante();
     $estudiante["nombre"] = $req["nombre"]; //Del lado izquierdo va el nombre de la columna de base de datos, del lado derecho el nombre del campo en el Formulario
@@ -217,7 +216,7 @@ $req->session()->flash('dnidocente', $req["dnidocente"]);
     return view("acreditarEstudiantesDia2", compact("resultados_d"));
   }
 
-  public function acreditados(Request $req) {
+public function acreditados(Request $req) {
 
 if (isset($req->presente))
     foreach ($req->presente as $estudiante) {
@@ -231,11 +230,10 @@ if (isset($req->presente))
     ["ID_docente_reg","=","$docente->ID"]
   ])->get();
 
-
-return view("estudiantesAcreditados", compact("estudiantesPresentes"));
+    return view("estudiantesAcreditados", compact("estudiantesPresentes"));
   }
 
-  public function acreditadosDia1(Request $req) {
+public function acreditadosDia1(Request $req) {
 
 if (isset($req->presente))
     foreach ($req->presente as $estudiante) {
@@ -249,11 +247,10 @@ if (isset($req->presente))
     ["ID_docente_reg","=","$docente->ID"]
   ])->get();
 
-
-return view("estudiantesAcreditadosDia1", compact("estudiantesPresentes"));
+      return view("estudiantesAcreditadosDia1", compact("estudiantesPresentes"));
   }
 
-  public function acreditadosDia2(Request $req) {
+public function acreditadosDia2(Request $req) {
 
   if (isset($req->presente))
     foreach ($req->presente as $estudiante) {
@@ -267,12 +264,11 @@ return view("estudiantesAcreditadosDia1", compact("estudiantesPresentes"));
     ["ID_docente_reg","=","$docente->ID"]
   ])->get();
 
-
-  return view("estudiantesAcreditadosDia2", compact("estudiantesPresentes"));
+      return view("estudiantesAcreditadosDia2", compact("estudiantesPresentes"));
   }
 
   public function listado() {
-  $estudiantes = Estudiante::orderBy('apellido')->paginate(10);
+  $estudiantes = Estudiante::orderBy('apellido')->paginate(50);
   $totaldeestudiantes = Estudiante::all()->count();
   // $escuelaPorID = Escuela::where("ID_escuela", "=", $req["iddelaescuela"])->first();
     return view("listadoEstudiantes", compact("estudiantes", "totaldeestudiantes", "escuelaPorID"));
@@ -280,7 +276,7 @@ return view("estudiantesAcreditadosDia1", compact("estudiantesPresentes"));
 
   public function listadoEstudiantesPresentesDia1(Request $req) {
   // $estudiantes = Estudiante::orderBy('apellido')->paginate(15);
-  $estudiantesPresentesDia1 = Estudiante::where("pres_dia1", "=", 1)->orderBy('apellido')->paginate(10);
+  $estudiantesPresentesDia1 = Estudiante::where("pres_dia1", "=", 1)->orderBy('apellido')->paginate(50);
   $totaldeestudiantesPresentesDia1 = Estudiante::where("pres_dia1", "=", 1)->count();
   // $escuelaPorID = Escuela::where("ID_escuela", "=", $req["iddelaescuela"])->first();
     return view("listadoEstudiantesPresentesDia1", compact("totaldeestudiantesPresentesDia1", "estudiantesPresentesDia1"));
@@ -288,7 +284,7 @@ return view("estudiantesAcreditadosDia1", compact("estudiantesPresentes"));
 
   public function listadoEstudiantesPresentesDia2(Request $req) {
   // $estudiantes = Estudiante::orderBy('apellido')->paginate(15);
-  $estudiantesPresentesDia2 = Estudiante::where("pres_dia2", "=", 1)->orderBy('apellido')->paginate(10);
+  $estudiantesPresentesDia2 = Estudiante::where("pres_dia2", "=", 1)->orderBy('apellido')->paginate(50);
   $totaldeestudiantesPresentesDia2 = Estudiante::where("pres_dia2", "=", 1)->count();
   // $escuelaPorID = Escuela::where("ID_escuela", "=", $req["iddelaescuela"])->first();
     return view("listadoEstudiantesPresentesDia2", compact("totaldeestudiantesPresentesDia2", "estudiantesPresentesDia2"));

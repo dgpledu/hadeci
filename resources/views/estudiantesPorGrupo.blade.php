@@ -58,9 +58,9 @@
         <th scope="col">Fecha de nac.</th>
         <th scope="col">Restr. Alim.</th>
           <th scope="col">Docente</th>
-        <th scope="col">Nombre adulto</th>
+        {{-- <th scope="col">Nombre adulto</th>
         <th scope="col">Apellido adulto</th>
-        <th scope="col">Teléfono adulto</th>
+        <th scope="col">Teléfono adulto</th> --}}
       </tr>
     </thead>
     <tbody>
@@ -77,9 +77,9 @@
         <td>{{$estudiante["fecha_nac"]}}</td>
         <td>{{$estudiante["restric_alim"]}}</td>
         <td>{{$estudiante->docente["apellido"]}}</td>
-        <td>{{$estudiante["nom_padre"]}}</td>
+        {{-- <td>{{$estudiante["nom_padre"]}}</td>
         <td>{{$estudiante["ape_padre"]}}</td>
-        <td>{{$estudiante["telefono_padre"]}}</td>
+        <td>{{$estudiante["telefono_padre"]}}</td> --}}
       </tr>
     @endforeach
     </tbody>

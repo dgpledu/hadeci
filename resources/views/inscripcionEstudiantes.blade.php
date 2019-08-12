@@ -70,7 +70,7 @@ Luego de un envío, el formulario se limpiará y podrá cargar los datos para el
     </div>
 
     <div class="form-group col-sm-3">
-      <input type="number" name="DNIestudiante" value="{{old('DNIestudiante')}}" class="form-control" placeholder="DNI">
+      <input type="text" name="DNIestudiante" value="{{old('DNIestudiante')}}" class="form-control" placeholder="DNI">
         <small class="form-text text-muted">Ingrese el DNI del/la estudiante sin puntos ni espacios</small>
     </div>
 
@@ -82,7 +82,7 @@ Luego de un envío, el formulario se limpiará y podrá cargar los datos para el
       <small class="form-text text-muted">Ingrese email del/la estudiante</small>
   </div>
   <div class="form-group col-sm-5">
-    <input type="text" name="celular" value="{{old('celular')}}" class="form-control" placeholder="Celular">
+    <input type="number" name="celular" value="" class="form-control" placeholder="Celular">
       <small class="form-text text-muted">Ingrese celular del/la estudiante sin 0, sin 15, sin guiones ni espacios, solo números consecutivos.</small>
   </div>
 </div>

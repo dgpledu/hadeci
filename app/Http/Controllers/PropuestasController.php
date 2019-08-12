@@ -13,6 +13,11 @@ class PropuestasController extends Controller
     return view("inscripcionPropuestas");
   }
 
+  // public function votarPropuestas(Request $req) {
+  //
+  //   return view("votacionPeoplesChoice");
+  // }
+
   // public function PorGrupo(Request $req) {
   //   $todoslosgrupos = Grupo::all();
   //   if (isset($req["ID_grupo"])) {

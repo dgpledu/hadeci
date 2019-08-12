@@ -5,13 +5,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<meta http-equiv="refresh" content="30">
     <!-- Bootstrap CSS -->
         <!-- ¡Esto debe ir antes que ningún otro stylesheet!!! -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
 
-    <title>Inscripción</title>
+    <title>Mentores presentes (día 2)</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -20,14 +20,14 @@
    <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron-HDC-jpg-01.jpg')">
  <div class="col-sm-6 mx-auto">
     <div class="card mx-auto" >
-      <div class="card-header" style="background:#ffebcc"><h4>Mentores presentes</h4></div>
+      <div class="card-header" style="background:#ffebcc"><h4>Mentores presentes (día 2)</h4></div>
        <div class="card-body">
         <h5 class="card-title">Hackatón "Desafíos Científicos" edición 2019</h5>
-            <p class="card-text">El siguiente es un listado de los mentores presentes en el evento.</p>
+            <p class="card-text">Listado de los mentores presentes en el evento en el día 2</p>
               <!-- Acá van las tarjetas de los mentores -->
 
-              @if ($todoslosmentorespresentes)
-                    @foreach ($todoslosmentorespresentes->sortBy('apellido') as $mentor)
+              @if ($todoslosmentorespresentesD2)
+                    @foreach ($todoslosmentorespresentesD2->sortBy('apellido') as $mentor)
 <!-- Primera tarjeta -->
               <div class="card" style="width: 34rem;">
   <div class="card mb-3 bg-warning" style="max-width: 540px;">

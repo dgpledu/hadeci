@@ -172,7 +172,7 @@
                       </div>
                     </td>
                     <td valign="top" style="padding: 0 120px 0 0;" class="mobile-pad-r">
-                      <div data-slot="text"><table class="responsive-table" width="100%"><tbody><tr><td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;"><span style="color: #2F2F33; font-weight: bold;">Autorización de uso de imagen</span><br>Adjunto a este correo encontrará un documento en formato PDF que representa la autorización de uso de imagen. <b>Es necesario que imprima dicho documento y sea firmado por el responsable (madre/padre/tutor) a cargo de cada estudiante participante</b>. Para el caso de los mayores de edad, pueden firmarlo ellos/as mismos/as. <b>Esta documentación</b>, junto con la autorización de uso de imagen del docente, <b>será requerida en el evento</b>.</td></tr></tbody></table></div>
+                      <div data-slot="text"><table class="responsive-table" width="100%"><tbody><tr><td style="color: #555555; font-family: 'Roboto', Arial, sans-serif; font-size: 16px; line-height: 22px;"><span style="color: #2F2F33; font-weight: bold;">Autorización de uso de imagen</span><br>Adjunto a este correo encontrará un documento en formato PDF que representa la autorización de uso de imagen. <b>Es necesario que imprima dicho documento y sea firmado por el responsable (madre/padre/familiar) a cargo de cada estudiante participante</b>. Para el caso de los mayores de edad, pueden firmarlo ellos/as mismos/as. <b>Esta documentación</b>, junto con la autorización de uso de imagen del docente, <b>será requerida en el evento</b>.</td></tr></tbody></table></div>
                     </td>
                   </tr>
                 </tbody></table>

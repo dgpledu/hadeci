@@ -20,6 +20,7 @@ return [
     'alpha' => 'The :attribute may only contain letters.',
     'alpha_dash' => 'The :attribute may only contain letters, numbers, dashes and underscores.',
     'alpha_num' => 'The :attribute may only contain letters and numbers.',
+    // 'LetrasYEspacios' => ':attribute debe contener solo letras y espacios',
     'array' => 'The :attribute must be an array.',
     'before' => ':attribute debe ser una fecha anterior a :date.',
     'before_or_equal' => 'El dato de :attribute debe ser una fecha igual o anterior al :date.',

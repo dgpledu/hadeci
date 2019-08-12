@@ -62,7 +62,7 @@ El estudiante
                     {{-- <form class="form-group pt-2" action="/inscripcionEstudiantes" method="get"> --}} <!-- esto era cuando validaba el DNI del docente en la página de INSCRIPCIÓN -->
             {{ csrf_field() }}
 <small class="form-text text-muted">1. Ingrese el número de DNI</small>
-          <input type="number" name="dnidocente" class="form-control" placeholder="DNI del docente registrante"><br>
+          <input type="text" name="dnidocente" class="form-control" placeholder="DNI del docente registrante"><br>
             <small class="form-text text-muted">2. Haga clic en el botón verde ubicado a continuación, para acceder al <b>formulario</b> donde realizar la carga de datos de sus estudiantes.</small>
             <div class="form-group col-sm-3">
               <br>

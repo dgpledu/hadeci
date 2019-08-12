@@ -7,6 +7,7 @@ use App\Escuela;
 use App\Docente;
 use App\Mail\Bienvenidodocente;
 use App\Estudiante;
+use App\Rules\LetrasYEspacios;
 
 class DocentesController extends Controller
 {
@@ -26,12 +27,13 @@ public function registrar(Request $req) {
         )
         {
           $this->validate($req, [
-            "nombre" => "required|string|max:30",
-            "apellido" => "required|string|max:40",
-            "dni_docente" => "required|numeric|min:1000000|max:99999999|unique:docentes,DNI",
+            "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+            "apellido" => ['required',new LetrasYEspacios, 'max:20'],
+            // "dni_docente" => "required|numeric|min:1000000|max:99999999|unique:docentes,DNI",
+            "dni_docente" => "required|alpha_dash|max:20|unique:docentes,DNI",
             "email_docente" => "required|email",
             "fecha_nac_docente" => "required|date|after:01-01-1900|before:30-09-2001",
-            "celular" => "required|string|max:30",
+            "celular" => "required|integer|max:99999999999",
             "restric_alim" => "required",
             "id_escuela" => "required|integer|exists:escuelas,ID"
           ], ["dni_docente.unique" => "Usted ya se encuentra registrado/a en el sistema asociado a esa misma escuela. Si desea proceder con la inscripción de estudiantes, haga clic en la opción Inscripción arriba a la derecha."]);
@@ -41,9 +43,9 @@ public function registrar(Request $req) {
 
           if ($req["apellido"] == $docentex["apellido"]) {
             $this->validate($req, [
-              "nombre" => "required|string|max:30",
-              "apellido" => "required|string|max:40",
-              "dni_docente" => "required|numeric|min:1000000|max:99999999",
+              "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+              "apellido" => ['required',new LetrasYEspacios, 'max:20'],
+              "dni_docente" => "required|alpha_dash|max:20",
               // "email_docente" => "required|email",
               // "fecha_nac_docente" => "required|date|before:2012",
               // "celular" => "required|string|max:30",
@@ -70,12 +72,12 @@ public function registrar(Request $req) {
           }
 else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
   $this->validate($req, [
-    "nombre" => "required|string|max:30",
-    "apellido" => "required|string|max:40",
-    "dni_docente" => "required|unique:docentes,DNI|numeric|min:1000000|max:99999999",
+    "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+    "apellido" => ['required',new LetrasYEspacios, 'max:20'],
+    "dni_docente" => "required|unique:docentes,DNI|alpha_dash|max:20",
     "email_docente" => "required|email",
     "fecha_nac_docente" => "required|date|after:01-01-1900|before:30-09-2001",
-    "celular" => "required|string|max:30",
+    "celular" => "required|integer|max:99999999999",
     "restric_alim" => "required",
     "id_escuela" => "required|integer|exists:escuelas,ID"
   ]);
@@ -88,12 +90,12 @@ else { // si el apellido no coincide con ese DNI, le dice que ese DNI ya existe
   else // CASO: Docente nuevo NO existe el docente en la tabla docentes... (porque no existe su DNI)
     {
         $this->validate($req, [
-          "nombre" => "required|string|max:30",
-          "apellido" => "required|string|max:40",
-          "dni_docente" => "required|numeric|min:1000000|max:99999999|",
+          "nombre" => ['required',new LetrasYEspacios, 'max:20'],
+          "apellido" => ['required',new LetrasYEspacios, 'max:20'],
+          "dni_docente" => "required|alpha_dash|max:20|",
           "email_docente" => "required|email",
           "fecha_nac_docente" => "required|date|after:01-01-1900|before:30-09-2001",
-          "celular" => "required|string|max:30",
+          "celular" => "required|integer|max:99999999999",
           "restric_alim" => "required",
           "id_escuela" => "required|integer|exists:escuelas,ID"
                               ]);
@@ -152,6 +154,30 @@ public function confirmarDia1(Request $req) {
         $docentesPres->save();
         // dd($req["apellido"]);
   return redirect("/acreditacionDocentesDia1")
+  ->with([
+  // "estado" => $req["nombre"]." ".$req["apellido"],
+    "estado" => $docentesPres["nombre"]." ".$docentesPres["apellido"],
+  ])
+  ;
+
+}
+
+public function acreditarDia2(Request $req) {
+  if (isset($req["busqueda_DNI_docente"])) {
+      $resultados_d = Docente::where("DNI", $req["busqueda_DNI_docente"])->get();
+  } else {
+      $resultados_d = [];
+  }
+  return view("acreditacionDocentesDia2", compact("resultados_d"));
+}
+
+public function confirmarDia2(Request $req) {
+  if ($req["presente"] == "Acreditarse")
+        $docentesPres = Docente::where("DNI", "=", $req["busqueda_DNI_docente"])->first();
+        $docentesPres->pres_dia2 = 1;
+        $docentesPres->save();
+        // dd($req["apellido"]);
+  return redirect("/acreditacionDocentesDia2")
   ->with([
   // "estado" => $req["nombre"]." ".$req["apellido"],
     "estado" => $docentesPres["nombre"]." ".$docentesPres["apellido"],

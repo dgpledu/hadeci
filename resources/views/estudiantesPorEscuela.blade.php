@@ -67,9 +67,9 @@
           <!-- lo agrego como prueba -->
           <th scope="col">Grupo</th>
           <!-- fin de lo agregado como prueba -->
-          <th scope="col">Nombre adulto</th>
+          {{-- <th scope="col">Nombre adulto</th>
           <th scope="col">Apellido adulto</th>
-          <th scope="col">Teléfono adulto</th>
+          <th scope="col">Teléfono adulto</th> --}}
         </tr>
       </thead>
       <tbody>
@@ -89,9 +89,9 @@
         <!-- lo agrego como prueba -->
         <td>{{$estudiante->grupo["nombre"]}}</td>
         <!-- fin de lo agregado como prueba -->
-        <td>{{$estudiante["nom_padre"]}}</td>
+        {{-- <td>{{$estudiante["nom_padre"]}}</td>
         <td>{{$estudiante["ape_padre"]}}</td>
-        <td>{{$estudiante["telefono_padre"]}}</td>
+        <td>{{$estudiante["telefono_padre"]}}</td> --}}
       </tr>
     @endforeach
   </tbody>

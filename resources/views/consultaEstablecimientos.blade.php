@@ -30,9 +30,9 @@
   <form class="form-group pt-2" action="" method="get">
     {{ csrf_field() }}
 <h6> <span class="text-black"> <b>IMPORTANTE:</b> </span> <span class="text-secondary">Consulte aquí para conocer el <kbd style="background:#5cb85c">ID</kbd> de su escuela: Dicho dato le será requerido para inscribirse como docente. Si su escuela no está dentro de la base de datos, por favor envíe un mail a <a href="mailto:desafios.cientificos@bue.edu.ar">desafios.cientificos@bue.edu.ar</a> </span> </h6><br>
-    <input type="text" name="busqueda_establecimiento" value="" placeholder="Nombre del establecimiento">
+    <input type="text" name="busqueda_establecimiento" value="" placeholder="Nombre o parte del nombre del establecimiento" style="width: 355px; height: 40px;">
     <button type="submit" name="" class="btn btn-success">Realizar consulta</button>
-    <small id="emailHelp" class="form-text text-muted">Tipear parte del nombre de la escuela y luega dar clic en "Realizar consulta" para conocer los datos de su escuela (incluido el ID). Tome nota del ID de su escuela, el cual le será requerido para inscribirse como docente. Luego de visualizar el ID de la escuela, puede volver a la pestaña anterior para continuar con su inscripción.</small>
+    <small id="emailHelp" class="form-text text-muted"><span style="color:red">ATENCIÓN:</span> Tipear <b>parte</b> del nombre de la escuela (una palabra entera del nombre, por ejemplo, si se busca el colegio "Mariano Moreno", tipear "Moreno", sin las comillas) y luega dar clic en "Realizar consulta" para conocer los datos de su escuela (incluido el ID). Tomar nota del ID de su escuela, el cual le será requerido para inscribirse como docente. Luego de visualizar el ID de la escuela, puede volver a la pestaña anterior para continuar con su inscripción.</small>
   </form>
 
 @if ($resultados_e)
