@@ -63,12 +63,16 @@
       </button>
         <small id="emailHelp" class="form-text text-muted">Elegir el tipo de listado a visualizar seleccionando una de las opciones</small>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/listadoEscuelasInscriptas">Listado de escuelas inscriptas</a>
+        <a class="dropdown-item" href="/listadoEscuelasParticipantes">Listado de escuelas participantes</a>
+        <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/listadoDocentes">Listado de docentes inscriptos</a>
         <a class="dropdown-item" href="/listadoDocentesD1">Listado de docentes presentes (día 1)</a>
         <a class="dropdown-item" href="/listadoDocentesD2">Listado de docentes presentes (día 2)</a>
         <a class="dropdown-item" href="/listadoDocentesD1D2">Listado de docentes presentes ambos días</a>
         <a class="dropdown-item" href="/listadoDocentesTotales">Listado de docentes totales</a>
         <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia1">Listado de estudiantes presentes (día 1)</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia2">Listado de estudiantes presentes (día 2)</a>
         <a class="dropdown-item" href="#">Listado de estudiantes presentes ambos días</a>
@@ -86,9 +90,6 @@
         <a class="dropdown-item" href="/listadoColaboradores">Listado de colaboradores inscriptos</a>
         <a class="dropdown-item" href="/listadoInvitados">Listado de invitados inscriptos</a>
         <a class="dropdown-item" href="/listadoProveedores">Listado de proveedores inscriptos</a>
-        <a class="dropdown-item" href="/listadoEscuelasInscriptas">Listado de escuelas inscriptas</a>
-        <a class="dropdown-item" href="/listadoEscuelasParticipantes">Listado de escuelas participantes</a>
-        <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos</a>
         </div>
         </div>
         </div>

@@ -77,8 +77,8 @@
       <small class="form-text text-muted">Ingrese su fecha de nacimiento</small>
   </div>
   <div class="form-group col-sm-2.5">
-    <input type="text" name="celular" class="form-control" placeholder="Teléfono de contacto">
-    <small class="form-text text-muted">Preferentemente su número de celular (con 0 y sin 15)</small>
+    <input type="text" name="celular" class="form-control" placeholder="Número de contacto">
+    <small class="form-text text-muted">Ingrese su celular (sin 0 y sin 15)</small>
   </div>
   </div>
   <!-- Fin segunda línea del formulario -->

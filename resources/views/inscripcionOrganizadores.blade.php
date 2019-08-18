@@ -78,7 +78,7 @@
   </div>
   <div class="form-group col-sm-2.5">
     <input type="text" name="celular" class="form-control" placeholder="Teléfono de contacto">
-    <small class="form-text text-muted">Preferentemente su número de celular (con 0 y sin 15)</small>
+    <small class="form-text text-muted">Preferentemente su número de celular (sin 0 y sin 15)</small>
   </div>
   </div>
   <!-- Fin segunda línea del formulario -->

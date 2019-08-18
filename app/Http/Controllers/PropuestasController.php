@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Propuesta; // El "Propuesta" en amarillo es el nombre del modelo en Propuesta.php
 // use App\Grupo;
+use App\Rules\LetrasYEspacios;
 
 class PropuestasController extends Controller
 {
@@ -13,29 +14,10 @@ class PropuestasController extends Controller
     return view("inscripcionPropuestas");
   }
 
-  // public function votarPropuestas(Request $req) {
-  //
-  //   return view("votacionPeoplesChoice");
-  // }
-
-  // public function PorGrupo(Request $req) {
-  //   $todoslosgrupos = Grupo::all();
-  //   if (isset($req["ID_grupo"])) {
-  //       $resultados_grupo = Grupo::where("nombre", "=", $req["ID_grupo"])->first();
-  //   } else {
-  //       $resultados_grupo = null;
-  //   }
-  //   return view("inscripcionPropuestas", compact("resultados_grupo", "todoslosgrupos"));
-  // }
-
   public function registrarPropuestas(Request $req) {
     $this->validate($req, [
-      "nombre_coord" => "required|string|max:60",
-      "nom_propuesta" => "required|string|max:45",
-      "descrip_propuesta" => "required|string|max:255",
-      "codigo" => "required|string|max:10",
-      "ID_grupo" => "required|string|max:40"
-
+      "nombre_coord" => ['required',new LetrasYEspacios, 'max:20'],
+      "codigo" => "required|alpha_dash|max:20"
     ]);
 
     $propuesta = new Propuesta();
@@ -51,8 +33,34 @@ class PropuestasController extends Controller
     ->with([
     "estado" => $req["nom_propuesta"],
     ])
+    ;
+  }
+
+  public function votarPropuestas() {
+    return view("votacionPeoplesChoice");
+  }
+
+  public function registrarVoto(Request $req) {
+    $this->validate($req, [
+      "Opcion1DePropuesta" => "required|string|max:20",
+      "Opcion2DePropuesta" => "required|string|max:20",
+      // "apellido" => ['required',new LetrasYEspacios, 'max:20'],
+      "dni_estudiante" => "required|alpha_dash|max:20",
+    ]);
+
+    // $propuesta = new Propuesta();
+    $propuesta["nom_propuesta"] = $req["Opcion1DePropuesta"]; //Del lado izquierdo va el nombre de la columna de base de datos, del lado derecho el nombre del campo en el Formulario
+    $propuesta["cant_votos"] = $propuesta["cant_votos"] + 1;
+
+    $propuesta->save();
+
+    return redirect("/votacionPeoplesChoice")
+    ->with([
+    "estado" => $req["dni_estudiante"],
+    ])
 
     ;
+
   }
 
 

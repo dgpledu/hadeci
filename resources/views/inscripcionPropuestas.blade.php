@@ -188,7 +188,7 @@ La propuesta
       <br>
           <div class="form-row">
           <div class="form-group col-sm-4">
-        <input type="submit" class="btn btn-primary" value="Inscribir Propuesta">
+        <input type="submit" class="btn btn-primary" value="">
         <small class="form-text text-muted">Al dar clic en este botón se enviarán los datos del formulario y se dará por completado el envío de la propuesta.</small>
       </div>
       </form>       </div> </div>  </div>      </div>       </div>

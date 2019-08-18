@@ -86,7 +86,7 @@
   </div>
   <div class="form-group col-sm-3">
     <input type="text" name="celular" class="form-control" placeholder="Celular">
-    <small class="form-text text-muted">Ingrese su celular de contacto (lo utilizaremos solo para localizarlo dentro del evento)</small>
+    <small class="form-text text-muted">Ingrese su celular de contacto sin 0 y sin 15 (lo utilizaremos solo para localizarlo dentro del evento)</small>
   </div>
   </div>
   <!-- fin de la segunda línea del formulario -->

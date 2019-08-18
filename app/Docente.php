@@ -16,5 +16,6 @@ class Docente extends Model
 }
 public function escuelas() {
     return $this->belongsToMany("App\Escuela", "docente_escuela", "ID_docente", "ID_escuela");
+    // return $this->belongsToMany("App\Escuela", "ID_escuela", "ID_docente"); //al revés probando...
 }
 }

@@ -145,30 +145,6 @@ Luego de un envío, el formulario se limpiará y podrá cargar los datos para el
   </div>
   <!-- fin de la tercera línea del formulario -->
 
-  {{-- <h5>Datos padre/madre/tutor del/la estudiante</h5>
-  <h6 style="color: red">*Si el estudiante es mayor de edad, puede rellenar los campos de nombre, apellido y teléfono con "---" y en el mail repetir el del estudiante.</h6>
-  <!-- Inicio cuarta línea del formulario -->
-    <div class="form-row">
-      <div class="form-group col-sm-4">
-        <input type="text" class="form-control" name="NombrePadreMadre" value="{{old('NombrePadreMadre')}}" placeholder="Nombre del padre/madre/tutor">
-          <small class="form-text text-muted">Ingrese el nombre del/la padre/madre/tutor</small>
-      </div>
-        <div class="form-group col-sm-4">
-          <input type="text" class="form-control" name="ApellidoPadreMadre" value="{{old('ApellidoPadreMadre')}}" placeholder="Apellido del padre/madre/tutor">
-            <small class="form-text text-muted">Ingrese el apellido del/la padre/madre/tutor</small>
-        </div>
-        <div class="form-group col-sm-4">
-          <input type="email" class="form-control" name="EmailPadreMadre" value="{{old('EmailPadreMadre')}}" placeholder="E-mail">
-            <small class="form-text text-muted">Ingrese email de padre/madre/tutor</small>
-        </div>
-        </div>
-          <!-- fin de la cuarta línea del formulario -->
-        <div class="form-row">
-          <div class="form-group col-sm-4">
-            <input type="text" class="form-control" name="TelefonoPadreMadre" value="{{old('TelefonoPadreMadre')}}" placeholder="Teléfono del padre/madre/tutor">
-              <small class="form-text text-muted">Ingrese el teléfono de padre/madre/tutor</small>
-          </div>
-    </div> --}}
 
 <!-- Fin de carga de datos del estudiante -->
 <hr>

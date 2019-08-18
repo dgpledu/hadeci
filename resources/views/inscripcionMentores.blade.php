@@ -79,7 +79,7 @@
   </div>
   <div class="form-group col-sm-2.5">
     <input type="text" name="celular" class="form-control" placeholder="Celular de contacto">
-    <small class="form-text text-muted">Con 0 y sin 15. Los organizadores lo utilizarán para ubicarlo/a en el evento.</small>
+    <small class="form-text text-muted">Sin 0 y sin 15. Los organizadores lo utilizarán para ubicarlo/a en el evento.</small>
   </div>
   </div>
   <!-- Fin segunda línea del formulario -->

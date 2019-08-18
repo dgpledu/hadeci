@@ -25,24 +25,6 @@
     <h4>Listado de docentes presentes (ambos días)
 {{-- <span class="badge badge-primary badge-pill">{{count($todoslostutores)}}</span> --}}
 </h4>
-{{-- <h5>
-<span class="badge badge-primary badge-pill">
-{{ $todoslosdocentesD1->firstItem() }}
-</span>
-<span class="">
-a
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $todoslosdocentesD1->lastItem() }}
-</span>
-<span class="">
-de un total de
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $todoslosdocentesD1->total() }}
-</span>
-<!-- Fin de cartel x a y de un total de n elementos -->
-    </h5> --}}
 
 <!-- Prueba -->
 <h5>
@@ -101,7 +83,11 @@ de un total de
           <td>{{$docente["DNI"]}}</td>
           <td>{{$docente["Celular"] }}</td>
           <td><a href="mailto:{{$docente["email"]}}">{{$docente["email"]}}</a></td>
-          <td>{{$docente->escuela["nombre"] }}</td>
+          <td>
+            @foreach ($docente->escuelas as $escuela)
+                {{$escuela["nombre"]}}
+            @endforeach
+          </td>
         </tr>
       @endforeach
       </tbody>

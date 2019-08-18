@@ -17,5 +17,6 @@ public function estudiantes() {
 
 public function docentes() {
  return $this->belongsToMany("App\Docente", "docente_escuela", "ID_escuela", "ID_docente");
+ // return $this->belongsToMany("App\Docente", "docente_escuela", "ID_docente", "ID_escuela"); //probando al revés
 }
 }

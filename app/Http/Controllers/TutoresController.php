@@ -48,7 +48,7 @@ $todoslostutores = Tutor::all();
     $this->validate($req, [
       "nombre" => ['required',new LetrasYEspacios, 'max:20'],
       "apellido" => ['required',new LetrasYEspacios, 'max:20'],
-      "dni_tutor" => "required|string|max:20",
+      "dni_tutor" => "required|alpha_dash|max:20",
       "fecha_nac_tutor" => "required|date|after:01-01-1900|before:30-09-2001",
       "email_tutor" => "required|email",
       "celular" => "required|integer|max:99999999999",

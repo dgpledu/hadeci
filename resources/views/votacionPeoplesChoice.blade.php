@@ -43,26 +43,43 @@
 
 <div class="alert alert-secondary w-85" role="alert">
   <form class="form-group pt-2" action="" method="get">
-    {{-- {{ csrf_field() }} --}}
-    <input class="form-control-lg col-lg-4" type="text" name="busqueda_cuilcuit_otro" value="" placeholder="Ingrese su DNI sin puntos ni espacios">
-
+    {{ csrf_field() }}
+    <input class="form-control-lg col-lg-4" type="text" name="dni_estudiante" value="" placeholder="Ingrese su DNI sin puntos ni espacios">
 <!-- prueba para elegir la propuesta -->
 <br><br>
-<select class="form-control col-lg-3" name="rol">
-  <option value="" selected>Seleccione una propuesta a votar</option>
-  <option>Propuesta 1</option>
-  <option>Propuesta 2</option>
-  <option>Propuesta 3</option>
-</select>
-
+<div class="form-group col-sm-3">
+  <select class="form-control" name="Opcion1DePropuesta">
+    <option value="" selected>Propuesta...</option>
+    <option value>Cohetes a vela</option>
+        <option value>Caloventor alimentado por margaritas</option>
+          <option value>Calimestradora de avellanar calabrocas</option>
+          <option value>Cuadros redondos</option>
+  </select>
+  <small class="form-text text-muted">Propuesta preferida en <b>primer</b> lugar</small>
+</div>
+<div class="form-group col-sm-3">
+  <select class="form-control" name="Opcion2DePropuesta">
+    <option value="" selected>Propuesta...</option>
+    <option value>Cohetes a vela</option>
+        <option value>Caloventor alimentado por margaritas</option>
+          <option value>Calimestradora de avellanar calabrocas</option>
+          <option value>Cuadros redondos</option>
+      </option>
+  </select>
+  <small class="form-text text-muted">Propuesta preferida en <b>segundo</b> lugar. <span style="color: red">ATENCIÓN:</span> Debe ser <b>diferente</b> a la propuesta elegida en <b>primer</b> lugar.</small>
+</div>
+</div>
 <!-- fin de prueba para elegir la propuesta -->
 <br>
-
-    <button type="submit" name="" class="btn btn-success">Votar</button>
-    <small id="emailHelp" class="form-text text-muted">Tipee el CUIL/CUIT completo de la persona a acreditar (sin puntos ni guiones ni espacios)</small>
+    <button type="submit" name="voto" class="btn btn-success">Votar</button>
   </form>
 
-  @if ($resultados_o)
+
+  </form>
+
+{{-- @php dd() @endphp --}}
+
+  {{-- @if ($resultados_o)
         @foreach ($resultados_o->sortBy('apellido') as $otro)
               <div class="card">
                   <div class="card-header" style="background:#F2D333">
@@ -83,7 +100,7 @@
               </div>
                       <br>
           @endforeach
-   @endif
+   @endif --}}
 
 </div>
 

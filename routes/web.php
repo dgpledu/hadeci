@@ -143,7 +143,7 @@ Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
 Route::get("/inscripcionPropuestas", "PropuestasController@inscribirPropuestas");
 Route::post("/inscripcionPropuestas", "PropuestasController@registrarPropuestas");
 
-// Route::get("/votacionPeoplesChoice", "PropuestasController@votarPropuestas");
+Route::get("/votacionPeoplesChoice", "PropuestasController@votarPropuestas");
 // fin de People's choice
 Route::get("/cargarDesafios", "DesafiosController@cargar");
 Route::post("/cargarDesafios", "DesafiosController@guardar");

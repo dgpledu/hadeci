@@ -69,14 +69,17 @@ de un total de
             $numorden++;
           @endphp
         <tr>
-
           <th scope="row">{{ $numorden }}</th>
           <td>{{$docente["apellido"]}}</td>
           <td>{{$docente["nombre"]}}</td>
           <td>{{$docente["DNI"]}}</td>
-          <td>{{$docente["Celular"] }}</td>
+          <td>{{$docente["celular"] }}</td>
           <td><a href="mailto:{{$docente["email"]}}">{{$docente["email"]}}</a></td>
-          <td>{{$docente->escuela["nombre"] }}</td>
+          <td>
+              @foreach ($docente->escuelas as $escuela)
+                  {{$escuela["nombre"]}}
+              @endforeach
+         </td>
         </tr>
       @endforeach
       </tbody>

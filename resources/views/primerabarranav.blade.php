@@ -20,7 +20,7 @@
 
   @if (Auth::check())
 <!-- Opción de menú: Acreditación D1 -->
-      @if(Date(today()) < '2019-10-01 00:00:00') <!-- tiene que ser MENOR A -->
+      @if(Date(today()) == '2019-10-01 00:00:00') <!-- tiene que ser MENOR A -->
 <!-- Probando menú descolgable -->
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AcreditaciónD1</a>
