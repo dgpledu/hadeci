@@ -68,7 +68,7 @@ de un total de
           <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
-          <th scope="col">Foto</th>
+          {{-- <th scope="col">Foto</th> --}}
         </tr>
       </thead>
       <tbody>
@@ -84,7 +84,7 @@ de un total de
           <td>{{$otro["cuilcuit"]}}</td>
           <td>{{$otro["celular"]}}</td>
           <td><a href="mailto:{{$otro["email"]}}">{{$otro["email"]}}</a></td>
-          <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td>
+          {{-- <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td> --}}
         </tr>
       @endforeach
       </tbody>
