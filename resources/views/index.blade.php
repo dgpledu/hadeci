@@ -78,18 +78,6 @@
   <body>
   @include('primerabarranav')
 
-
-<!-- mapa -->
-      {{-- <div class="modal fade" role="dialog" id="imgModal">
-          <div class="modal-dialog">
-              <div class="modal-content"></div>
-                <img class="img-responsive" src="/imgs/plano-hadeci.jpg" id="show-img">
-              </div>
-      </div> --}}
-<!-- fin del mapa -->
-
-
-
           <!-- Barra de navegación con menú -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
       <div class="collapse navbar-collapse" >
@@ -119,23 +107,6 @@
 </div>
 
 
-
-
-
-
-
-{{-- <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    ¿Qué escuelas pueden participar?
-  </a>
-
-</p>
-<div class="collapse" id="que_escuelas_pueden_participar">
-  <div class="card card-body">
-    Todas las escuelas de gestión estatal o privada de la Ciudad Autónoma de Buenos Aires
-  </div>
-</div> --}}
-
 <!-- fin de prueba de FAQ -->
 
         </ul>
@@ -147,8 +118,6 @@
 <!-- Jumbotron -->
  <!-- DIV de fin del Jumbotron con la imagen de los chicos-->
 
-
-
  <div class="conimagenoscurecida">
    <h1 class="blanco animated wobble delay-2s"> Hackatón Desafíos Científicos </h1>
 
@@ -156,26 +125,17 @@
 
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron-verde.png')">
 
-
-
     <div class="contenedor">
      <div class="card-deck">
+
        <div class="card"> <!-- primera tarjeta -->
          <img class="card-img-top" src="/imgs/hdc2017-1.jpg" alt="estudiantes en hackatón">
          <div class="card-body">
            <h5 class="card-title"><a name="que_es">¿Qué es?</a></h5>
            <p class="card-text">
-
              Desafíos Científicos es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas. <br>
              <br>Los estudiantes trabajan en equipos <b>(5 a 8 integrantes cada uno)</b> para encontrar soluciones a problemas actuales vinculados al enfoque de ciencia y tecnología en sociedad.<br><br>
              Durante la actividad se promueve la imaginación, el trabajo colaborativo y el “espíritu emprendedor”.
-
-
-             {{-- Desafíos Científicos es una propuesta que promueve el abordaje de diversos desafíos regionales, globales y espaciales y la búsqueda de su resolución a lo largo de dos jornadas de trabajo.
-           <br>
-             Los estudiantes trabajan en equipos de entre <strong>5 a 8 estudiantes</strong> y eligen una entre <strong><a href="#tematicas">cuatro temáticas</a></strong> posibles a las cuales pertenecen los problemas. Los problemas abordan aspectos del mundo real. --}}
-
-
            <br>
            </p>
          </div>
@@ -193,7 +153,6 @@
 <li>integrando estudiantes de diferentes escuelas.</li></ul>
 No se requieren conocimientos previos.
 
-         {{-- Los equipos son armados por un equipo central en base a las <a href="#tematicas">temáticas</a> elegida por cada estudiante para asegurar la heterogeneidad. <br>Los equipos trabajan durante un día y medio para encontrar soluciones a problemas reales vinculados al enfoque de ciencia y tecnología en sociedad. --}}
            <br></p><a name="tematicas">
          </div>
        </div> <!-- fin de segunda tarjeta -->
@@ -204,15 +163,9 @@ No se requieren conocimientos previos.
            <h5 class="card-title"><a name="como_participar">¿Cómo participar?</a></h5>
            <p class="card-text">
 
-
              Para participar en Desafíos Científicos se debe realizar la inscripción correspondiente. <b>Cada estudiante debe ser registrado por un docente o directivo</b> de la institución escolar a la que pertenece.
              Los cupos son limitados. <br>
              <br>No es necesario llevar al evento ningún elemento en especial, aunque es más que bienvenido si desean concurrir con sus dispositivos portátiles como smartphones, netbooks o tablets.
-
-
-             {{-- Para participar en Desafíos Científicos se debe realizar la inscripción correspondiente. Cada estudiante debe registrarse a través de un docente o de otro personal responsable de la institución escolar. Para participar no es necesario llevar ningún elemento en especial aunque está más que bienvenido si desean llevar sus dispositivos portátiles como smartphones, netbooks o tablets. --}}
-
-
 
            </p>
          </div>
@@ -229,13 +182,8 @@ No se requieren conocimientos previos.
            <p class="card-text">
 
 
-             <span h6>Edición 2019:</span h6> <b>martes 1 y miércoles 2 de octubre (8:30 a 17:00)</b>.
-             <br><br>El evento se lleva a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas.
-
-
-{{-- El evento se lleva a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas. --}}
-
-             {{-- El evento se llevará a cabo en <a href="https://www.google.com.ar/maps/place/La+Usina+del+Arte/@-34.6285277,-58.3591658,17z/data=!3m1!4b1!4m5!3m4!1s0x95a334c73fe3e107:0xeae5d0a098ae5c1!8m2!3d-34.6285321!4d-58.3569718" target="_blank">La Usina del Arte, Agustín R. Caffarena 1, barrio de La Boca</a>, donde más de 600 estudiantes se repartirán en equipos conformados por representantes de escuelas diferentes. Durante la actividad se promoverá la imaginación, el trabajo colaborativo y el espíritu emprendedor. Los docentes acompañantes participarán de actividades específicas, formativas e informativas. --}}
+             <span h6>Edición 2019:</span h6> <b>martes 8 y miércoles 9 de octubre (8:30 a 17:00)</b>.
+             <br><br>El evento se lleva a cabo en <a href="https://goo.gl/maps/UJmcddvzDfgiLFiR6" target="_blank">Parque de la Estación, Pres. Tte. Juan Domingo Perón 3326, CABA</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas.
 
 
            </p>
@@ -411,7 +359,7 @@ Los docentes deben primero inscribirse como tales, para poder luego inscribir es
     </div>
     <div id="preguntaSiete" class="collapse" aria-labelledby="septimaPregunta" data-parent="#accordionExample">
       <div class="card-body">
-      Cada estudiante pueden llegar hasta la Usina del Arte solo, llegado el caso, pero al momento de la acreditación en el evento deberá estar acompañado/a por su docente a cargo.
+      Cada estudiante pueden llegar hasta el lugar solo, llegado el caso, pero al momento de la acreditación en el evento deberá estar acompañado/a por su docente a cargo.
       </div>
     </div>
   </div>
@@ -456,7 +404,7 @@ Los docentes deben primero inscribirse como tales, para poder luego inscribir es
     <div class="card-header" id="decimaPregunta">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaDiez" aria-expanded="false" aria-controls="collapseThree">
-          ¿Qué necesito llevar a la Usina para ingresar al evento?
+          ¿Qué necesito llevar al Parque de la Estación para ingresar al evento?
         </button>
       </h2>
     </div>
@@ -511,15 +459,15 @@ Los docentes deben primero inscribirse como tales, para poder luego inscribir es
     <div class="card-header" id="decimoterceraPregunta">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaTrece" aria-expanded="false" aria-controls="collapseThree">
-          ¿Cómo llego a la Usina del Arte?
+          ¿Cómo llego al Parque de la Estación?
         </button>
       </h2>
     </div>
     <div id="preguntaTrece" class="collapse" aria-labelledby="decimoterceraPregunta" data-parent="#accordionExample">
       <div class="card-body">
-        Líneas de colectivo que te acercan: 10, 20, 22, 24, 29, 33, 39, 46, 54, 64, 70, 74, 86, 93, 102, 129, 130, 152, 168 y 186.
+        Líneas de colectivo que te acercan: 24, 41, 68, 71, 75, 146, 151, 168, 194.
         <br><br>
-        Estación BAEcobici #108 – Usina del Arte.
+        Estación BAEcobici #052 – Sánchez de Bustamante.
       </div>
     </div>
   </div>

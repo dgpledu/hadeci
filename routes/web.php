@@ -86,6 +86,11 @@ Route::get("/acreditacionOtrosDia2", "OtrosController@acreditarOtroDia2")->middl
 Route::post("/acreditacionOtrosDia2", "OtrosController@confirmarOtroDia2")->middleware("auth");
 // fin de acreditar OTROS
 
+// Opción agregar escuelas
+Route::get("/agregarescuelas", "EscuelasParticipantesController@cargarEscuela")->middleware("auth");
+Route::post("/agregarescuelas", "EscuelasParticipantesController@agregarEscuela")->middleware("auth");
+// fin de agregar escuelas
+
 // Check-out de mentores
 Route::get("/checkoutMentoresDia1", "OtrosController@acreditarCheckOutDia1")->middleware("auth");
 Route::post("/checkoutMentoresDia1", "OtrosController@confirmarCheckOutDia1")->middleware("auth");
@@ -137,8 +142,12 @@ Route::get("/consultaPorDesafio", "DesafiosController@consulta")->middleware("au
 Route::get("/asignarDesafioATutores", "DesafiosController@consultaDeTutores");
 
 Route::get("/consultaPorDesafioTipeandoCodigo", "DesafiosController@consultaTipeandoCodigo");
+
+// Deshabilitación transitoria por falta de cupo
 Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
 Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
+// Fin de deshabilitación transitoria por falta de cupo
+
 // People's choice
 Route::get("/inscripcionPropuestas", "PropuestasController@inscribirPropuestas");
 Route::post("/inscripcionPropuestas", "PropuestasController@registrarPropuestas");
@@ -147,8 +156,12 @@ Route::get("/votacionPeoplesChoice", "PropuestasController@votarPropuestas");
 // fin de People's choice
 Route::get("/cargarDesafios", "DesafiosController@cargar");
 Route::post("/cargarDesafios", "DesafiosController@guardar");
+
+// Deshabilitación transitoria por falta de cupo
 Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
 Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
+// fin de deshabilitación transitoria por falta de cupo
+
 Route::get("/inscripcionTutores", "TutoresController@inscribir");
 Route::post("/inscripcionTutores", "TutoresController@registrar");
 Route::get("/inscripcionMentores", "OtrosController@inscribirMentores");

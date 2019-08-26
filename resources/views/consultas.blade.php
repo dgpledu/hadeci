@@ -18,10 +18,10 @@
 
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
 
-     {{-- <div class="jumbotron bg-light" > <!-- jumbotron secundario --> --}}
       <!-- Dos columnas -->
+      <!-- Columna 1 -->
       <div class="row">
-  <div class="col-sm-5 ml-auto">
+  <div class="col-sm-3 ml-auto">
     <div class="card">
       <div class="card-header" style="background:#ffebcc"><h5>Consultas</h5></div>
        <div class="card-body">
@@ -50,7 +50,7 @@
   </div>
   <!-- Fin columna 1 -->
     <!-- Columna 2 -->
-  <div class="col-sm-5 mr-auto ">
+  <div class="col-sm-3">
     <div class="card">
         <div class="card-header" style="background:#b3ffb3"><h5>Listados</h5></div>
       <div class="card-body">
@@ -96,6 +96,31 @@
         </div>
         </div>
               <!-- fin de columna 2 -->
+
+              <!-- Columna 3 -->
+            <div class="col-sm-3 mr-auto ">
+              <div class="card">
+                  <div class="card-header" style="background:#A9F5F2"><h5>Modificaciones</h5></div>
+                <div class="card-body">
+                  <h5 class="card-title">Altas y bajas de registros</h5>
+                    <p class="card-text">Agregar escuelas faltantes, cargar desafíos, asignar desafíos a tutores, etc.</p><br><br><br><br>
+                  {{-- <div class="card-body"> --}}
+                    <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  clic para desplegar opciones
+                </button>
+                  <small id="emailHelp" class="form-text text-muted">Elegir el tipo de modificación a realizar<br><br></small>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/cargarDesafios">Cargar desafíos</a>
+                  <a class="dropdown-item" href="/asignarDesafioATutores">Asignar desafío a tutores</a>
+                  <a class="dropdown-item" href="/agregarescuelas">Agregar escuelas no incluidas en la base de datos</a>
+                  <div class="dropdown-divider"></div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                        <!-- fin de columna 3 -->
         </div>
 
 </div><!-- fin del jumbotron secundario -->

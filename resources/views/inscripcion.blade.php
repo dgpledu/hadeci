@@ -30,8 +30,11 @@
           </button>
             <small id="emailHelp" class="form-text text-muted">Elija la opción que corresponda y recuerde que para inscribir estudiantes debe primero inscribirse como docente. Si usted es personal de la escuela pero no se desempeña como docente, igual debe inscribirse como docente de su escuela por más que no tenga estudiantes a cargo en este evento.</small>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a>
-            <hr>
+            <!-- Deshabilitación transitoria por falta de cupo -->
+            {{-- <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a> --}}
+            {{-- <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a> --}}
+            {{-- <hr> --}}
+            <!-- Fin de deshabilitación transitoria por falta de cupo -->
             <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente</a>
             <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor/a</a>
             <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor/a</a>
@@ -42,16 +45,7 @@
             <a class="dropdown-item" href="/inscripcionInvitados">Inscribirme como invitado/a</a>
             <a class="dropdown-item" href="/inscripcionDisertantes">Inscribirme como disertante/tallerista</a>
             <a class="dropdown-item" href="/inscripcionProveedores">Inscribirme como proveedor/a de servicios y/o productos</a>
-            {{-- <a class="dropdown-item" href="#">Miembro de institución asociada</a> --}}
-            {{-- <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor</a>
-            <a class="dropdown-item" href="/inscripcionJurados">Inscribirme como jurado</a>
-            <a class="dropdown-item" href="/inscripcionOrganizadores">Inscribirme como organizador</a>
-            <a class="dropdown-item" href="/inscripcionAutoridades">Inscribirme como autoridad</a>
-            <a class="dropdown-item" href="/inscripcionColaboradores">Inscribirme como colaborador</a>
-            <a class="dropdown-item" href="/inscripcionInvitados">Inscribirme como invitado</a>
-            <a class="dropdown-item" href="/inscripcionDisertante">Inscribirme como disertante/tallerista</a>
-            <a class="dropdown-item" href="/inscripcionProveedor">Inscribirme como proveedor de servicios y/o productos</a>
-            <a class="dropdown-item" href="/inscripcionMiembroIA">Miembro de institución asociada</a> --}}
+
       </div>
     </div>
       </div>

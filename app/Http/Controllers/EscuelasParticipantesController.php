@@ -77,4 +77,37 @@ public function listadotodas(Request $req) {
       return view("consultaEstablecimientos", compact("resultados_e"));
     }
 
+    public function cargarEscuela() {
+
+      return view("agregarescuelas");
+    }
+
+    public function agregarEscuela(Request $req)
+    {
+      $escuelaagregada = new Escuela();
+      $escuelaagregada["nombre"] = $req["nombre"]; //Del lado izquierdo va el nombre de la columna de base de datos, del lado derecho el nombre del campo en el Formulario
+      $escuelaagregada["nombre_abrev"] = $req["nombre_abrev"];
+      $escuelaagregada["dom_edific"] = $req["dom_edific"];
+      $escuelaagregada["dom_establ"] = $req["dom_establ"];
+      $escuelaagregada["cui"] = $req["cui"];
+      $escuelaagregada["cueanexo"] = $req["cueanexo"];
+      $escuelaagregada["cue"] = $req["cue"];
+      $escuelaagregada["telefono"] = $req["telefono"];
+      $escuelaagregada["nivelmodal"] = $req["nivelmodal"];
+      $escuelaagregada["de"] = $req["de"];
+      $escuelaagregada["comunas"] = $req["comunas"];
+      $escuelaagregada["barrio"] = $req["barrio"];
+      $escuelaagregada["codigo_postal"] = $req["codigo_postal"];
+
+      $escuelaagregada->save();
+
+      return redirect("/agregarescuelas")
+      ->with([
+      "estado" => $req["nombre"],
+
+      ])
+
+      ;
+    }
+
 };
