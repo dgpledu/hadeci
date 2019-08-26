@@ -182,8 +182,8 @@ No se requieren conocimientos previos.
            <p class="card-text">
 
 
-             <span h6>Edición 2019:</span h6> <b>Próximamente se definirá fecha y lugar de realización</b>.
-             <br><br>El evento contará con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas.
+             <span h6>Edición 2019:</span h6> <b>martes 8 y miércoles 9 de octubre (8:30 a 17:00)</b>.
+             <br><br>El evento se lleva a cabo en <a href="https://goo.gl/maps/UJmcddvzDfgiLFiR6" target="_blank">Parque de la Estación, Pres. Tte. Juan Domingo Perón 3326, CABA</a>, con la presencia de cerca de <b>600 estudiantes</b> de diferentes escuelas y <b>100 docentes</b> acompañantes que participan en actividades específicas, formativas e informativas.
 
 
            </p>
@@ -404,7 +404,7 @@ Los docentes deben primero inscribirse como tales, para poder luego inscribir es
     <div class="card-header" id="decimaPregunta">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaDiez" aria-expanded="false" aria-controls="collapseThree">
-          ¿Qué necesito llevar al lugar de realización para ingresar al evento?
+          ¿Qué necesito llevar al Parque de la Estación para ingresar al evento?
         </button>
       </h2>
     </div>
@@ -455,7 +455,7 @@ Los docentes deben primero inscribirse como tales, para poder luego inscribir es
   <!-- fin de nueva pregunta -->
 
   <!-- Nueva pregunta -->
-  {{-- <div class="card">
+  <div class="card">
     <div class="card-header" id="decimoterceraPregunta">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#preguntaTrece" aria-expanded="false" aria-controls="collapseThree">
@@ -470,7 +470,7 @@ Los docentes deben primero inscribirse como tales, para poder luego inscribir es
         Estación BAEcobici #052 – Sánchez de Bustamante.
       </div>
     </div>
-  </div> --}}
+  </div>
   <!-- fin de nueva pregunta -->
 
   <!-- Nueva pregunta -->

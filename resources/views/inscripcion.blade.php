@@ -34,8 +34,8 @@
             {{-- <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a> --}}
             {{-- <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a> --}}
             {{-- <hr> --}}
-            <!-- Fin de deshabilitación transitoria por falta de cupo -->
-            <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente</a>
+            {{-- <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente</a> --}}
+              <!-- Fin de deshabilitación transitoria por falta de cupo -->
             <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor/a</a>
             <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor/a</a>
             <a class="dropdown-item" href="/inscripcionJurados">Inscribirme como jurado</a>

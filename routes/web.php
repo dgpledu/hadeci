@@ -144,8 +144,8 @@ Route::get("/asignarDesafioATutores", "DesafiosController@consultaDeTutores");
 Route::get("/consultaPorDesafioTipeandoCodigo", "DesafiosController@consultaTipeandoCodigo");
 
 // Deshabilitación transitoria por falta de cupo
-Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
-Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
+// Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
+// Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
 // Fin de deshabilitación transitoria por falta de cupo
 
 // People's choice
@@ -158,8 +158,8 @@ Route::get("/cargarDesafios", "DesafiosController@cargar");
 Route::post("/cargarDesafios", "DesafiosController@guardar");
 
 // Deshabilitación transitoria por falta de cupo
-Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
-Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
+// Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
+// Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
 // fin de deshabilitación transitoria por falta de cupo
 
 Route::get("/inscripcionTutores", "TutoresController@inscribir");
@@ -181,8 +181,11 @@ Route::post("/inscripcionInvitados", "OtrosController@registrarInvitados");
 Route::get("/inscripcionProveedores", "OtrosController@inscribirProveedores");
 Route::post("/inscripcionProveedores", "OtrosController@registrarProveedores");
 Route::post("/inscripcion", "OtrosController@registrar");
-Route::get("/inscripcionDocentes", "DocentesController@inscribir");
-Route::post("/inscripcionDocentes", "DocentesController@registrar");
+
+// Deshabilitación transitoria por falta de cupo
+// Route::get("/inscripcionDocentes", "DocentesController@inscribir");
+// Route::post("/inscripcionDocentes", "DocentesController@registrar");
+// Fin de deshabilitación transitoria por falta de cupo
 
 // Esto lo agregué para el logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
