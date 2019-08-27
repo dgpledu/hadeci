@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
         <!-- ¡Esto debe ir antes que ningún otro stylesheet!!! -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
 
     <title>Inscripción</title>
@@ -18,6 +18,24 @@
 
  {{-- <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')"> --}}
    <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron-HDC-jpg-01.jpg')">
+
+<!-- Toast -->
+  <div class="toast" style="position: absolute; top: 0; right: 27rem;" id="cupocompleto" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true" >
+  <div class="toast-header">
+    <img src="/imgs/alerta.png" class="rounded mr-2" alt="...">
+    <strong class="mr-auto">¡CUPO COMPLETO!</strong>
+    <small>27 de Agosto</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    No se aceptan más inscripciones de <b>estudiantes</b>. Solo docentes acompañantes y demás perfiles (tutores, mentores, etc.).
+  </div>
+</div>
+<!-- fin de toast -->
+
+
  <div class="col-sm-6 mx-auto">
     <div class="card mx-auto" >
       <div class="card-header" style="background:#ffebcc"><h4>Menú de opciones para inscripción</h4></div>
@@ -33,9 +51,9 @@
             <!-- Deshabilitación transitoria por falta de cupo -->
             {{-- <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a> --}}
             {{-- <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a> --}}
+                <!-- Fin de deshabilitación transitoria por falta de cupo -->
             {{-- <hr> --}}
-            {{-- <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente</a> --}}
-              <!-- Fin de deshabilitación transitoria por falta de cupo -->
+            <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente acompañante</a>
             <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor/a</a>
             <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor/a</a>
             <a class="dropdown-item" href="/inscripcionJurados">Inscribirme como jurado</a>
@@ -60,6 +78,13 @@
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <script>
+      $(document).ready(function(){
+          $("#cupocompleto").toast('show');
+      });
+      </script>
+
   </body>
     </html>

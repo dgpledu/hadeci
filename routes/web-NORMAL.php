@@ -15,14 +15,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get("cambiarAbase2019", function() {
+Route::get("cambiarAbaseActual", function() {
   $_SESSION["db"] = "hadeci";
 
   return back();
 });
 
-Route::get("cambiarAbasePrueba", function() {
-  $_SESSION["db"] = "hadeci_prueba";
+Route::get("cambiarAbase2018", function() {
+  $_SESSION["db"] = "hadeci2018";
 
   return back();
 });
@@ -144,8 +144,8 @@ Route::get("/asignarDesafioATutores", "DesafiosController@consultaDeTutores");
 Route::get("/consultaPorDesafioTipeandoCodigo", "DesafiosController@consultaTipeandoCodigo");
 
 // Deshabilitación transitoria por falta de cupo
-// Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
-// Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
+Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
+Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
 // Fin de deshabilitación transitoria por falta de cupo
 
 // People's choice
@@ -158,8 +158,8 @@ Route::get("/cargarDesafios", "DesafiosController@cargar");
 Route::post("/cargarDesafios", "DesafiosController@guardar");
 
 // Deshabilitación transitoria por falta de cupo
-// Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
-// Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
+Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
+Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
 // fin de deshabilitación transitoria por falta de cupo
 
 Route::get("/inscripcionTutores", "TutoresController@inscribir");

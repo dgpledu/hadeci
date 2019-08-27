@@ -34,10 +34,10 @@
              docente de la escuela <b>{{session('escuela')}}</b> se ha inscripto correctamente en "Desafíos Científicos".
              <br><br>
              <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción desde la dirección <font color="#2E9AFE">desafios.cientificos@gmail.com</font><br> Por favor, verifique que el correo no se encuentre en la carpeta de correo no deseado o SPAM.
-.<hr>
-             <!-- prueba de botón para dirigir a inscripción de estudiantes -->
 
-             Si desea inscribir ahora a sus estudiantes, haga clic en el botón siguiente: <a class="btn btn-success" href="/preinscripcionEstudiantes" role="button">Inscribir estudiantes</a>
+             <!-- prueba de botón para dirigir a inscripción de estudiantes -->
+             {{-- <hr>
+             Si desea inscribir ahora a sus estudiantes, haga clic en el botón siguiente: <a class="btn btn-success" href="/preinscripcionEstudiantes" role="button">Inscribir estudiantes</a> --}}
              <!-- fin prueba de botón  -->
              </h5>
           </div>

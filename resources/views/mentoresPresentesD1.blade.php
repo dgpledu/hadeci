@@ -10,6 +10,12 @@
         <!-- ¡Esto debe ir antes que ningún otro stylesheet!!! -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
+      <!-- De Slick -->
+      {{-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+      <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> --}}
+
+{{-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> --}}
+    <!-- Fin de Slick -->
     <title>Mentores presentes (día 1)</title>
   </head>
   <body>
@@ -23,46 +29,43 @@
 
     <div class="card mx-auto pt-0 mt-0 ">
 
-
-
       <div class="card-header" style="background:#ffebcc"><h4>Mentores presentes (día 1)</h4></div>
        <div class="card-body pt-1" >
-              @if ($todoslosmentorespresentesD1)
-                    @foreach ($todoslosmentorespresentesD1->sortBy('apellido') as $mentor)
+         @if ($todoslosmentorespresentesD1)
+               @foreach ($todoslosmentorespresentesD1->sortBy('apellido') as $mentor)
 <!-- CON TABLAS DENTRO DE TARJETAS -->
 <div class="card" style="width: 65rem;">
 <ul class="list-group list-group-flush">
 <li class="list-group-item">
-  <table style="width:100%">
+
+  <!-- Principio de tabla -->
+ <table style="width:100%">
   <td width="20%">
     <img src="storage/{{$mentor["nom_foto"]}}" width="120" height="90">
   </td>
   <td width="55%">
     <font size="6"><b>{{$mentor["nombre"]}} {{$mentor["apellido"]}}</b></font>
   </td>
-  <td width="25%">
-
-{{$mentor["area_expertise1"]}} | {{$mentor["area_expertise2"]}}
+  <td width="25%">{{$mentor["area_expertise1"]}} | {{$mentor["area_expertise2"]}}
 <p>
 Robótica: {{$mentor["exp_robotica"]}} | Programación: {{$mentor["exp_program"]}}
-
 </p>
   </td>
 </table>
-</li>
+<!-- fin de la tabla -->
+ </li>
 </ul>
 </div>
 <!-- fin de primera tarjeta -->
 
 @endforeach
-@endif
+        @endif
 </div>
 <a class="arriba" href="#"></a>
 <!-- fin del contenedor principal -->
             </div>
 <br>
-            {{-- @endforeach
-                    @endif --}}
+
 
 </div></div>
 
@@ -83,6 +86,26 @@ Robótica: {{$mentor["exp_robotica"]}} | Programación: {{$mentor["exp_program"]
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js">
       </script>
+      <!-- Para Slick -->
+      {{-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="slick/slick.min.js"></script> --}}
+      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <!-- Fin de para Slick -->
+
+      <!-- Script para Carrousel con Slick -->
+      <script>
+      $('.Carrousel').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
+
+
+	   </script>
+
+      <!-- Fin de carrousel con Slick -->
 
       <script>
     $(document).ready(function() {

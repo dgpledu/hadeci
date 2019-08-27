@@ -557,7 +557,8 @@ $todoslosmentores = Otro::all();
 $todoslosmentorespresentesD1 = Otro::where('rol', 'Mentor')
 ->where('pres_dia1', 1)->get();
 $otros = Otro::all();
-    return view("mentoresPresentesD1", compact("todoslosmentorespresentesD1", "otros"));
+$todoslosmentorespresentesD1json = json_encode($todoslosmentorespresentesD1);
+    return view("mentoresPresentesD1", compact("todoslosmentorespresentesD1", "otros", "todoslosmentorespresentesD1json"));
   }
 
   public function listadoMentoresPresentesD2(Request $req) {
