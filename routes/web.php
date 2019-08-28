@@ -58,6 +58,7 @@ Route::get('/acreditacionxmenu', function () {
 // fin de prueba de locuras
 
 Route::get("/consultaEstablecimientos", "EscuelasParticipantesController@listadotodas");
+Route::get("/consultaEscuelasPorID", "EscuelasParticipantesController@consultaEscuelasPorID");
 Route::get("/acreditarEstudiantes", "EstudiantesController@acreditacion");
 Route::post("/estudiantesAcreditados", "EstudiantesController@acreditados");
 

@@ -15,4 +15,6 @@ class EstablecimientosController extends Controller
       }
       return view("consultaEstablecimientos", compact("resultados_e"));
     }
+
+    
 }

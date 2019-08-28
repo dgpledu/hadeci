@@ -41,6 +41,7 @@
             <a class="dropdown-item" href="/estudiantesPorGrupo">Estudiantes por grupo</a>
             <a class="dropdown-item" href="/consultaPorDesafio">Desafíos (por nombre para saber descripción, tutor y grupos asignados)</a>
             <a class="dropdown-item" href="/consultaEstablecimientos">Establecimientos oficiales de CABA (por nombre o parte del nombre)</a>
+            <a class="dropdown-item" href="/consultaEscuelasPorID">Establecimientos oficiales de CABA (por ID)</a>
               <a class="dropdown-item" href="/consultaEscuelasParticipantes">Escuelas participantes del hackatón (por nombre o parte del nombre)</a>
               <a class="dropdown-item" href="/consultaTutores">Tutores (para saber grupos y estudiantes)</a>
       </div>

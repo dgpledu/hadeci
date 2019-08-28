@@ -16,6 +16,15 @@ class EscuelasParticipantesController extends Controller
       return view("consultaEscuelasParticipantes", compact("resultados_esc"));
     }
 
+    public function consultaEscuelasPorID(Request $req) {
+      if (isset($req["busqueda_establecimientoPorID"])) {
+          $resultados_e = Escuela::where("ID", "=", $req["busqueda_establecimientoPorID"])->get();
+      } else {
+          $resultados_e = [];
+      }
+      return view("consultaEscuelasPorID", compact("resultados_e"));
+    }
+
     public function consultaactivas(Request $req) {
 
       if (isset($req["busqueda_escuela"])) {
