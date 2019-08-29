@@ -59,7 +59,7 @@ $resultados_esc = Escuela::where("activa", "=", 1)
 
 public function listadoParticipantes() {
 
-$escuelasordenadas = Escuela::where("activa", "=", 1)->orderBy("nombre")->paginate(30);
+$escuelasordenadas = Escuela::where("activa", "=", 1)->orderBy("nombre")->paginate(100);
 
 // $escuelasordenadas = Escuela::orderBy('nombre')->paginate(10);
  $numerototaldeescuelas = $escuelasordenadas->count();
@@ -69,7 +69,7 @@ $escuelasordenadas = Escuela::where("activa", "=", 1)->orderBy("nombre")->pagina
 
 public function listadoInscriptas() {
 
-$escuelasordenadas = Escuela::where("activa", "=", 1)->orderBy("nombre")->paginate(30);
+$escuelasordenadas = Escuela::where("activa", "=", 1)->orderBy("nombre")->paginate(100);
 
 // $escuelasordenadas = Escuela::orderBy('nombre')->paginate(10);
  $numerototaldeescuelas = $escuelasordenadas->count();

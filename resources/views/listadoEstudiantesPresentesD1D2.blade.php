@@ -8,11 +8,11 @@
     <!-- Bootstrap CSS -->
         <!-- ¡Esto debe ir antes que ningún otro stylesheet!!! -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="/css/tableexport.css" rel="stylesheet">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
+      <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+      <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de tutores presentes (día 1)</title>
+    <title>Listado de estudiantes presentes (ambos días)</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,107 +22,74 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de tutores presentes (día 1)
-{{-- <span class="badge badge-primary badge-pill">{{count($todoslostutores)}}</span> --}}
-</h4>
-{{-- <h5>
-<span class="badge badge-primary badge-pill">
-{{ $todoslosdocentesD1->firstItem() }}
-</span>
-<span class="">
-a
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $todoslosdocentesD1->lastItem() }}
-</span>
-<span class="">
-de un total de
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $todoslosdocentesD1->total() }}
-</span>
-<!-- Fin de cartel x a y de un total de n elementos -->
-    </h5> --}}
-
-<!-- Prueba -->
-<h5>
-<span class="badge badge-primary badge-pill">
-{{ $todoslostutoresD1->firstItem() }}
-</span>
-<span class="">
-a
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $todoslostutoresD1->lastItem() }}
-</span>
-<span class="">
-de un total de
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $todoslostutoresD1->total() }}
-</span>
-<!-- Fin de cartel x a y de un total de n elementos -->
-    </h5>
-<!-- fin de prueba -->
-
+    <h4>Listado de estudiantes presentes en el hackatón ambos días</h4>
+    <h5>
+    <span class="badge badge-primary badge-pill">
+    {{ $estudiantesPresentesD1D2->firstItem() }}
+    </span>
+    <span class="">
+    a
+    </span>
+    <span class="badge badge-primary badge-pill">
+    {{ $estudiantesPresentesD1D2->lastItem() }}
+    </span>
+    <span class="">
+    de un total de
+    </span>
+    <span class="badge badge-primary badge-pill">
+    {{ $estudiantesPresentesD1D2->total() }}
+    </span>
+    <!-- Fin de cartel x a y de un total de n elementos -->
+        </h5>
   </div>
   <div class="card-body">
-
     <!-- tabla -->
     @php
-      $numorden = ($todoslostutoresD1->currentpage()-1)* $todoslostutoresD1->perpage();
+      $numorden = ($estudiantesPresentesD1D2->currentpage()-1)* $estudiantesPresentesD1D2->perpage();
     @endphp
-    {{-- @php
-      $numorden = 0;
-    @endphp --}}
     <table id="tabla-listado" class="table table-responsive table-striped">
-      {{-- <thead style="background:#F2D333"> --}}
-        <thead class="thead-dark">
+      <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
-          <th scope="col">CUIL/CUIT</th>
-          <th scope="col">Celular</th>
-          <th scope="col">Email</th>
-          <th scope="col">Institución</th>
+          <th scope="col">DNI</th>
+          <th scope="col">Escuela</th>
+          <th scope="col">Docente</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($todoslostutoresD1 as $tutor)
+        @foreach ($estudiantesPresentesD1D2 as $estudiante)
           @php
             $numorden++;
           @endphp
         <tr>
-
           <th scope="row">{{ $numorden }}</th>
-          <td>{{$tutor["Apellido"]}}</td>
-          <td>{{$tutor["Nombre"]}}</td>
-          <td>{{$tutor["DNI"]}}</td>
-          <td>{{$tutor["Celular"] }}</td>
-          <td><a href="mailto:{{$tutor["email"]}}">{{$tutor["email"]}}</a></td>
-          <td>{{$tutor["instit_rep"] }}</td>
+          <td>{{$estudiante["apellido"]}}</td>
+          <td>{{$estudiante["nombre"]}}</td>
+          <td>{{$estudiante["DNI"]}}</td>
+          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
+          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
         </tr>
       @endforeach
       </tbody>
     </table>
     <!-- fin de tabla -->
-
-  <!-- tabla para paginación -->
-    <table class="table table-responsive ">
-      {{-- <thead>
+    <table class="table table-responsive table-striped">
+      {{-- <thead style="background:#F2D333">
         <tr>
           <th scope="col"></th>
         </tr>
       </thead> --}}
       <tbody>
         <tr>
-          <div>{{$todoslostutoresD1->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></div>
+          <div>{{$estudiantesPresentesD1D2->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></div>
         </tr>
       </tbody>
     </table>
-    <!-- fin de tabla para paginación -->
-</div></div>
+
+    </div>
+    </div>
 </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')

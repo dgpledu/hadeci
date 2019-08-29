@@ -27,7 +27,7 @@
      <div class="alert alert-success">
 <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
-        <b> {{session('estado')}}, </b>
+        <b> {{session('estado')}} </b>
         se ha inscripto correctamente en el hackatón "Desafíos Científicos".<br>
         {{-- <br><br>
         <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción y detallando información necesaria para el evento. --}}

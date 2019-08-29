@@ -131,6 +131,7 @@ Route::get("/estudiantesPorDocenteNL", "EstudiantesController@PorDocenteNL");
 Route::get("/listadoEstudiantes", "EstudiantesController@listado")->middleware("auth");
 Route::get("/listadoEstudiantesPresentesDia1", "EstudiantesController@listadoEstudiantesPresentesDia1")->middleware("auth");
 Route::get("/listadoEstudiantesPresentesDia2", "EstudiantesController@listadoEstudiantesPresentesDia2")->middleware("auth");
+Route::get("/listadoEstudiantesPresentesD1D2", "EstudiantesController@listadoEstudiantesPresentesD1D2")->middleware("auth");
 Route::get("/estudiantesPorEscuela", "EstudiantesController@PorEscuelaActiva")->middleware("auth");
 Route::get("/estudiantesPorGrupo", "EstudiantesController@PorGrupo")->middleware("auth");
 // agregado a ver si funciona

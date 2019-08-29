@@ -78,14 +78,14 @@ de un total de
     </table>
     <!-- fin de tabla -->
     <table class="table table-responsive table-striped">
-      <thead>
+      {{-- <thead>
         <tr>
-          {{-- <th scope="col"></th> --}}
+          <th scope="col">Hola</th>
         </tr>
-      </thead>
+      </thead> --}}
       <tbody>
         <tr>
-          <th scope="row">{{$estudiantesPresentesDia1->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
+          <div >{{$estudiantesPresentesDia1->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></div>
         </tr>
       </tbody>
     </table>

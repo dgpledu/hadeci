@@ -38,6 +38,7 @@
   <!-- Prueba de tabla linda -->
   @if ($resultados_d)
     <b>Docente:</b> {{$resultados_d["apellido"]}}, {{$resultados_d["nombre"]}} |
+    <b>ID:</b> {{$resultados_d["ID"]}} |
     <b>DNI:</b> {{$resultados_d["DNI"]}}<br>
     <b>Cantidad de estudiantes: </b>{{count($resultados_d->estudiantes)}}
     <br><hr>

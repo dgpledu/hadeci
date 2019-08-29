@@ -12,7 +12,7 @@
     <link href="/css/tableexport.css" rel="stylesheet">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
 
-    <title>Listado de docentes</title>
+    <title>Listado de docentes inscriptos</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,7 +22,7 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de docentes
+    <h4>Listado de docentes inscriptos
 {{-- <span class="badge badge-primary badge-pill">{{count($todoslostutores)}}</span> --}}
 </h4>
 <h5>
@@ -55,6 +55,7 @@ de un total de
         <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
+          <th scope="col">ID</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
           <th scope="col">CUIL/CUIT</th>
@@ -70,6 +71,7 @@ de un total de
           @endphp
         <tr>
           <th scope="row">{{ $numorden }}</th>
+          <td>{{$docente["ID"]}}</td>
           <td>{{$docente["apellido"]}}</td>
           <td>{{$docente["nombre"]}}</td>
           <td>{{$docente["DNI"]}}</td>

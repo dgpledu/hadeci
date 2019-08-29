@@ -268,28 +268,37 @@ public function acreditadosDia2(Request $req) {
   }
 
   public function listado() {
-  $estudiantes = Estudiante::orderBy('apellido')->paginate(50);
+  $estudiantes = Estudiante::orderBy('apellido')->paginate(1000);
   $totaldeestudiantes = Estudiante::all()->count();
   // $escuelaPorID = Escuela::where("ID_escuela", "=", $req["iddelaescuela"])->first();
     return view("listadoEstudiantes", compact("estudiantes", "totaldeestudiantes", "escuelaPorID"));
   }
 
   public function listadoEstudiantesPresentesDia1(Request $req) {
-  // $estudiantes = Estudiante::orderBy('apellido')->paginate(15);
-  $estudiantesPresentesDia1 = Estudiante::where("pres_dia1", "=", 1)->orderBy('apellido')->paginate(50);
-  $totaldeestudiantesPresentesDia1 = Estudiante::where("pres_dia1", "=", 1)->count();
-  // $escuelaPorID = Escuela::where("ID_escuela", "=", $req["iddelaescuela"])->first();
+  $estudiantesPresentesDia1 = Estudiante::where("pres_dia1", "=", 1)
+  ->orderBy('apellido')
+  ->paginate(1000);
+  $totaldeestudiantesPresentesDia1 = Estudiante::where("pres_dia1", "=", 1)
+  ->count();
     return view("listadoEstudiantesPresentesDia1", compact("totaldeestudiantesPresentesDia1", "estudiantesPresentesDia1"));
   }
 
   public function listadoEstudiantesPresentesDia2(Request $req) {
-  // $estudiantes = Estudiante::orderBy('apellido')->paginate(15);
-  $estudiantesPresentesDia2 = Estudiante::where("pres_dia2", "=", 1)->orderBy('apellido')->paginate(50);
-  $totaldeestudiantesPresentesDia2 = Estudiante::where("pres_dia2", "=", 1)->count();
-  // $escuelaPorID = Escuela::where("ID_escuela", "=", $req["iddelaescuela"])->first();
+  $estudiantesPresentesDia2 = Estudiante::where("pres_dia2", "=", 1)
+  ->orderBy('apellido')
+  ->paginate(1000);
+  $totaldeestudiantesPresentesDia2 = Estudiante::where("pres_dia2", "=", 1)
+  ->count();
     return view("listadoEstudiantesPresentesDia2", compact("totaldeestudiantesPresentesDia2", "estudiantesPresentesDia2"));
   }
 
+  public function listadoEstudiantesPresentesD1D2(Request $req) {
+  $estudiantesPresentesD1D2 = Estudiante::where("pres_dia1", "=", 1)
+  ->where("pres_dia2", "=", 1)
+  ->orderBy('apellido')
+  ->paginate(1000);
+    return view("listadoEstudiantesPresentesD1D2", compact("estudiantesPresentesD1D2"));
+  }
 
 }
 ;

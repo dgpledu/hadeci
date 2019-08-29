@@ -541,17 +541,10 @@ $otro["dir_foto"] = $ruta;
   }
 
   public function listadoMentores(Request $req) {
-$otros = Otro::orderBy('apellido')->where('rol', 'Mentor')->paginate(10);
+$otros = Otro::orderBy('apellido')->where('rol', 'Mentor')->paginate(100);
 $todoslosmentores = Otro::all();
     return view("listadoMentores", compact("todoslosmentores", "otros"));
   }
-
-//   public function listadoMentoresPresentes(Request $req) {
-// $todoslosmentorespresentes = Otro::where('rol', 'Mentor')
-// ->where('pres_dia1', 1)->get();
-// $otros = Otro::all();
-//     return view("mentoresPresentes", compact("todoslosmentorespresentes", "otros"));
-//   }
 
   public function listadoMentoresPresentesD1(Request $req) {
 $todoslosmentorespresentesD1 = Otro::where('rol', 'Mentor')
@@ -569,43 +562,43 @@ $otros = Otro::all();
   }
 
   public function listadoDisertantes(Request $req) {
-  $otros = Otro::orderBy('apellido')->where('rol', 'Disertante')->paginate(10);
+  $otros = Otro::orderBy('apellido')->where('rol', 'Disertante')->paginate(100);
   $todoslosdisertantes = Otro::all();
     return view("listadoDisertantes", compact("todoslosdisertantes", "otros"));
   }
 
   public function listadoJurados(Request $req) {
-  $otros = Otro::orderBy('apellido')->where('rol', 'Jurado')->paginate(10);
+  $otros = Otro::orderBy('apellido')->where('rol', 'Jurado')->paginate(100);
   $todoslosjurados = Otro::all();
     return view("listadoJurados", compact("todoslosjurados", "otros"));
   }
 
   public function listadoOrganizadores(Request $req) {
-  $otros = Otro::orderBy('apellido')->where('rol', 'Organizador')->paginate(10);
+  $otros = Otro::orderBy('apellido')->where('rol', 'Organizador')->paginate(100);
   $todoslosorganizadores = Otro::all();
     return view("listadoOrganizadores", compact("todoslosorganizadores", "otros"));
   }
 
   public function listadoAutoridades(Request $req) {
-  $otros = Otro::orderBy('apellido')->where('rol', 'Autoridad')->paginate(10);
+  $otros = Otro::orderBy('apellido')->where('rol', 'Autoridad')->paginate(100);
   $todaslasautoridades = Otro::all();
     return view("listadoAutoridades", compact("todaslasautoridades", "otros"));
   }
 
   public function listadoColaboradores(Request $req) {
-  $otros = Otro::orderBy('apellido')->where('rol', 'Colaborador')->paginate(10);
+  $otros = Otro::orderBy('apellido')->where('rol', 'Colaborador')->paginate(100);
   $todosloscolaboradores = Otro::all();
     return view("listadoColaboradores", compact("todosloscolaboradores", "otros"));
   }
 
   public function listadoInvitados(Request $req) {
-  $otros = Otro::orderBy('apellido')->where('rol', 'Invitado')->paginate(10);
+  $otros = Otro::orderBy('apellido')->where('rol', 'Invitado')->paginate(100);
   $todoslosinvitados = Otro::all();
     return view("listadoInvitados", compact("todoslosinvitados", "otros"));
   }
 
   public function listadoProveedores(Request $req) {
-  $otros = Otro::orderBy('apellido')->where('rol', 'Proveedor')->paginate(10);
+  $otros = Otro::orderBy('apellido')->where('rol', 'Proveedor')->paginate(100);
   $todoslosproveedores = Otro::all();
     return view("listadoProveedores", compact("todoslosproveedores", "otros"));
   }

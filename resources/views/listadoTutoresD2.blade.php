@@ -93,14 +93,14 @@ de un total de
 
   <!-- tabla para paginación -->
     <table class="table table-responsive ">
-      <thead>
+      {{-- <thead>
         <tr>
           <th scope="col"></th>
         </tr>
-      </thead>
+      </thead> --}}
       <tbody>
         <tr>
-          <th scope="row">{{$todoslostutoresD2->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
+          <div>{{$todoslostutoresD2->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></div>
         </tr>
       </tbody>
     </table>

@@ -187,18 +187,22 @@ public function confirmarDia2(Request $req) {
 }
 
 public function listado(Request $req) {
-$docentes = Docente::orderBy('apellido')->paginate(50);
+$docentes = Docente::orderBy('apellido')->paginate(200);
 $todoslosdocentes = Docente::all();
   return view("listadoDocentes", compact("todoslosdocentes", "docentes"));
 }
 
 public function listadoD1(Request $req) {
-$todoslosdocentesD1 = Docente::where("pres_dia1", "=", 1)->orderBy('apellido')->paginate(50);
+$todoslosdocentesD1 = Docente::where("pres_dia1", "=", 1)
+->orderBy('apellido')
+->paginate(200);
   return view("listadoDocentesD1", compact("todoslosdocentesD1"));
 }
 
 public function listadoD2(Request $req) {
-$todoslosdocentesD2 = Docente::where("pres_dia2", "=", 1)->orderBy('apellido')->paginate(50);
+$todoslosdocentesD2 = Docente::where("pres_dia2", "=", 1)
+->orderBy('apellido')
+->paginate(200);
   return view("listadoDocentesD2", compact("todoslosdocentesD2"));
 }
 
@@ -206,14 +210,14 @@ public function listadoD1D2(Request $req) {
 $todoslosdocentesD1D2 = Docente::where("pres_dia1", "=", 1)
 ->where("pres_dia2", "=", 1)
 ->orderBy('apellido')
-->paginate(50);
+->paginate(200);
   return view("listadoDocentesD1D2", compact("todoslosdocentesD1D2"));
 }
 
 public function listadoDocentesTotales(Request $req) {
 $docentestotales = Docente::where("pres_dia1", "=", 1, 'OR', "pres_dia2", "=", 1 )
 ->orderBy('apellido')
-->paginate(50);
+->paginate(300);
   return view("listadoDocentesTotales", compact("docentestotales"));
 }
 

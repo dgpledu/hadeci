@@ -22,18 +22,18 @@ $todoslostutores = Tutor::all();
   }
 
   public function listado(Request $req) {
-$tutores = Tutor::orderBy('apellido')->paginate(10);
+$tutores = Tutor::orderBy('apellido')->paginate(100);
 $todoslostutores = Tutor::all();
     return view("listadoTutores", compact("todoslostutores", "tutores"));
   }
 
   public function listadoD1(Request $req) {
-  $todoslostutoresD1 = Tutor::where("pres_dia1", "=", 1)->orderBy('Apellido')->paginate(50);
+  $todoslostutoresD1 = Tutor::where("pres_dia1", "=", 1)->orderBy('Apellido')->paginate(100);
     return view("listadoTutoresD1", compact("todoslostutoresD1"));
   }
 
   public function listadoD2(Request $req) {
-  $todoslostutoresD2 = Tutor::where("pres_dia2", "=", 1)->orderBy('Apellido')->paginate(50);
+  $todoslostutoresD2 = Tutor::where("pres_dia2", "=", 1)->orderBy('Apellido')->paginate(100);
     return view("listadoTutoresD2", compact("todoslostutoresD2"));
   }
 
@@ -48,7 +48,7 @@ $todoslostutores = Tutor::all();
     $this->validate($req, [
       "nombre" => ['required',new LetrasYEspacios, 'max:20'],
       "apellido" => ['required',new LetrasYEspacios, 'max:20'],
-      "dni_tutor" => "required|alpha_dash|max:20",
+      "dni_tutor" => "required|alpha_dash|max:20|unique:tutores,DNI",
       "fecha_nac_tutor" => "required|date|after:01-01-1900|before:30-09-2001",
       "email_tutor" => "required|email",
       "celular" => "required|integer|max:99999999999",

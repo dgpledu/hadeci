@@ -27,8 +27,8 @@
      <div class="alert alert-success">
 <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
 
-        <b> {{session('estado')}}, </b>
-        Se ha inscripto correctamente como <b>colaborador/a</b> en "Desafíos Científicos".
+        <b> {{session('estado')}} </b>
+        se ha inscripto correctamente como <b>colaborador/a</b> en "Desafíos Científicos".
         <br><br>
         <img src="/imgs/icono-mail-enviado.png" style="width:40px; height:40px;" alt="mail"> Se ha enviado un mail a <b>{{session('correo')}}</b> confirmando su inscripción desde la dirección <font color="#2E9AFE">desafios.cientificos@gmail.com</font><br> Por favor, verifique que el correo no se encuentre en la carpeta de correo no deseado o SPAM.<hr>
      </div>

@@ -48,7 +48,7 @@
       $numorden = ($estudiantesPresentesDia2->currentpage()-1)* $estudiantesPresentesDia2->perpage();
     @endphp
     <table id="tabla-listado" class="table table-responsive table-striped">
-      <thead>
+      <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
@@ -76,14 +76,14 @@
     </table>
     <!-- fin de tabla -->
     <table class="table table-responsive table-striped">
-      <thead style="background:#F2D333">
+      {{-- <thead>
         <tr>
           <th scope="col"></th>
         </tr>
-      </thead>
+      </thead> --}}
       <tbody>
         <tr>
-          <th scope="row">{{$estudiantesPresentesDia2->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
+          <div>{{$estudiantesPresentesDia2->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></div>
         </tr>
       </tbody>
     </table>
