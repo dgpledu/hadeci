@@ -23,7 +23,25 @@ class Estudiante extends Model
     return $this->belongsTo("App\Escuela", "ID_escuela");
   }
 
+// ¿Está bien este método? (siempre estuvo y nunca dio error)
   public function categoria() {
     return $this->hasMany("App\Escuela", "ID_cat_tem1", "ID_cat_tem2");
   }
+
+  // public function categoria() {
+  //   return $this->hasMany("App\Categoria", "ID_cat_tem1", "ID_cat_tem2");
+  // }
+
+  // public function categoriaUno() {
+  //   return $this->hasMany("App\Categoria", "ID_cat_tem1", "ID_cat_tem2");
+  // }
+  //
+  public function categoria1() {
+    return $this->belongsTo("App\Categoria", "ID_cat_tem1");
+  }
+
+  public function categoria2() {
+    return $this->belongsTo("App\Categoria", "ID_cat_tem2");
+  }
+
 }

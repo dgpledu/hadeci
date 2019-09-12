@@ -16,6 +16,7 @@
   <body>
   @include('primerabarranav')
 
+ {{-- <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')"> --}}
    <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron-HDC-jpg-01.jpg')">
 
 <!-- Toast -->
@@ -23,13 +24,13 @@
   <div class="toast-header">
     <img src="/imgs/alerta.png" class="rounded mr-2" alt="...">
     <strong class="mr-auto">¡CUPO COMPLETO!</strong>
-    <small>27 de Agosto</small>
+    <small>11 de septiembre</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="toast-body">
-    No se aceptan más inscripciones de <b>estudiantes</b>. Solo docentes acompañantes y demás perfiles (tutores, mentores, jurados, etc.).
+    El cupo de estudiantes está completo. La inscripción para el resto de los perfiles se reanudará a partir del jueves 12 de septiembre.
   </div>
 </div>
 <!-- fin de toast -->
@@ -39,7 +40,9 @@
     <div class="card mx-auto" >
       <div class="card-header" style="background:#ffebcc"><h4>Menú de opciones para inscripción</h4></div>
        <div class="card-body">
-        <h5 class="card-title">Hackatón "Desafíos Científicos" edición 2019</h5>
+         <br><br><br><br><br><br><br><br>
+           <!-- Deshabilitación transitoria por falta de cupo -->
+        {{-- <h5 class="card-title">Hackatón "Desafíos Científicos" edición 2019</h5>
             <p class="card-text">Todas las personas asistentes al evento deben completar su registro. Para poder registrar estudiantes, primero debe haberse registrado como <b>docente</b>. Seleccione una de las opciones disponibles dando clic en el selector azul.</p>
               <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,11 +50,9 @@
           </button>
             <small id="emailHelp" class="form-text text-muted">Elija la opción que corresponda y recuerde que para inscribir estudiantes debe primero inscribirse como docente. Si usted es personal de la escuela pero no se desempeña como docente, igual debe inscribirse como docente de su escuela por más que no tenga estudiantes a cargo en este evento.</small>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-            {{-- <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a>
+            <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a>
             <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a>
-
-           <hr> --}}
+           <hr>
             <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente acompañante</a>
             <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor/a</a>
             <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor/a</a>
@@ -62,9 +63,9 @@
             <a class="dropdown-item" href="/inscripcionInvitados">Inscribirme como invitado/a</a>
             <a class="dropdown-item" href="/inscripcionDisertantes">Inscribirme como disertante/tallerista</a>
             <a class="dropdown-item" href="/inscripcionProveedores">Inscribirme como proveedor/a de servicios y/o productos</a>
-
       </div>
-    </div>
+    </div> --}}
+      <!-- Fin de deshabilitación transitoria por falta de cupo -->
       </div>
     </div>
   </div>

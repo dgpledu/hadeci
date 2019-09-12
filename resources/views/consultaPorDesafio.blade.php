@@ -12,6 +12,10 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
      <link href="/css/tableexport.css" rel="stylesheet">
 
+     <!-- CSS para editor RTF -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+     <!-- Fin de CSS para editor RTF -->
+
     <title>Consulta de desafíos</title>
   </head>
   <body>
@@ -52,8 +56,13 @@
     <div class="card">
       <h5 class="card-header text-white bg-primary">{{$des["codigo"]}}</h5>
       <div class="card-body">
+
+
         <h5 class="card-title">{{$des["nombre"]}}</h5>
-        <p class="card-text">{{$des["descripcion"]}}</p>
+        <textarea id="summernote">
+{{$des["descripcion"]}}
+        </textarea>
+
 
     @foreach ($des->tutores as $tutor)
       <b>Tutor:</b> {{$tutor["Nombre"]}} {{$tutor["Apellido"]}}
@@ -77,12 +86,7 @@
     @endforeach
 
   @endif
-
-
 </div>
-
-
-
 </div>
 <br>
 <a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
@@ -104,7 +108,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blob-polyfill/4.0.20190430/Blob.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.6/xls.core.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+
+   <!-- JS y script para editor RTF -->
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+
+   <script>
+   $('#summernote').summernote('disable');
+   </script>
+   <!-- Fin de JS y script para editor RTF -->
 
    <script src="/js/tableexport.min.js"></script>
  </body>

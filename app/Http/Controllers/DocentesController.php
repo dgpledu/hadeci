@@ -138,6 +138,43 @@ return redirect("/inscripcionDocentes")
 
 } // cierre de la función
 
+public function editarDocente(Request $req)
+    {
+        $docente=Docente::find($req["ID_docente_a_editar"]);
+        return view('editarDocentes',compact('docente'));
+    }
+
+public function actualizarDocente(Request $req) // editar y borrar docentes
+    {
+if (isset($req["ID"])) {
+
+        $this->validate($req,['nombre'=>'required', 'apellido'=>'required']);
+
+        Docente::find($req["ID"])->update($req->all());
+
+        return redirect("/indiceDocentes")
+        ->with([
+          "exitoso" => "Registro actualizado satisfactoriamente",
+        ]);
+
+}
+      if (isset($req["ID_docente_a_borrar"])) {
+        $docenteABorrar = Docente::find($req["ID_docente_a_borrar"]);
+        //
+        $docenteABorrar->escuelas()->detach();
+
+        Estudiante::where('ID_docente_reg', $req["ID_docente_a_borrar"])->delete();
+
+        $docenteABorrar->delete();
+
+          return redirect("/indiceDocentes")
+          ->with([
+            "exitoso" => "Registro borrado satisfactoriamente",
+          ]);
+      }
+
+    }
+
 public function acreditarDia1(Request $req) {
   if (isset($req["busqueda_DNI_docente"])) {
       $resultados_d = Docente::where("DNI", $req["busqueda_DNI_docente"])->get();
@@ -191,6 +228,27 @@ $docentes = Docente::orderBy('apellido')->paginate(200);
 $todoslosdocentes = Docente::all();
   return view("listadoDocentes", compact("todoslosdocentes", "docentes"));
 }
+
+// public function listadoPorEscuela(Request $req) {
+//
+// $docentes = Docente::with('escuelas')->orderBy('ID_escuela')->paginate(200);
+// //$docentes = Docente::orderBy('ID')->paginate(200);
+// $todoslosdocentes = Docente::all();
+//   return view("listadoDocentesPorEscuela", compact("todoslosdocentes", "docentes"));
+// }
+
+public function listadoParaEditarDocentesANTIGUO(Request $req) {
+$docentes = Docente::orderBy('apellido')->paginate(200);
+$todoslosdocentes = Docente::all();
+  return view("listadoDocentes", compact("todoslosdocentes", "docentes"));
+}
+
+public function listadoParaEditarDocentes(Request $req) {
+$docentes = Docente::orderBy('apellido')->paginate(200);
+$todoslosdocentes = Docente::all();
+  return view("indiceDocentes", compact("todoslosdocentes", "docentes"));
+}
+
 
 public function listadoD1(Request $req) {
 $todoslosdocentesD1 = Docente::where("pres_dia1", "=", 1)

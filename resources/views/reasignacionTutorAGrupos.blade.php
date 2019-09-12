@@ -12,16 +12,16 @@
       <!-- CSS para editor RTF -->
       <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
       <!-- Fin de CSS para editor RTF -->
-    <title>Asignar desafío a tutores</title>
+    <title>Re-asignar tutor a grupos</title>
   </head>
   <body>
   @include('primerabarranav')
 
 <!-- Mensaje de asignación exitosa -->
-  @if (session('eltutor'))
+  @if (session('grupo_actualizado'))
        <div class="alert alert-success">
   <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="aprobado">
-          El desafío <b>{{session('eldesafio')}}</b>, código <b>{{session('elcodigo')}}</b>, fue asignado correctamente al tutor <b>{{session('eltutor')}}</b>.
+          El tutor <b>{{session('tutor_reasignado')}}</b>, fue re-asignado correctamente al grupo <b>{{session('grupo_actualizado')}}</b>.
   </h5>
        </div>
    @endif
@@ -31,61 +31,46 @@
     <!-- Formulario de inscripción -->
     <!-- Cabecera -->
     <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
-    <div class="card-header" style="background:#f2d333"><h5>Asignación de desafíos a tutores</h5></div>
+    <div class="card-header" style="background:#f2d333"><h5>Re-asignación de tutores a grupos</h5></div>
     <div class="card-body">
 
       <div class="container-fluid ml-3 mt-0 pt-1"> <!-- Donde va todo -->
 
   <div class="alert alert-secondary w-85" role="alert">
-  <form class="form-group pt-2" action="/asignarDesafioATutores" method="get">
+  <form class="form-group pt-2" action="/reasignacionTutorAGrupos" method="post">
     {{ csrf_field() }}
-
-     <select class="" name="busqueda_desafio" id="lista_de_desafios">
-        <option value="">Seleccionar un desafío de la lista</option>
-    @if($todoslosdesafios)
-       @foreach ($todoslosdesafios as $desafio)
-         <option value="{{$desafio["ID"]}}">{{$desafio["codigo"]}}: {{$desafio["nombre"]}}</option>
+<!-- Seleccionar grupo -->
+     <select class="" name="ID_grupo_seleccionado">
+        <option value="">Seleccionar un grupo de la lista</option>
+    @if($todoslosgrupos)
+       @foreach ($todoslosgrupos as $grupo)
+         <option value="{{$grupo["ID"]}}">{{$grupo["nombre"]}}</option>
        @endforeach
      @endif
      </select>
+<!-- Fin de seleccionar grupo -->
 
-     {{-- <button type="submit" class="btn btn-success" name="btn_mostrar_desafio">Mostrar datos del desafío</button> --}}
-     <input type="submit" name="btn_mostrar_desafio" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;">
-     {{-- <small id="emailHelp" class="form-text text-muted">Se mostrará el nombre del desafío, el código y la descripción.</small> --}}
-  </form>
-
-  @if ($des)
-<!-- comienzo card -->
-    <div class="card">
-      <h5 class="card-header text-white bg-primary">{{$des["codigo"]}}</h5>
-      <div class="card-body">
-        <h5 class="card-title">{{$des["nombre"]}}</h5>
-        <textarea id="summernote">
-{{$des["descripcion"]}}
-        </textarea>
-  @endif
-
-</div></div>
-<br>
-<!-- Formulario para asignar el desafío al tutor -->
-<form class="" action="" method="POST">
-  {{csrf_field()}}
-    <select class="" name="ID_tutor">
+<!-- Seleccionar tutor -->
+    <select class="" name="ID_tutor_seleccionado">
       <option value="">Seleccionar un tutor de la lista</option>
-        @if($todoslostutoress)
-          @foreach ($todoslostutoress as $tutor)
+        @if($todoslostutores)
+          @foreach ($todoslostutores as $tutor)
             <option value ="{{$tutor["ID"]}}">{{$tutor["Apellido"]}}, {{$tutor["Nombre"]}}</option>
           @endforeach
         @endif
-    </select>
-      <button type="submit" class="btn btn-primary">Asignar el desafío al tutor</button>
-      <small id="emailHelp" class="form-text text-muted">Se asignará el desafío a dicho tutor.</small>
+    </select><br><br>
+      <button type="submit" class="btn btn-primary">Asignar</button>
+      <small id="emailHelp" class="form-text text-muted">Se asignará al grupo elegido el tutor seleccionado.</small>
+      <!-- Fin de seleccionar tutor -->
 </form>
 <!-- Fin del formulario para asignar el desafío al tutor -->
 <!-- fin card -->
+
+
 </div>
 </div>
 </div>
+
 </div>
 </div><!-- fin del jumbotron secundario -->
 
@@ -102,15 +87,6 @@
     <script>
     $('#summernote').summernote('disable');
     </script>
-<!-- Fin de JS y script para editor RTF -->
-
-<!-- Script para que se dispare solo el botón "Mostrar desafío" -->
-<script>
-    $('#lista_de_desafios').on('change', function(){
-    $("[name='btn_mostrar_desafio']:submit").trigger("click");
-});
-</script>
-<!-- Fin del script para que se dispare solo el botón "Mostrar desafío" -->
-
+    <!-- Fin de JS y script para editor RTF -->
   </body>
 </html>

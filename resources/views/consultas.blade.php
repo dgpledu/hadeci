@@ -17,16 +17,16 @@
   @include('primerabarranav')
 
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
-
-      <!-- Dos columnas -->
+   <div class="container"> <!-- Container para 3 columnas -->
+      <!-- Tres columnas -->
       <!-- Columna 1 -->
       <div class="row">
-  <div class="col-sm-3 ml-auto">
+  <div class="col-sm-4 ml-auto">
     <div class="card">
       <div class="card-header" style="background:#ffebcc"><h5>Consultas</h5></div>
        <div class="card-body">
         <h5 class="card-title">Consulta de datos</h5>
-            <p class="card-text">Permite realizar consultas de estudiantes a partir del DNI del docente; de estudiantes por escuela; de desafíos para saber descripción, tutor y estudiantes; de grupos para saber tutor e integrantes, etc.</p>
+            <p class="card-text">Permite realizar consultas de estudiantes a partir del DNI del docente; de estudiantes por escuela; de desafíos para saber descripción, tutor y estudiantes; de grupos para saber tutor e integrantes, etc.</p><br>
               <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             clic para desplegar opciones
@@ -51,7 +51,7 @@
   </div>
   <!-- Fin columna 1 -->
     <!-- Columna 2 -->
-  <div class="col-sm-3">
+  <div class="col-sm-4">
     <div class="card">
         <div class="card-header" style="background:#b3ffb3"><h5>Listados</h5></div>
       <div class="card-body">
@@ -67,13 +67,16 @@
         <a class="dropdown-item" href="/listadoEscuelasInscriptas">Listado de escuelas inscriptas</a>
         <a class="dropdown-item" href="/listadoEscuelasParticipantes">Listado de escuelas participantes</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="/listadoDocentes">Listado de docentes inscriptos</a>
+        <a class="dropdown-item" href="/listadoDocentes">Listado de docentes inscriptos (alfabético)</a>
+        <a class="dropdown-item" href="/listadoDocentesPorEscuela">Listado de docentes inscriptos (por escuela)</a>
         <a class="dropdown-item" href="/listadoDocentesD1">Listado de docentes presentes (día 1)</a>
         <a class="dropdown-item" href="/listadoDocentesD2">Listado de docentes presentes (día 2)</a>
         <a class="dropdown-item" href="/listadoDocentesD1D2">Listado de docentes presentes ambos días</a>
         <a class="dropdown-item" href="/listadoDocentesTotales">Listado de docentes totales</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos</a>
+        <a class="dropdown-item" href="/listadoEstudiantes">Listado de estudiantes inscriptos (alfabético)</a>
+        <a class="dropdown-item" href="/listadoEstudiantesCT1">Listado de estudiantes inscriptos (por 1ª opción)</a>
+        <a class="dropdown-item" href="/listadoEstudiantesCT2">Listado de estudiantes inscriptos (por 2ª opción)</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia1">Listado de estudiantes presentes (día 1)</a>
         <a class="dropdown-item" href="/listadoEstudiantesPresentesDia2">Listado de estudiantes presentes (día 2)</a>
         <a class="dropdown-item" href="#">Listado de estudiantes presentes ambos días</a>
@@ -99,7 +102,7 @@
               <!-- fin de columna 2 -->
 
               <!-- Columna 3 -->
-            <div class="col-sm-3 mr-auto ">
+            <div class="col-sm-4 mr-auto ">
               <div class="card">
                   <div class="card-header" style="background:#A9F5F2"><h5>Modificaciones</h5></div>
                 <div class="card-body">
@@ -114,7 +117,13 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="/cargarDesafios">Cargar desafíos</a>
                   <a class="dropdown-item" href="/asignarDesafioATutores">Asignar desafío a tutores</a>
+                  <a class="dropdown-item" href="/asignacionTutorAGrupos">Crear nombre de grupo y asignarle un tutor</a>
+
+                  <a class="dropdown-item" href="/indiceDocentes">Editar docentes</a>
+                  <a class="dropdown-item" href="/indiceTutores">Editar tutores</a>
                   <a class="dropdown-item" href="/agregarescuelas">Agregar escuelas no incluidas en la base de datos</a>
+                    <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/reasignacionTutorAGrupos">Re-asignar tutor a grupo ya creado</a>
                   <div class="dropdown-divider"></div>
                   </div>
                   </div>
@@ -123,7 +132,7 @@
                   </div>
                         <!-- fin de columna 3 -->
         </div>
-
+</div> <!-- Fin del container de las 3 columnas -->
 </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')

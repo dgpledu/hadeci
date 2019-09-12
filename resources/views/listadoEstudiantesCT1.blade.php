@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes</title>
+    <title>Listado de estudiantes CT1</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,10 +22,11 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes inscriptos en el hackatón</h4>
+    <h4>Listado de estudiantes inscriptos en el hackatón (por 1º opción de cat. tem.)</h4>
 {{-- <span class="badge badge-primary badge-pill">{{$totaldeestudiantes}}</span> --}}
 
 <!-- Cartel x a y de un total de n elementos -->
+
 <h5>
 <span class="badge badge-primary badge-pill">
 {{ $estudiantes->firstItem() }}

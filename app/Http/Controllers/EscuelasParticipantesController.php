@@ -16,6 +16,14 @@ class EscuelasParticipantesController extends Controller
       return view("consultaEscuelasParticipantes", compact("resultados_esc"));
     }
 
+    public function listadoPorEscuela() {
+      $escuelasordenadas = Escuela::with('docentes')->where("activa", "=", 1)->orderBy("nombre")->paginate(200);
+
+      $numerototaldeescuelas = $escuelasordenadas->count();
+
+      return view("listadoDocentesPorEscuela", compact("escuelasordenadas"));
+    }
+
     public function consultaEscuelasPorID(Request $req) {
       if (isset($req["busqueda_establecimientoPorID"])) {
           $resultados_e = Escuela::where("ID", "=", $req["busqueda_establecimientoPorID"])->get();

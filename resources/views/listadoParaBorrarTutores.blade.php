@@ -8,109 +8,132 @@
     <!-- Bootstrap CSS -->
         <!-- ¡Esto debe ir antes que ningún otro stylesheet!!! -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/tableexport.css" rel="stylesheet">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
-      <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-      <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes</title>
+    <title>Listado de tutores para borrar</title>
   </head>
   <body>
   @include('primerabarranav')
+  <!--- prueba para ver si muestra el mensaje exitoso de registro -->
+  @if (session('estado'))
+       <div class="alert alert-success">
+  <h5><img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="borrado">
 
+          <b> {{session('estado')}} </b>
+          ha sido borrado como <b>tutor</b> en "Desafíos Científicos".
+  </h5>
+       </div>
+   @endif
+
+   {{-- @if (isset($nombreTutorABorrar))
+       <h5>
+         <img src="/imgs/tilde-correcto-4.png" style="width:40px; height:40px;" alt="borrado">
+         <b> {{$nombreTutorABorrar}} {{$apellidoTutorABorrar}} </b>
+         ha sido borrado como <b>tutor</b> en "Desafíos Científicos".
+         <br><br>
+         {{-- <hr>
+         <a class="btn " style="background:#f2d333; color: black;" href="/listadoParaBorrarTutores" role="button">Borrar otro tutor</a>
+         </h5>
+   @endif --}}
+
+  <!--- fin de prueba para ver si muestra el mensaje exitoso de registro -->
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
+
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes inscriptos en el hackatón</h4>
-{{-- <span class="badge badge-primary badge-pill">{{$totaldeestudiantes}}</span> --}}
+    <h4>Listado de tutores para borrar
+{{-- <span class="badge badge-primary badge-pill">{{count($todoslostutores)}}</span> --}}
+</h4>
 
-<!-- Cartel x a y de un total de n elementos -->
+
 <h5>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantes->firstItem() }}
+{{ $tutores->firstItem() }}
 </span>
 <span class="">
 a
 </span>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantes->lastItem() }}
+{{ $tutores->lastItem() }}
 </span>
 <span class="">
 de un total de
 </span>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantes->total() }}
+{{ $tutores->total() }}
 </span>
 <!-- Fin de cartel x a y de un total de n elementos -->
     </h5>
+
   </div>
+
   <div class="card-body">
+
     <!-- tabla -->
     @php
-      $numorden = ($estudiantes->currentpage()-1)* $estudiantes->perpage();
+      $numorden = ($tutores->currentpage()-1)* $tutores->perpage();
     @endphp
     <table id="tabla-listado" class="table table-responsive table-striped">
-      <thead class="thead-dark">
+      {{-- <thead style="background:#F2D333"> --}}
+        <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
+          <th scope="col">ID</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
-          <th scope="col">CT 1º</th>
-          <th scope="col">CT 2º</th>
+          <th scope="col">CUIL/CUIT</th>
+          <th scope="col">Celular</th>
+          <th scope="col">Email</th>
+          <th scope="col">Institución</th>
+          <th scope="col">¿Borrar?</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($estudiantes as $estudiante)
+        @foreach ($tutores as $tutor)
           @php
             $numorden++;
           @endphp
         <tr>
-          <th scope="row">{{ $numorden }}</th>
-          <td>{{$estudiante["apellido"]}}</td>
-          <td>{{$estudiante["nombre"]}}</td>
-          <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
 
-          <td>{{$estudiante->categoria1["alias"]}}</td>
-         <td>{{$estudiante->categoria2["alias"]}}</td>
+          <th scope="row">{{ $numorden }}</th>
+          <td>{{$tutor["ID"]}}</td>
+          <td>{{$tutor["Apellido"]}}</td>
+          <td>{{$tutor["Nombre"]}}</td>
+          <td>{{$tutor["DNI"]}}</td>
+          <td>{{$tutor["Celular"] }}</td>
+          <td><a href="mailto:{{$tutor["email"]}}">{{$tutor["email"]}}</a></td>
+          <td>{{$tutor["instit_rep"] }}</td>
+<!-- Prueba de borrar tutor -->
+          <td>
+              <form action="" method="post">
+              {{ csrf_field() }}
+              <input type="checkbox" name="ID_tutor" value="{{$tutor["ID"]}}" >
+   </div>
+           </td>
+<!-- Fin de prueba borrar tutor -->
         </tr>
       @endforeach
       </tbody>
     </table>
     <!-- fin de tabla -->
-
-<!-- Zócalo de paginador -->
-    {{-- <div class="container-fluid ml-3 mt-0 pt-1">
-      <div class="alert alert-secondary w-85" role="alert">
-        {{$estudiantes->links()}}
-      </div>
-    </div> --}}
-    <!-- fin zócalo de paginador -->
-
-{{-- <div class="alert alert-secondary ml-auto">
-  {{$estudiantes->links()}}
-</div> --}}
-
-<table class="table table-responsive table-striped">
-  <thead>
-    <tr>
-      {{-- <th scope="col"></th> --}}
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{$estudiantes->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
-    </tr>
-  </tbody>
-</table>
-
-</div>
-</div>
+    <input type="submit" class="btn btn-primary" value="Borrar tutor">
+                    </form>
+{{-- <br><br> --}}
+    <a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
+  <!-- tabla para paginación -->
+    {{-- <table class="table table-responsive ">
+      <tbody>
+        <tr>
+          <th scope="row">{{$tutores->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
+        </tr>
+      </tbody>
+    </table> --}}
+    <!-- fin de tabla para paginación -->
+</div></div>
 </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')

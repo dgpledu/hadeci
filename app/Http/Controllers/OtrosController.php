@@ -328,6 +328,8 @@ $otro["disp_horariaD2"] = $req["disp_horariaD2"];
       "fecha_nac" => "required|date|after:01-01-1900|before:30-09-2001",
       "celular" => "required|integer|max:99999999999",
       "breveCV" => "required|string|max:255",
+      "contacto" => "required|string|max:44",
+      "instit_rep" => "required|string|max:44",
       "foto_jurado" => "required|image|max:5000"
 
     ]);

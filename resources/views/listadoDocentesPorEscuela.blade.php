@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes</title>
+    <title>Listado de docentes por escuela</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,93 +22,68 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes inscriptos en el hackatón</h4>
-{{-- <span class="badge badge-primary badge-pill">{{$totaldeestudiantes}}</span> --}}
 
-<!-- Cartel x a y de un total de n elementos -->
-<h5>
+    <h4>Listado de escuelas inscriptas con sus docentes</h4>
+
+      <!-- Cartel x a y de un total de n elementos -->
+      <h5>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantes->firstItem() }}
+  {{ $escuelasordenadas->firstItem() }}
 </span>
 <span class="">
-a
+  a
 </span>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantes->lastItem() }}
+  {{ $escuelasordenadas->lastItem() }}
 </span>
 <span class="">
-de un total de
+  de un total de
 </span>
 <span class="badge badge-primary badge-pill">
-{{ $estudiantes->total() }}
+  {{ $escuelasordenadas->total() }}
 </span>
 <!-- Fin de cartel x a y de un total de n elementos -->
+
     </h5>
   </div>
   <div class="card-body">
-    <!-- tabla -->
-    @php
-      $numorden = ($estudiantes->currentpage()-1)* $estudiantes->perpage();
-    @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
-          <th scope="col">CT 1º</th>
-          <th scope="col">CT 2º</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($estudiantes as $estudiante)
-          @php
-            $numorden++;
-          @endphp
-        <tr>
-          <th scope="row">{{ $numorden }}</th>
-          <td>{{$estudiante["apellido"]}}</td>
-          <td>{{$estudiante["nombre"]}}</td>
-          <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
-
-          <td>{{$estudiante->categoria1["alias"]}}</td>
-         <td>{{$estudiante->categoria2["alias"]}}</td>
-        </tr>
-      @endforeach
-      </tbody>
-    </table>
-    <!-- fin de tabla -->
-
-<!-- Zócalo de paginador -->
-    {{-- <div class="container-fluid ml-3 mt-0 pt-1">
-      <div class="alert alert-secondary w-85" role="alert">
-        {{$estudiantes->links()}}
-      </div>
-    </div> --}}
-    <!-- fin zócalo de paginador -->
-
-{{-- <div class="alert alert-secondary ml-auto">
-  {{$estudiantes->links()}}
-</div> --}}
-
-<table class="table table-responsive table-striped">
-  <thead>
+<!-- Prueba de tabla -->
+@php
+  $numorden = ($escuelasordenadas->currentpage()-1)* $escuelasordenadas->perpage();
+@endphp
+<table id="tabla-listado" class="table table-responsive table-striped">
+  <thead class="thead-dark">
     <tr>
-      {{-- <th scope="col"></th> --}}
+      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Docentes inscriptos</th>
     </tr>
   </thead>
   <tbody>
+    @foreach ($escuelasordenadas as $clave => $escuela)
+      @php
+        $numorden++;
+      @endphp
     <tr>
-      <th scope="row">{{$estudiantes->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
+
+      <th scope="row">{{ $numorden }}</th>
+      <td>{{$escuela["ID"]}}</td>
+      <td>{{$escuela["nombre"]}}</td>
+      <td>{{$escuela["dom_edific"]}}</td>
+      <td>
+      @foreach ($escuela->docentes as $docente)
+        {{$docente["apellido"]}}, {{$docente["nombre"]}}<br>
+      @endforeach
+      </td>
+
     </tr>
+  @endforeach
   </tbody>
 </table>
-
+{{$escuelasordenadas->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
+<!-- fin prueba de tabla -->
 </div>
 </div>
 </div><!-- fin del jumbotron secundario -->

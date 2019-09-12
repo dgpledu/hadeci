@@ -270,8 +270,22 @@ public function acreditadosDia2(Request $req) {
   public function listado() {
   $estudiantes = Estudiante::orderBy('apellido')->paginate(1000);
   $totaldeestudiantes = Estudiante::all()->count();
-  // $escuelaPorID = Escuela::where("ID_escuela", "=", $req["iddelaescuela"])->first();
-    return view("listadoEstudiantes", compact("estudiantes", "totaldeestudiantes", "escuelaPorID"));
+
+    return view("listadoEstudiantes", compact("estudiantes", "totaldeestudiantes"));
+  }
+
+  public function listadoCT1() {
+  $estudiantes = Estudiante::orderBy('ID_cat_tem1')->paginate(1000);
+  $totaldeestudiantes = Estudiante::all()->count();
+
+    return view("listadoEstudiantesCT1", compact("estudiantes", "totaldeestudiantes"));
+  }
+
+  public function listadoCT2() {
+  $estudiantes = Estudiante::orderBy('ID_cat_tem2')->paginate(1000);
+  $totaldeestudiantes = Estudiante::all()->count();
+
+    return view("listadoEstudiantesCT2", compact("estudiantes", "totaldeestudiantes"));
   }
 
   public function listadoEstudiantesPresentesDia1(Request $req) {

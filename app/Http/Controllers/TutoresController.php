@@ -21,11 +21,177 @@ $todoslostutores = Tutor::all();
     return view("consultaTutores", compact("resultados_tutor", "todoslostutores"));
   }
 
+  public function seleccionarTutor() {
+  $todoslostutores = Tutor::all()->sortBy("Apellido");
+  $todoslosgrupos = Grupo::all()->sortBy("nombre");
+    return view("asignacionTutorAGrupos", compact("todoslosgrupos", "todoslostutores"));
+  }
+
+  public function crearGrupo_y_AsignarleTutor(Request $req) {
+
+$tutorAsignado = Tutor::where("ID", "=", $req["ID_del_tutor_seleccionado"])->first();
+
+$nuevoGrupo_Tutor = new Grupo();
+$nuevoGrupo_Tutor["nombre"] = $req["cat_tematica_selec"].$req["nro_de_equipo"];
+$nuevoGrupo_Tutor["ID_tutor"] = $tutorAsignado["ID"];
+
+// Validación
+$this->validate($req, [
+  "nombre_del_equipo" => "required|unique:grupos,nombre",
+  "nro_de_equipo" => "required|max:19"
+
+]);
+// fin de validación
+
+$nuevoGrupo_Tutor->save();
+
+    return redirect("/asignacionTutorAGrupos")
+    ->with ([
+    "grupo_asignado" => $nuevoGrupo_Tutor["nombre"],
+    "tutor_asignado" => $tutorAsignado["Nombre"]." ".$tutorAsignado["Apellido"],
+    ])
+    ;
+  }
+
+  public function seleccionarTutorAReasignar() {
+$todoslostutores = Tutor::all()->sortBy("Apellido");
+$todoslosgrupos = Grupo::all()->sortBy("nombre");
+    return view("reasignacionTutorAGrupos", compact("todoslosgrupos", "todoslostutores"));
+  }
+
+  public function reasignarTutorAGrupo(Request $req) {
+
+if (isset($req["ID_grupo_seleccionado"])) {
+  $grupoAAsignar = Grupo::where("ID", "=", $req["ID_grupo_seleccionado"])->first();
+} else {
+  $grupoAAsignar = null;
+}
+
+$tutorReasignado = Tutor::where("ID", "=", $req["ID_tutor_seleccionado"])->first();
+
+$grupoAAsignar["ID_tutor"] = $req["ID_tutor_seleccionado"];
+
+$grupoAAsignar->update();
+
+    return redirect("/reasignacionTutorAGrupos")
+    ->with ([
+    "grupo_actualizado" => $grupoAAsignar["nombre"],
+    "tutor_reasignado" => $tutorReasignado["Nombre"]." ".$tutorReasignado["Apellido"],
+    ])
+    ;
+  }
+
   public function listado(Request $req) {
 $tutores = Tutor::orderBy('apellido')->paginate(100);
 $todoslostutores = Tutor::all();
     return view("listadoTutores", compact("todoslostutores", "tutores"));
   }
+
+  public function listadoParaEditarTutores(Request $req) {
+$tutores = Tutor::orderBy('Apellido')->paginate(100);
+$todoslostutores = Tutor::all();
+    return view("indiceTutores", compact("todoslostutores", "tutores"));
+  }
+
+  public function listadoParaBorrar(Request $req) {
+$tutores = Tutor::orderBy('Apellido')->paginate(100);
+$todoslostutores = Tutor::all();
+    return view("listadoParaBorrarTutores", compact("todoslostutores", "tutores"));
+  }
+
+public function borrarTutor(Request $req) {
+  if (isset($req["ID_tutor"])) {
+      $tutorABorrar = Tutor::find($req["ID_tutor"]);
+  } else {
+      $tutorABorrar = null;
+  }
+  $nombreTutorABorrar = $tutorABorrar["Nombre"];
+  $apellidoTutorABorrar = $tutorABorrar["Apellido"];
+  $tutores = Tutor::orderBy('apellido')->paginate(100);
+  $todoslostutores = Tutor::all();
+
+  $tutorABorrar->delete();
+
+  return redirect("/listadoParaBorrarTutores")
+  ->with ([
+    "estado" => $nombreTutorABorrar." ".$apellidoTutorABorrar,
+  ]);
+}
+
+public function borrarTutorEditado(Request $req) {
+  if (isset($req["ID_tutor"])) {
+      $tutorABorrar = Tutor::find($req["ID_tutor"]);
+  } else {
+      $tutorABorrar = null;
+  }
+
+  $tutorABorrar->delete();
+
+  return redirect('/indiceTutores')->with('exitoso', 'El tutor fue borrado existosamente');
+  ;
+}
+
+public function editarTutor(Request $req)
+    {
+        // $tutor=Tutor::find($req["ID_tutor_a_editar"]);
+        $tutor=Tutor::where('ID', "=", $req["ID_tutor_a_editar"])->first();
+        return view('editarTutores',compact('tutor'));
+    }
+
+public function actualizarTutor(Request $req)
+    {
+
+if (isset($req["ID"])) {
+
+        $this->validate($req,['Nombre'=>'required', 'Apellido'=>'required']);
+
+        Tutor::find($req["ID"])->update($req->all());
+
+        return redirect("/indiceTutores")
+        ->with([
+          "exitoso" => "Registro actualizado satisfactoriamente",
+        ]);
+
+}
+      if (isset($req["ID_tutor_a_borrar"])) {
+        $tutorABorrar = Tutor::find($req["ID_tutor_a_borrar"]);
+
+        $tutorABorrar->delete();
+
+          return redirect("/indiceTutores")
+          ->with([
+            "exitoso" => "Registro borrado satisfactoriamente",
+          ]);
+      }
+
+    }
+
+    public function actualizarTutorANDA(Request $req)
+        {
+
+      $this->validate($req,['Nombre'=>'required', 'Apellido'=>'required']);
+
+      Tutor::find($req["ID"])->update($req->all());
+
+      return redirect("/indiceTutores")
+      ->with([
+        "exitoso" => "Registro actualizado satisfactoriamente",
+      ]);
+
+        }
+
+    public function borrarElTutor(Request $req)
+        {
+          $tutorABorrar = Tutor::find($req["ID_tutor"]);
+
+          $tutorABorrar->delete();
+
+            return redirect("/indiceTutores")
+            ->with([
+              "exitoso" => "Registro borrado satisfactoriamente",
+            ]);
+
+        }
 
   public function listadoD1(Request $req) {
   $todoslostutoresD1 = Tutor::where("pres_dia1", "=", 1)->orderBy('Apellido')->paginate(100);
