@@ -28,7 +28,7 @@
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
-  <div class="card mx-auto text-black bg-info mb-3" style="max-width: 75rem";>
+  <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
     <h4>Listado de mentores
 {{-- <span class="badge badge-primary badge-pill">{{count($todoslosmentores)}}</span> --}}
@@ -52,26 +52,32 @@ de un total de
 <!-- Fin de cartel x a y de un total de n elementos -->
     </h5>
   </div>
-  <div class="card-body bg-light"> <!-- contiene la tabla para darle margen -->
+  {{-- <div class="card-body bg-light"> <!-- contiene la tabla para darle margen --> --}}
 
     <!-- tabla -->
     @php
       $numorden = ($otros->currentpage()-1)* $otros->perpage();
     @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
+    <table id="tabla-listado" class="table table-sm table-responsive table-striped">
       {{-- <thead style="background:#F2D333"> --}}
         <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
+          <th scope="col">Fecha</th>
           <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
           <th scope="col">Breve CV</th>
           <th scope="col">Día 1</th>
           <th scope="col">Día 2</th>
+          <th scope="col">Exp.</th>
+          {{-- <th scope="col">Exp.</th> --}}
+          <th scope="col">Rob.</th>
+          <th scope="col">Prog.</th>
           <th scope="col">Foto</th>
+          <th scope="col">Contacto</th>
         </tr>
       </thead>
       <tbody>
@@ -84,13 +90,18 @@ de un total de
           <th scope="row">{{ $numorden }}</th>
           <td>{{$otro["apellido"]}}</td>
           <td>{{$otro["nombre"]}}</td>
+          <td>{{$otro["fecha_nac"]}}</td>
           <td>{{$otro["cuilcuit"]}}</td>
           <td>{{$otro["celular"]}}</td>
           <td><a href="mailto:{{$otro["email"]}}">{{$otro["email"]}}</a></td>
           <td>{{$otro["CV"]}}</td>
           <td>{{$otro["disp_horariaD1"]}}</td>
           <td>{{$otro["disp_horariaD2"]}}</td>
+          <td>{{$otro["area_expertise1"]}}/{{$otro["area_expertise2"]}}</td>
+          <td>{{$otro["exp_robotica"]}}</td>
+          <td>{{$otro["exp_program"]}}</td>
           <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td>
+          <td>{{$otro["contacto"]}}</td>
         </tr>
       @endforeach
       </tbody>
@@ -107,23 +118,18 @@ de un total de
 
   <!-- tabla para paginación -->
     <table class="table table-responsive ">
-      <thead>
-        <tr>
-         {{-- <th scope="col"></th>  --}}
-        </tr>
-      </thead>
       <tbody>
         <tr>
           <th scope="row">
             {{$otros->links()}}
-            <a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
+            <a class="btn" style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a>
           </th>
         </tr>
       </tbody>
     </table>
   <!-- fin de tabla para paginación -->
 
-</div><!-- fin del contenedor de la tabla -->
+{{-- </div><!-- fin del contenedor de la tabla --> --}}
 </div><!-- fin del contenedor principal -->
 </div><!-- fin del jumbotron secundario -->
 

@@ -48,10 +48,10 @@
             <small id="emailHelp" class="form-text text-muted">Elija la opción que corresponda y recuerde que para inscribir estudiantes debe primero inscribirse como docente. Si usted es personal de la escuela pero no se desempeña como docente, igual debe inscribirse como docente de su escuela por más que no tenga estudiantes a cargo en este evento.</small>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-            <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a>
-            {{-- <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a> --}}
+            {{-- <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a>
+            <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a>
 
-           <hr>
+           <hr> --}}
             <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente acompañante</a>
             <a class="dropdown-item" href="/inscripcionTutores">Inscribirme como tutor/a</a>
             <a class="dropdown-item" href="/inscripcionMentores">Inscribirme como mentor/a</a>

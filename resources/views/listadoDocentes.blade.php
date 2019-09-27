@@ -44,13 +44,14 @@ de un total de
 <!-- Fin de cartel x a y de un total de n elementos -->
     </h5>
   </div>
-  <div class="card-body">
+  {{-- <div class="card-body container-fluid"> --}}
+  {{-- <div class="card" style="width: 75rem;"> --}}
 
     <!-- tabla -->
     @php
       $numorden = ($docentes->currentpage()-1)* $docentes->perpage();
     @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
+    <table id="tabla-listado" class="table table-responsive table-striped table-sm">
       {{-- <thead style="background:#F2D333"> --}}
         <thead class="thead-dark">
         <tr>
@@ -58,7 +59,9 @@ de un total de
           <th scope="col">ID</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
-          <th scope="col">CUIL/CUIT</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Rest.Alim.</th>
+          <th scope="col">DNI</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
           <th scope="col">Escuela</th>
@@ -74,6 +77,8 @@ de un total de
           <td>{{$docente["ID"]}}</td>
           <td>{{$docente["apellido"]}}</td>
           <td>{{$docente["nombre"]}}</td>
+            <td>{{$docente["fecha_nac"]}}</td>
+              <td>{{$docente["restric_alim"]}}</td>
           <td>{{$docente["DNI"]}}</td>
           <td>{{$docente["celular"] }}</td>
           <td><a href="mailto:{{$docente["email"]}}">{{$docente["email"]}}</a></td>
@@ -102,7 +107,8 @@ de un total de
       </tbody>
     </table>
     <!-- fin de tabla para paginación -->
-</div></div>
+{{-- </div><!-- fin de tarjeta --> --}}
+</div>
 </div><!-- fin del jumbotron secundario -->
 
 @include('segundabarranav')

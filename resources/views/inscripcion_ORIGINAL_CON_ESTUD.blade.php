@@ -49,7 +49,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
             <a class="dropdown-item disabled" href="#">Inscribir estudiantes</a>
-            {{-- <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a> --}}
+            <a class="dropdown-item" href="/preinscripcionEstudiantes">Inscribir estudiantes</a>
 
            <hr>
             <a class="dropdown-item" href="/inscripcionDocentes">Inscribirme como docente acompañante</a>

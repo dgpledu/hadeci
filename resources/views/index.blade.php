@@ -86,7 +86,7 @@
                 <a class="nav-link text-secondary" href="mailto:desafios.cientificos@bue.edu.ar">Contacto</a>
             </div>
           </div>
-          </div>
+          {{-- </div> --}}
         <!-- fin barra de navegación Inicio / PF / Contacto-->
 
 <!-- Imagen oscurecida con título -->

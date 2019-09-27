@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes</title>
+    <title>Armado de grupos</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,72 +22,103 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes inscriptos en el hackatón</h4>
-{{-- <span class="badge badge-primary badge-pill">{{$totaldeestudiantes}}</span> --}}
+    <h4>Armado de grupos</h4>
+    <div class="row">
+    <!-- Seleccionar temática como 1ª opción-->
+    <div class="col sm-4">
+    <form action="" method="post">
+      {{ csrf_field() }}
+    <label>1ª opción:</label>
+         <select class="" name="ID_categoria_tematica1" id="menu_de_tematicas1">
+            <option value="">Seleccionar una temática</option>
+             <option value="1">Ciencias Espaciales</option>
+              <option value="2">Ciencias de la Vida</option>
+             <option value="3">Gestión Territorial y Urbana</option>
+             <option value="4">Ciencia y Arte</option>
+             <option value="5">Cualquiera</option>
+         </select>
+    <!-- Fin de seleccionar temática para el desafío -->
+    <button type="submit" class="btn btn-primary">Consultar</button>
+  </form>
+  </div>
 
-<!-- Cartel x a y de un total de n elementos -->
-<h5>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->firstItem() }}
-</span>
-<span class="">
-a
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->lastItem() }}
-</span>
-<span class="">
-de un total de
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->total() }}
-</span>
-<!-- Fin de cartel x a y de un total de n elementos -->
-    </h5>
+  <!-- Seleccionar temática 2ª opción-->
+  <div class="col sm-4">
+  <form action="" method="post">
+    {{ csrf_field() }}
+  <label>2ª opción:</label>
+       <select class="" name="ID_categoria_tematica2" id="menu_de_tematicas2">
+          <option value="">Seleccionar una temática</option>
+           <option value="1">Ciencias Espaciales</option>
+            <option value="2">Ciencias de la Vida</option>
+           <option value="3">Gestión Territorial y Urbana</option>
+           <option value="4">Ciencia y Arte</option>
+           <option value="5">Cualquiera</option>
+       </select>
+  <!-- Fin de seleccionar temática para el desafío -->
+  <button type="submit" class="btn btn-primary">Consultar</button>
+</form>
+</div>
+
+</div>
   </div>
   <div class="card-body">
+  </div>
     <!-- tabla -->
     @php
-      $numorden = ($estudiantes->currentpage()-1)* $estudiantes->perpage();
+      $numorden = 0;
     @endphp
-    <table id="tabla-listado" class="table table-sm table-responsive table-striped">
+    <table id="tabla-listado" class="table table-responsive table-striped">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
           <th scope="col">DNI</th>
-          <th scope="col">E-mail</th>
-          <th scope="col">Celular</th>
           <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
           <th scope="col">CT 1º</th>
           <th scope="col">CT 2º</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($estudiantes as $estudiante)
-          @php
-            $numorden++;
-          @endphp
+        @if ($estudiantesPorTematica1raOpcion)
+          {{-- @php dd($estudiantesPorTematica); @endphp --}}
+          @foreach ($estudiantesPorTematica1raOpcion as $estudiante)
+            @php
+              $numorden++;
+              @endphp
         <tr>
           <th scope="row">{{ $numorden }}</th>
           <td>{{$estudiante["apellido"]}}</td>
           <td>{{$estudiante["nombre"]}}</td>
           <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante["email"]}}</td>
-          <td>{{$estudiante["celular"]}}</td>
           <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
-
           <td>{{$estudiante->categoria1["alias"]}}</td>
          <td>{{$estudiante->categoria2["alias"]}}</td>
         </tr>
       @endforeach
+    @endif
+
+      @if ($estudiantesPorTematica2daOpcion)
+        {{-- @php dd($estudiantesPorTematica); @endphp --}}
+        @foreach ($estudiantesPorTematica2daOpcion as $estudiante)
+          @php
+            $numorden++;
+            @endphp
+      <tr>
+        <th scope="row">{{ $numorden }}</th>
+        <td>{{$estudiante["apellido"]}}</td>
+        <td>{{$estudiante["nombre"]}}</td>
+        <td>{{$estudiante["DNI"]}}</td>
+        <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
+        <td>{{$estudiante->categoria1["alias"]}}</td>
+       <td>{{$estudiante->categoria2["alias"]}}</td>
+      </tr>
+    @endforeach
       </tbody>
     </table>
     <!-- fin de tabla -->
-
+@endif
 <!-- Zócalo de paginador -->
     {{-- <div class="container-fluid ml-3 mt-0 pt-1">
       <div class="alert alert-secondary w-85" role="alert">
@@ -107,9 +138,9 @@ de un total de
     </tr>
   </thead>
   <tbody>
-    <tr>
+    {{-- <tr>
       <th scope="row">{{$estudiantes->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
-    </tr>
+    </tr> --}}
   </tbody>
 </table>
 

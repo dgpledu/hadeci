@@ -115,12 +115,15 @@
                 </button>
                   <small id="emailHelp" class="form-text text-muted">Elegir el tipo de modificación a realizar<br><br></small>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/armadoDeGrupos">Armar grupos</a>
+                    <a class="dropdown-item" href="/formadoDeGrupos">Formar grupos</a>
                   <a class="dropdown-item" href="/cargarDesafios">Cargar desafíos</a>
                   <a class="dropdown-item" href="/asignarDesafioATutores">Asignar desafío a tutores</a>
                   <a class="dropdown-item" href="/asignacionTutorAGrupos">Crear nombre de grupo y asignarle un tutor</a>
 
                   <a class="dropdown-item" href="/indiceDocentes">Editar docentes</a>
                   <a class="dropdown-item" href="/indiceTutores">Editar tutores</a>
+                  <a class="dropdown-item" href="/indiceEstudiantes">Editar estudiantes</a>
                   <a class="dropdown-item" href="/agregarescuelas">Agregar escuelas no incluidas en la base de datos</a>
                     <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="/reasignacionTutorAGrupos">Re-asignar tutor a grupo ya creado</a>

@@ -15,14 +15,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get("cambiarAbaseActual", function() {
+Route::get("cambiarAbase2019", function() {
   $_SESSION["db"] = "hadeci";
 
   return back();
 });
 
-Route::get("cambiarAbase2018", function() {
-  $_SESSION["db"] = "hadeci2018";
+Route::get("cambiarAbasePrueba", function() {
+  $_SESSION["db"] = "hadeci_prueba";
 
   return back();
 });
@@ -31,6 +31,7 @@ Route::get("cambiarAbase2018", function() {
 Route::get('/consultas', function () {
     return view('consultas');
 })->middleware("auth");
+
 
 Route::get('/inscripcion', function () {
     return view('inscripcion');
@@ -49,7 +50,6 @@ Route::get('/mentoresD2', function () {
 Route::get('/acreditacion', function () {
     return view('acreditacion');
 });
-// fin de prueba
 
 // probando locuras
 Route::get('/acreditacionxmenu', function () {
@@ -58,6 +58,7 @@ Route::get('/acreditacionxmenu', function () {
 // fin de prueba de locuras
 
 Route::get("/consultaEstablecimientos", "EscuelasParticipantesController@listadotodas");
+Route::get("/consultaEscuelasPorID", "EscuelasParticipantesController@consultaEscuelasPorID");
 Route::get("/acreditarEstudiantes", "EstudiantesController@acreditacion");
 Route::post("/estudiantesAcreditados", "EstudiantesController@acreditados");
 
@@ -91,6 +92,21 @@ Route::get("/agregarescuelas", "EscuelasParticipantesController@cargarEscuela")-
 Route::post("/agregarescuelas", "EscuelasParticipantesController@agregarEscuela")->middleware("auth");
 // fin de agregar escuelas
 
+Route::get("/armadoDeGrupos", "EstudiantesController@armarGrupos")->middleware("auth");
+Route::post("/armadoDeGrupos", "EstudiantesController@armarGrupos")->middleware("auth");
+
+Route::get("/formadoDeGrupos", "EstudiantesController@formarGrupos")->middleware("auth");
+Route::post("/formadoDeGrupos", "EstudiantesController@formarGrupos")->middleware("auth");
+
+Route::get("/asignarDesafioATutores", "DesafiosController@consultaDeTutores")->middleware("auth");
+Route::post("/asignarDesafioATutores", "DesafiosController@asignarDesafioATutor")->middleware("auth");
+
+Route::get("/asignacionTutorAGrupos", "TutoresController@seleccionarTutor")->middleware("auth");
+Route::post("/asignacionTutorAGrupos", "TutoresController@crearGrupo_y_AsignarleTutor")->middleware("auth");
+
+Route::get("/reasignacionTutorAGrupos", "TutoresController@seleccionarTutorAReasignar")->middleware("auth");
+Route::post("/reasignacionTutorAGrupos", "TutoresController@reasignarTutorAGrupo")->middleware("auth");
+
 // Check-out de mentores
 Route::get("/checkoutMentoresDia1", "OtrosController@acreditarCheckOutDia1")->middleware("auth");
 Route::post("/checkoutMentoresDia1", "OtrosController@confirmarCheckOutDia1")->middleware("auth");
@@ -102,13 +118,29 @@ Route::post("/checkoutMentoresDia2", "OtrosController@confirmarCheckOutDia2")->m
 Route::post("/estudiantesDocentesDia1", "DocentesController@acreditadosDia1");
 // fin otra prueba acreditar docentes
 
-
 Route::get("/consultaEscuelasParticipantes", "EscuelasParticipantesController@consultaactivas")->middleware("auth");
 Route::get("/consultaTutores", "TutoresController@consulta")->middleware("auth");
 Route::get("/listadoTutores", "TutoresController@listado")->middleware("auth");
+
+Route::get("/listadoParaBorrarTutores", "TutoresController@listadoParaBorrar")->middleware("auth");
+Route::post("/listadoParaBorrarTutores", "TutoresController@borrarTutor")->middleware("auth");
+
+// Con esto funciona bien la actualización de tutores
+Route::get("/indiceTutores", "TutoresController@listadoParaEditarTutores")->middleware("auth");
+Route::post("/indiceTutores", "TutoresController@actualizarTutor")->middleware("auth");
+Route::post("/editarTutores", "TutoresController@editarTutor")->middleware("auth");
+// fin
+
+// Con esto funciona bien la actualización de docentes
+Route::get("/indiceDocentes", "DocentesController@listadoParaEditarDocentes")->middleware("auth");
+Route::post("/indiceDocentes", "DocentesController@actualizarDocente")->middleware("auth");
+Route::post("/editarDocentes", "DocentesController@editarDocente")->middleware("auth");
+// fin
+
 Route::get("/listadoTutoresD1", "TutoresController@listadoD1")->middleware("auth");
 Route::get("/listadoTutoresD2", "TutoresController@listadoD2")->middleware("auth");
 Route::get("/listadoDocentes", "DocentesController@listado")->middleware("auth");
+Route::get("/listadoDocentesPorEscuela", "EscuelasParticipantesController@listadoPorEscuela")->middleware("auth");
 Route::get("/listadoDocentesD1", "DocentesController@listadoD1")->middleware("auth");
 Route::get("/listadoDocentesD2", "DocentesController@listadoD2")->middleware("auth");
 Route::get("/listadoDocentesD1D2", "DocentesController@listadoD1D2")->middleware("auth");
@@ -128,39 +160,32 @@ Route::get("/estudiantesPorDocente", "EstudiantesController@PorDocente")->middle
 Route::get("/estudiantesPorDocenteNL", "EstudiantesController@PorDocenteNL");
 // fin de consulta para docentes
 Route::get("/listadoEstudiantes", "EstudiantesController@listado")->middleware("auth");
+Route::get("/listadoEstudiantesCT1", "EstudiantesController@listadoCT1")->middleware("auth");
+Route::get("/listadoEstudiantesCT2", "EstudiantesController@listadoCT2")->middleware("auth");
 Route::get("/listadoEstudiantesPresentesDia1", "EstudiantesController@listadoEstudiantesPresentesDia1")->middleware("auth");
 Route::get("/listadoEstudiantesPresentesDia2", "EstudiantesController@listadoEstudiantesPresentesDia2")->middleware("auth");
+Route::get("/listadoEstudiantesPresentesD1D2", "EstudiantesController@listadoEstudiantesPresentesD1D2")->middleware("auth");
 Route::get("/estudiantesPorEscuela", "EstudiantesController@PorEscuelaActiva")->middleware("auth");
 Route::get("/estudiantesPorGrupo", "EstudiantesController@PorGrupo")->middleware("auth");
 // agregado a ver si funciona
 Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido")->middleware("auth");
-// Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido");
-// Route::get("/inscripcionPropuestas", "PropuestasController@PorGrupo")->middleware("auth");
 // fin de agregado
 Route::get("/consultaPorDesafio", "DesafiosController@consulta")->middleware("auth");
 
-Route::get("/asignarDesafioATutores", "DesafiosController@consultaDeTutores");
-
 Route::get("/consultaPorDesafioTipeandoCodigo", "DesafiosController@consultaTipeandoCodigo");
 
-// Deshabilitación transitoria por falta de cupo
+// Deshabilitación por cupo cubierto
 Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
 Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
-// Fin de deshabilitación transitoria por falta de cupo
+// Fin de deshabilitación transitoria por cupo cubierto
 
-// People's choice
-Route::get("/inscripcionPropuestas", "PropuestasController@inscribirPropuestas");
-Route::post("/inscripcionPropuestas", "PropuestasController@registrarPropuestas");
+Route::get("/cargarDesafios", "DesafiosController@cargar")->middleware("auth");
+Route::post("/cargarDesafios", "DesafiosController@guardar")->middleware("auth");
 
-Route::get("/votacionPeoplesChoice", "PropuestasController@votarPropuestas");
-// fin de People's choice
-Route::get("/cargarDesafios", "DesafiosController@cargar");
-Route::post("/cargarDesafios", "DesafiosController@guardar");
-
-// Deshabilitación transitoria por falta de cupo
+// Deshabilitación por cupo cubierto
 Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
 Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
-// fin de deshabilitación transitoria por falta de cupo
+// fin de deshabilitación por cupo cubierto
 
 Route::get("/inscripcionTutores", "TutoresController@inscribir");
 Route::post("/inscripcionTutores", "TutoresController@registrar");
@@ -172,8 +197,8 @@ Route::get("/inscripcionDisertantes", "OtrosController@inscribirDisertantes");
 Route::post("/inscripcionDisertantes", "OtrosController@registrarDisertantes");
 Route::get("/inscripcionOrganizadores", "OtrosController@inscribirOrganizadores");
 Route::post("/inscripcionOrganizadores", "OtrosController@registrarOrganizadores");
-Route::get("/inscripcionAutoridades", "OtrosController@inscribirAutoridades");
-Route::post("/inscripcionAutoridades", "OtrosController@registrarAutoridades");
+// Route::get("/inscripcionAutoridades", "OtrosController@inscribirAutoridades");
+// Route::post("/inscripcionAutoridades", "OtrosController@registrarAutoridades");
 Route::get("/inscripcionColaboradores", "OtrosController@inscribirColaboradores");
 Route::post("/inscripcionColaboradores", "OtrosController@registrarColaboradores");
 Route::get("/inscripcionInvitados", "OtrosController@inscribirInvitados");
@@ -182,10 +207,8 @@ Route::get("/inscripcionProveedores", "OtrosController@inscribirProveedores");
 Route::post("/inscripcionProveedores", "OtrosController@registrarProveedores");
 Route::post("/inscripcion", "OtrosController@registrar");
 
-// Deshabilitación transitoria por falta de cupo
 Route::get("/inscripcionDocentes", "DocentesController@inscribir");
 Route::post("/inscripcionDocentes", "DocentesController@registrar");
-// Fin de deshabilitación transitoria por falta de cupo
 
 // Esto lo agregué para el logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

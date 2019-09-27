@@ -50,17 +50,19 @@ de un total de
     @php
       $numorden = ($tutores->currentpage()-1)* $tutores->perpage();
     @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
+    <table id="tabla-listado" class="table table-responsive table-striped table-sm">
       {{-- <thead style="background:#F2D333"> --}}
         <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
+          <th scope="col">Fecha</th>
           <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
           <th scope="col">Institución</th>
+          <th scope="col">Restr.Alim.</th>
         </tr>
       </thead>
       <tbody>
@@ -73,10 +75,12 @@ de un total de
           <th scope="row">{{ $numorden }}</th>
           <td>{{$tutor["Apellido"]}}</td>
           <td>{{$tutor["Nombre"]}}</td>
+          <td>{{$tutor["fecha_nac"]}}</td>
           <td>{{$tutor["DNI"]}}</td>
           <td>{{$tutor["Celular"] }}</td>
           <td><a href="mailto:{{$tutor["email"]}}">{{$tutor["email"]}}</a></td>
           <td>{{$tutor["instit_rep"] }}</td>
+          <td>{{$tutor["restric_alim"] }}</td>
         </tr>
       @endforeach
       </tbody>

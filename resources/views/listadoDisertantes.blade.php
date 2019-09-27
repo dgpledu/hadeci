@@ -58,18 +58,22 @@ de un total de
     @php
       $numorden = ($otros->currentpage()-1)* $otros->perpage();
     @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
+    <table id="tabla-listado" class="table table-responsive table-striped table-sm">
       {{-- <thead style="background:#F2D333"> --}}
         <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
+          <th scope="col">Fecha</th>
           <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
+          <th scope="col">Charla</th>
+          <th scope="col">Descrip.</th>
           <th scope="col">Breve CV</th>
           <th scope="col">Foto</th>
+          <th scope="col">Instit.</th>
         </tr>
       </thead>
       <tbody>
@@ -82,11 +86,15 @@ de un total de
           <th scope="row">{{ $numorden }}</th>
           <td>{{$otro["apellido"]}}</td>
           <td>{{$otro["nombre"]}}</td>
+          <td>{{$otro["fecha_nac"]}}</td>
           <td>{{$otro["cuilcuit"]}}</td>
           <td>{{$otro["celular"]}}</td>
           <td><a href="mailto:{{$otro["email"]}}">{{$otro["email"]}}</a></td>
+          <td>{{$otro["titulo_charla"]}}</td>
+          <td>{{$otro["descrip_charla"]}}</td>
           <td>{{$otro["CV"]}}</td>
           <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td>
+          <td>{{$otro["instit_rep"]}}</td>
         </tr>
       @endforeach
       </tbody>
@@ -99,53 +107,10 @@ de un total de
     <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
   {{-- <script src="https://unpkg.com/tableexport/dist/js/tableexport.min.js"></script> --}}
     <script src="/js/tableexport.min.js"></script>
-    {{-- <script>
-    $("table").tableExport({
-    formats: ["csv", "xlsx","xls", "txt"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
-    position: "bottom",  // Posicion que se muestran los botones puedes ser: (top, bottom)
-    bootstrap: true,//Usar lo estilos de css de bootstrap para los botones (true, false)
-    fileName: "Listado",    //Nombre del archivo
-    });
-    </script> --}}
-    {{-- <script>
-    /* Defaults */
-TableExport(document.getElementsByTagName("table"), {
-  headers: true,                      // (Boolean), display table headers (th or td elements) in the <thead>, (default: true)
-  footers: true,                      // (Boolean), display table footers (th or td elements) in the <tfoot>, (default: false)
-  formats: ["xlsx", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
-  filename: "id",                     // (id, String), filename for the downloaded file, (default: 'id')
-  bootstrap: true,                   // (Boolean), style buttons using bootstrap, (default: true)
-  exportButtons: true,                // (Boolean), automatically generate the built-in export buttons for each of the specified formats (default: true)
-  position: 'bottom',                 // (top, bottom), position of the caption element relative to table, (default: 'bottom')
-  ignoreRows: null,                   // (Number, Number[]), row indices to exclude from the exported file(s) (default: null)
-  ignoreCols: null,                   // (Number, Number[]), column indices to exclude from the exported file(s) (default: null)
-  trimWhitespace: true,               // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
-  RTL: false,                         // (Boolean), set direction of the worksheet to right-to-left (default: false)
-  sheetname: "id"                     // (id, String), sheet name for the exported spreadsheet, (default: 'id')
-});
-</script> --}}
-{{-- <script>
-TableExport.prototype.ignoreCSS = ".tableexport-ignore";
-var table = TableExport(document.getElementById("tabla-listado"));
-</script> --}}
-
-{{-- <script>
-TableExport(document.getElementsByTagName("table"), {
-  bootstrap: true,
-  position: 'bottom',
-  formats: ["xls", "csv", "txt"],    // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
-  filename: "listadoDe"                     // (id, String), filename for the downloaded file, (default: 'id')
-});
-</script> --}}
-
 
   <!-- tabla para paginación -->
     <table class="table table-responsive ">
-      <thead>
-        <tr>
-         {{-- <th scope="col"></th>  --}}
-        </tr>
-      </thead>
+
       <tbody>
         <tr>
           <th scope="row">{{$otros->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
@@ -153,9 +118,6 @@ TableExport(document.getElementsByTagName("table"), {
       </tbody>
     </table>
   <!-- fin de tabla para paginación -->
-
-
-
 
 </div><!-- fin del contenedor de la tabla -->
 </div><!-- fin del contenedor principal -->

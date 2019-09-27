@@ -58,18 +58,21 @@ de un total de
     @php
       $numorden = ($otros->currentpage()-1)* $otros->perpage();
     @endphp
-    <table id="tabla-listado" class="table table-responsive table-striped">
+    <table id="tabla-listado" class="table table-responsive table-striped table-sm">
       {{-- <thead style="background:#F2D333"> --}}
         <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
+          <th scope="col">Fecha</th>
           <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
           <th scope="col">Breve CV</th>
           <th scope="col">Foto</th>
+          <th scope="col">Contacto</th>
+          <th scope="col">Instit.</th>
         </tr>
       </thead>
       <tbody>
@@ -82,11 +85,14 @@ de un total de
           <th scope="row">{{ $numorden }}</th>
           <td>{{$otro["apellido"]}}</td>
           <td>{{$otro["nombre"]}}</td>
+          <td>{{$otro["fecha_nac"]}}</td>
           <td>{{$otro["cuilcuit"]}}</td>
           <td>{{$otro["celular"]}}</td>
           <td><a href="mailto:{{$otro["email"]}}">{{$otro["email"]}}</a></td>
           <td>{{$otro["CV"]}}</td>
           <td><a href="/storage/{{$otro["nom_foto"]}}" target="_blank"><img src="storage/{{$otro["nom_foto"]}}" width="40" height="40"></a></td>
+          <td>{{$otro["contacto"]}}</td>
+          <td>{{$otro["instit_rep"]}}</td>
         </tr>
       @endforeach
       </tbody>

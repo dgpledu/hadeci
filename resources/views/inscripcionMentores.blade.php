@@ -154,7 +154,6 @@
       </div>
   </div>
 
-
   <!-- Fin de área de expertise -->
 
 <!-- Fin quinta línea del formulario -->
@@ -165,12 +164,12 @@
 <div class="form-group col-sm-5">
 
     <input type="text" name="disp_horariaD1" class="form-control" placeholder="Disponibilidad día martes">
-    <small class="form-text text-muted">Ingrese el/los horario/s del día martes 1/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es sobre todo de 14 a 17hs).
+    <small class="form-text text-muted">Ingrese el/los horario/s del día martes 8/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es sobre todo de 14 a 17hs).
 </small>
 </div>
 <div class="form-group col-sm-5">
     <input type="text" name="disp_horariaD2" class="form-control" placeholder="Disponibilidad día miércoles">
-    <small class="form-text text-muted">Ingrese el/los horario/s del día miércoles 2/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es de 8:30 a 13:30hs).
+    <small class="form-text text-muted">Ingrese el/los horario/s del día miércoles 9/10 en que va a poder estar presente (Recuerde que el trabajo fuerte es de 8:30 a 13:30hs).
 </small>
 </div>
 

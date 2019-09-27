@@ -137,12 +137,6 @@ Route::post("/indiceDocentes", "DocentesController@actualizarDocente")->middlewa
 Route::post("/editarDocentes", "DocentesController@editarDocente")->middleware("auth");
 // fin
 
-// Con esto funciona bien la actualización de estudiantes
-Route::get("/indiceEstudiantes", "EstudiantesController@listadoParaEditarEstudiantes")->middleware("auth");
-Route::post("/indiceEstudiantes", "EstudiantesController@actualizarEstudiante")->middleware("auth");
-Route::post("/editarEstudiantes", "EstudiantesController@editarEstudiante")->middleware("auth");
-// fin
-
 Route::get("/listadoTutoresD1", "TutoresController@listadoD1")->middleware("auth");
 Route::get("/listadoTutoresD2", "TutoresController@listadoD2")->middleware("auth");
 Route::get("/listadoDocentes", "DocentesController@listado")->middleware("auth");
@@ -175,20 +169,25 @@ Route::get("/estudiantesPorEscuela", "EstudiantesController@PorEscuelaActiva")->
 Route::get("/estudiantesPorGrupo", "EstudiantesController@PorGrupo")->middleware("auth");
 // agregado a ver si funciona
 Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido")->middleware("auth");
+// Route::get("/estudiantesPorApellido", "EstudiantesController@PorApellido");
+// Route::get("/inscripcionPropuestas", "PropuestasController@PorGrupo")->middleware("auth");
 // fin de agregado
 Route::get("/consultaPorDesafio", "DesafiosController@consulta")->middleware("auth");
 
 Route::get("/consultaPorDesafioTipeandoCodigo", "DesafiosController@consultaTipeandoCodigo");
 
 // Deshabilitación por cupo cubierto
-// Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
-// Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
 // Route::get("/inscripcionEstudiantes", "EstudiantesController@inscribir");
 // Route::post("/inscripcionEstudiantes", "EstudiantesController@registrar");
 // Fin de deshabilitación transitoria por cupo cubierto
 
 Route::get("/cargarDesafios", "DesafiosController@cargar")->middleware("auth");
 Route::post("/cargarDesafios", "DesafiosController@guardar")->middleware("auth");
+
+// Deshabilitación por cupo cubierto
+// Route::get("/preinscripcionEstudiantes", "EstudiantesController@preinscribir");
+// Route::post("/preinscripcionEstudiantes", "EstudiantesController@preregistrar");
+// fin de deshabilitación por cupo cubierto
 
 Route::get("/inscripcionTutores", "TutoresController@inscribir");
 Route::post("/inscripcionTutores", "TutoresController@registrar");

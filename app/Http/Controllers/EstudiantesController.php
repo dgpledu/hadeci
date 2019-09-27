@@ -274,6 +274,28 @@ public function acreditadosDia2(Request $req) {
     return view("listadoEstudiantes", compact("estudiantes", "totaldeestudiantes"));
   }
 
+  public function armarGrupos(Request $req) {
+
+$estudiantesPorTematica1raOpcion = Estudiante::where('ID_cat_tem1', '=', $req["ID_categoria_tematica1"])->take(11)->get();
+$estudiantesPorTematica2daOpcion = Estudiante::where('ID_cat_tem2', '=', $req["ID_categoria_tematica2"])->take(11)->get();
+
+    return view ("armadoDeGrupos", compact("estudiantesPorTematica1raOpcion", "estudiantesPorTematica2daOpcion"));
+  }
+
+  public function formarGrupos(Request $req) {
+
+$escuelasParticipantes = Escuela::where("activa", "=", 1)->get();
+$IDescuelas = $escuelasParticipantes->pluck('ID');
+$IDestudiantes = Estudiante::all()->pluck('ID');
+$todoslosestudiantes = Estudiante::all();
+
+$tleC1 = Estudiante::where('ID_cat_tem1', '=', $req["ID_categoria_tematica"])->get();
+$estudiantesPorTematica = $tleC1->shuffle();
+
+    return view ("formadoDeGrupos", compact("estudiantesPorTematica"));
+  }
+
+
   public function listadoCT1() {
   $estudiantes = Estudiante::orderBy('ID_cat_tem1')->paginate(1000);
   $totaldeestudiantes = Estudiante::all()->count();
@@ -313,6 +335,49 @@ public function acreditadosDia2(Request $req) {
   ->paginate(1000);
     return view("listadoEstudiantesPresentesD1D2", compact("estudiantesPresentesD1D2"));
   }
+
+  // Prueba de edición y actualización de estudiantes
+  public function editarEstudiante(Request $req)
+      {
+          $estudiante=Estudiante::find($req["ID_estudiante_a_editar"]);
+          return view('editarEstudiantes',compact('estudiante'));
+      }
+
+  public function actualizarEstudiante(Request $req)
+          {
+
+      if (isset($req["ID"])) {
+
+              $this->validate($req,['Nombre'=>'required', 'Apellido'=>'required']);
+
+              Estudiante::find($req["ID"])->update($req->all());
+
+              return redirect("/indiceEstudiantes")
+              ->with([
+                "exitoso" => "Registro actualizado satisfactoriamente",
+              ]);
+
+      }
+            if (isset($req["ID_estudiante_a_borrar"])) {
+              $estudianteABorrar = Estudiante::find($req["ID_estudiante_a_borrar"]);
+
+              $estudianteABorrar->delete();
+
+                return redirect("/indiceEstudiantes")
+                ->with([
+                  "exitoso" => "Registro borrado satisfactoriamente",
+                ]);
+            }
+
+          }
+
+  public function listadoParaEditarEstudiantes(Request $req) {
+  $estudiantes = Estudiante::orderBy('apellido')->paginate(1000);
+  $todoslosestudiantes = Estudiante::all();
+    return view("indiceEstudiantes", compact("todoslosestudiantes", "estudiantes"));
+  }
+
+  // fin de prueba
 
 }
 ;

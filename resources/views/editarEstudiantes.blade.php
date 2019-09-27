@@ -12,49 +12,80 @@
     <link href="/css/tableexport.css" rel="stylesheet">
       <!-- Fin de lo que debe ir antes que ningún otro stylesheet!!! -->
 
-    <title>Editar tutores</title>
+    <title>Editar estudiantes</title>
   </head>
   <body>
   @include('primerabarranav')
-  
+
  <div class="jumbotron jumbotron-fluid" id="contenedor_ppal" style="background:url('/imgs/patron.png')">
 
   <!-- Formulario de inscripción -->
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de tutores para editar
-{{-- <span class="badge badge-primary badge-pill">{{count($todoslostutores)}}</span> --}}
+    <h4>Listado de estudiantes para editar
+
 </h4>
 <h5>
 
-  {{-- <form method="POST" action="{{ route('actualizarTutor',$tutorAEditar["ID"]) }}"  role="form"> --}}
-<form method="POST" action="/indiceTutores"  role="form">
+<form method="POST" action="/indiceEstudiantes"  role="form">
       {{ csrf_field() }}
-      <input type="hidden" name="ID" value={{$tutor["ID"]}}>
+      <input type="hidden" name="ID" value={{$estudiante["ID"]}}>
           <div class="form-group">
             <label for="nombre_tutor">Nombre:</label>
-            <input type="text" class="form-control" name="Nombre" value="{{$tutor["Nombre"]}}" />
+            <input type="text" class="form-control" name="Nombre" value="{{$estudiante["nombre"]}}" />
           </div>
           <div class="form-group">
             <label for="apellido_tutor">Apellido:</label>
-            <input type="text" class="form-control" name="Apellido" value="{{$tutor["Apellido"]}}" />
+            <input type="text" class="form-control" name="Apellido" value="{{$estudiante["apellido"]}}" />
           </div>
           <div class="form-group">
             <label for="celular_tutor">Celular:</label>
-            <input type="text" class="form-control" name="Celular" value="{{$tutor["Celular"]}}" />
+            <input type="text" class="form-control" name="Celular" value="{{$estudiante["celular"]}}" />
           </div>
           <div class="form-group">
-            <label for="DNI_tutor">DNI:</label>
-            <input type="text" class="form-control" name="DNI" value="{{$tutor["DNI"] }}" />
+            <label for="DNI_estudiante">DNI:</label>
+            <input type="text" class="form-control" name="DNI" value="{{$estudiante["DNI"] }}" />
           </div>
           <div class="form-group">
-            <label for="email_tutor">E-mail:</label>
-            <input type="text" class="form-control" name="email" value="{{$tutor["email"] }}" />
+            <label for="email_estudiante">E-mail:</label>
+            <input type="text" class="form-control" name="email" value="{{$estudiante["email"] }}" />
           </div>
           <div class="form-group">
-            <label for="instit_rep_tutor">Institución:</label>
-            <input type="text" class="form-control" name="instit_rep" value="{{$tutor["instit_rep"]}}" />
+            <label for="fecha_nac">Fecha:</label>
+            <input type="text" class="form-control" name="fecha_nac" value="{{$estudiante["fecha_nac"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="anio_cursa">Año:</label>
+            <input type="text" class="form-control" name="anio_cursa" value="{{$estudiante["anio_cursa"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="restric_alim">¿Restricción alimentaria?</label>
+            <input type="text" class="form-control" name="restric_alim" value="{{$estudiante["restric_alim"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="ID_cat_tem1">Cat. tem. 1º:</label>
+            <input type="text" class="form-control" name="ID_cat_tem1" value="{{$estudiante["ID_cat_tem1"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="ID_cat_tem2">Cat. tem. 2º:</label>
+            <input type="text" class="form-control" name="ID_cat_tem2" value="{{$estudiante["ID_cat_tem2"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="ID_docente_reg">Docente:</label>
+            <input type="text" class="form-control" name="ID_docente_reg" value="{{$estudiante["ID_docente_reg"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="ID_grupo">ID grupo:</label>
+            <input type="text" class="form-control" name="ID_grupo" value="{{$estudiante["ID_grupo"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="pres_dia1">Día 1:</label>
+            <input type="text" class="form-control" name="pres_dia1" value="{{$estudiante["pres_dia1"]}}"/>
+          </div>
+          <div class="form-group">
+            <label for="pres_dia2">Día 2:</label>
+            <input type="text" class="form-control" name="pres_dia2" value="{{$estudiante["pres_dia2"]}}"/>
           </div>
 
           <button type="submit" class="btn btn-primary">Actualizar</button>

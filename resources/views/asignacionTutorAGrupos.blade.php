@@ -56,8 +56,8 @@
      <select class="" name="cat_tematica_selec" id="menu_de_tematicas">
         <option value="">Seleccionar una temática</option>
          <option value="G-ESP-">Ciencias Espaciales</option>
-         <option value="G-GES-">Gestión Territorial y Urbana</option>
          <option value="G-VID-">Ciencias de la Vida</option>
+         <option value="G-GES-">Gestión Territorial y Urbana</option>
          <option value="G-ART-">Ciencia y Arte</option>
      </select>
 <!-- Fin de seleccionar temática para el grupo -->

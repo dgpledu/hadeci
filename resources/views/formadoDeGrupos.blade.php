@@ -12,7 +12,7 @@
       <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
       <link href="/css/tableexport.css" rel="stylesheet">
 
-    <title>Listado de estudiantes</title>
+    <title>Armado de grupos</title>
   </head>
   <body>
   @include('primerabarranav')
@@ -22,71 +22,97 @@
   <!-- Cabecera -->
   <div class="card mx-auto text-black bg-light mb-3" style="max-width: 75rem";>
   <div class="card-header" style="background:#f2d333">
-    <h4>Listado de estudiantes inscriptos en el hackatón</h4>
-{{-- <span class="badge badge-primary badge-pill">{{$totaldeestudiantes}}</span> --}}
+    <h4>Formación de grupos</h4>
+    <div class="row">
+    <!-- Seleccionar temática del grupo-->
+    <div class="col sm-4">
+    <form action="" method="post">
+      {{ csrf_field() }}
+    <label>Temática del grupo:</label>
+         <select class="" name="ID_categoria_tematica" id="menu_de_tematicas">
+            <option value="">Seleccionar una temática</option>
+             <option value="1">Ciencias Espaciales</option>
+              <option value="2">Ciencias de la Vida</option>
+             <option value="3">Gestión Territorial y Urbana</option>
+             <option value="4">Ciencia y Arte</option>
+             <option value="5">Cualquiera</option>
+         </select>
+    <!-- Fin de seleccionar temática para el grupo -->
+    <button type="submit" class="btn btn-primary">Consultar</button>
+  </form>
+  </div>
 
-<!-- Cartel x a y de un total de n elementos -->
-<h5>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->firstItem() }}
-</span>
-<span class="">
-a
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->lastItem() }}
-</span>
-<span class="">
-de un total de
-</span>
-<span class="badge badge-primary badge-pill">
-{{ $estudiantes->total() }}
-</span>
-<!-- Fin de cartel x a y de un total de n elementos -->
-    </h5>
+
+
+</div>
   </div>
   <div class="card-body">
+  </div>
     <!-- tabla -->
     @php
-      $numorden = ($estudiantes->currentpage()-1)* $estudiantes->perpage();
+      $numorden = 0;
     @endphp
     <table id="tabla-listado" class="table table-sm table-responsive table-striped">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Nombre</th>
+          {{-- <th scope="col">Grupo</th> --}}
+          <th scope="col">ID</th>
+          <th scope="col">nombre</th>
+          <th scope="col">apellido</th>
           <th scope="col">DNI</th>
-          <th scope="col">E-mail</th>
-          <th scope="col">Celular</th>
-          <th scope="col">Escuela</th>
-          <th scope="col">Docente</th>
-          <th scope="col">CT 1º</th>
-          <th scope="col">CT 2º</th>
+          <th scope="col">email</th>
+          <th scope="col">celular</th>
+          <th scope="col">fecha_nac</th>
+          <th scope="col">anio_cursa</th>
+          <th scope="col">restric_alim</th>
+          <th scope="col">ID_cat_tem1</th>
+          <th scope="col">ID_cat_tem2</th>
+          <th scope="col">ID_docente_reg</th>
+          <th scope="col">ID_escuela</th>
+          <th scope="col">ID_grupo</th>
+
         </tr>
       </thead>
       <tbody>
-        @foreach ($estudiantes as $estudiante)
-          @php
-            $numorden++;
-          @endphp
-        <tr>
-          <th scope="row">{{ $numorden }}</th>
-          <td>{{$estudiante["apellido"]}}</td>
-          <td>{{$estudiante["nombre"]}}</td>
-          <td>{{$estudiante["DNI"]}}</td>
-          <td>{{$estudiante["email"]}}</td>
-          <td>{{$estudiante["celular"]}}</td>
-          <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
-          <td>{{$estudiante->docente["apellido"]}}, {{$estudiante->docente["nombre"]}}</td>
 
-          <td>{{$estudiante->categoria1["alias"]}}</td>
-         <td>{{$estudiante->categoria2["alias"]}}</td>
-        </tr>
-      @endforeach
+@if ($estudiantesPorTematica)
+    <!-- Prueba con chunk -->
+    @foreach ($estudiantesPorTematica->chunk(11) as $grupo)
+      @php
+        $numorden++;
+      @endphp
+            @foreach ($grupo as $estudiante)
+              <tr>
+                {{-- <th scope="row">{{ $numorden }}</th> --}}
+                <td>{{$estudiante->ID}}</td>
+                <td>{{$estudiante->nombre}}</td>
+                <td>{{$estudiante->apellido}}</td>
+                <td>{{$estudiante->DNI}}</td>
+                <td>{{$estudiante->email}}</td>
+                <td>{{$estudiante->celular}}</td>
+                <td>{{$estudiante->fecha_nac}}</td>
+                <td>{{$estudiante->anio_cursa}}</td>
+                <td>{{$estudiante->restric_alim}}</td>
+                <td>{{$estudiante->ID_cat_tem1}}</td>
+                <td>{{$estudiante->ID_cat_tem2}}</td>
+                <td>{{$estudiante->ID_docente_reg}}</td>
+                <td>{{$estudiante->ID_escuela}}</td>
+                <td>{{ $numorden }}</td>
+                {{-- <td>{{$estudiante->ID_grupo}}</td> --}}
+                {{-- <td>{{$estudiante->categoria1["alias"]}}</td>
+                <td>{{$estudiante->categoria2["alias"]}}</td> --}}
+              </tr>
+            @endforeach
+    @endforeach
+    <!-- fin de prueba con chunk -->
+
       </tbody>
     </table>
     <!-- fin de tabla -->
+@endif
+
+
+
 
 <!-- Zócalo de paginador -->
     {{-- <div class="container-fluid ml-3 mt-0 pt-1">
@@ -107,9 +133,9 @@ de un total de
     </tr>
   </thead>
   <tbody>
-    <tr>
+    {{-- <tr>
       <th scope="row">{{$estudiantes->links()}}<a class="btn " style="background:#f2d333; color: black;" href="/consultas" role="button">Volver a Consultas</a></th>
-    </tr>
+    </tr> --}}
   </tbody>
 </table>
 

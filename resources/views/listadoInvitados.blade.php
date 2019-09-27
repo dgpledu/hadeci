@@ -65,6 +65,7 @@ de un total de
           <th scope="col">#</th>
           <th scope="col">Apellido</th>
           <th scope="col">Nombre</th>
+          <th scope="col">Fecha</th>
           <th scope="col">CUIL/CUIT</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
@@ -82,6 +83,7 @@ de un total de
           <th scope="row">{{ $numorden }}</th>
           <td>{{$otro["apellido"]}}</td>
           <td>{{$otro["nombre"]}}</td>
+          <td>{{$otro["fecha_nac"]}}</td>
           <td>{{$otro["cuilcuit"]}}</td>
           <td>{{$otro["celular"]}}</td>
           <td><a href="mailto:{{$otro["email"]}}">{{$otro["email"]}}</a></td>
