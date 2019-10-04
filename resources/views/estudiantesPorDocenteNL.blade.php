@@ -53,6 +53,7 @@
         <th scope="col">Nombre</th>
         <th scope="col">DNI</th>
         <th scope="col">Escuela</th>
+        <th scope="col">Grupo</th>
       </tr>
     </thead>
     <tbody>
@@ -66,6 +67,7 @@
         <td>{{$estudiante["nombre"]}}</td>
         <td>{{$estudiante["DNI"]}}</td>
         <td>{{$estudiante->escuela["nombre"]}}</td> <!-- esto funciona porque $estudiante es de tipo estudiante -->
+          <td>{{$estudiante->grupo["nombre"]}}</td>
       </tr>
     @endforeach
     </tbody>

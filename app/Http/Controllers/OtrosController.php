@@ -548,6 +548,30 @@ $todoslosmentores = Otro::all();
     return view("listadoMentores", compact("todoslosmentores", "otros"));
   }
 
+  public function listadoOtrosPerfilesInscriptos(Request $req) {
+$todoslosotrosperfiles = Otro::orderBy('apellido')->Paginate(1000);
+
+    return view("listadoOtrosPerfilesInscriptos", compact("todoslosotrosperfiles"));
+  }
+
+  public function listadoOtrosPerfilesD1(Request $req) {
+$todoslosotrosperfiles = Otro::orderBy('apellido')->where('pres_dia1', '1')->paginate(1000);
+
+    return view("listadoOtrosPerfilesD1", compact("todoslosotrosperfiles"));
+  }
+
+  public function listadoOtrosPerfilesD2(Request $req) {
+$todoslosotrosperfiles = Otro::orderBy('apellido')->where('pres_dia2', '1')->paginate(1000);
+
+    return view("listadoOtrosPerfilesD2", compact("todoslosotrosperfiles"));
+  }
+
+  public function listadoOtrosPerfilesD1D2(Request $req) {
+$todoslosotrosperfiles = Otro::orderBy('apellido')->where('pres_dia1', '1' && 'pres_dia2', '1')->paginate(1000);
+
+    return view("listadoOtrosPerfilesD1D2", compact("todoslosotrosperfiles"));
+  }
+
   public function listadoMentoresPresentesD1(Request $req) {
 $todoslosmentorespresentesD1 = Otro::where('rol', 'Mentor')
 ->where('pres_dia1', 1)->get();

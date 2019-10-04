@@ -83,6 +83,11 @@
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/listadoMentores">Listado de mentores inscriptos</a>
         <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/listadoOtrosPerfilesInscriptos">Listado de otros perfiles inscriptos</a>
+        <a class="dropdown-item" href="/listadoOtrosPerfilesD1">Listado de otros perfiles presentes (día 1)</a>
+        <a class="dropdown-item" href="/listadoOtrosPerfilesD2">Listado de otros perfiles presentes (día 2)</a>
+        <a class="dropdown-item" href="/listadoOtrosPerfilesD1D2">Listado de otros perfiles presentes (ambos días)</a>
+        <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/listadoTutores">Listado de tutores inscriptos</a>
         <a class="dropdown-item" href="/listadoTutoresD1">Listado de tutores presentes (día 1)</a>
         <a class="dropdown-item" href="/listadoTutoresD2">Listado de tutores presentes (día 2)</a>

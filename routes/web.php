@@ -155,6 +155,10 @@ Route::get("/listadoMentores", "OtrosController@listadoMentores")->middleware("a
 Route::get("/listadoJurados", "OtrosController@listadoJurados")->middleware("auth");
 Route::get("/listadoDisertantes", "OtrosController@listadoDisertantes")->middleware("auth");
 Route::get("/listadoOrganizadores", "OtrosController@listadoOrganizadores")->middleware("auth");
+Route::get("/listadoOtrosPerfilesInscriptos", "OtrosController@listadoOtrosPerfilesInscriptos")->middleware("auth");
+Route::get("/listadoOtrosPerfilesD1", "OtrosController@listadoOtrosPerfilesD1")->middleware("auth");
+Route::get("/listadoOtrosPerfilesD2", "OtrosController@listadoOtrosPerfilesD2")->middleware("auth");
+Route::get("/listadoOtrosPerfilesD1D2", "OtrosController@listadoOtrosPerfilesD1D2")->middleware("auth");
 Route::get("/listadoAutoridades", "OtrosController@listadoAutoridades")->middleware("auth");
 Route::get("/listadoColaboradores", "OtrosController@listadoColaboradores")->middleware("auth");
 Route::get("/listadoInvitados", "OtrosController@listadoInvitados")->middleware("auth");
